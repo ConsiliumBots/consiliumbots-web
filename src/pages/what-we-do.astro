@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const approach = [
+  {
+    icon: '/images/figure-info-interventions.png',
+    title: 'Informational interventions are effective',
+    body: 'There is scientific evidence that providing relevant information at the right time can make a significant difference in the way people live — improving decisions about schooling, enrollment, and access to benefits.',
+  },
+  {
+    icon: '/images/figure-ai.png',
+    title: 'Artificial Intelligence: a reality now available',
+    body: 'AI, empowered by large language models, has opened up new possibilities for delivering personalized, dynamic information at massive scale — reshaping how individuals make decisions about education, housing, and government services.',
+  },
+  {
+    icon: '/images/figure-centralized.png',
+    title: 'Centralized systems and data offer an opportunity',
+    body: 'Government benefit processes are increasingly digitized and centralized. The resulting data lowers the cost of supporting families in decision-making with personalized information.',
+  },
+];
+---
+
+<BaseLayout
+  title="What We Do | ConsiliumBots"
+  description="We turn complex and underutilized information into virtual assistance and personalized recommendations, helping people make better-informed decisions."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>What We Do</h1>
+      <p>
+        We turn complex and underutilized information into virtual assistance and personalized
+        recommendations.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="lead">
+        Our nonprofit organization is dedicated to leveraging technology to
+        <strong>connect government data with the community</strong> in order to
+        <strong>help people make better-informed decisions that can positively impact their well-being.</strong>
+        Our mission is to increase <strong>access to education, housing, and other government benefits</strong>
+        by fostering technological innovation — empowering those who need it most and promoting social
+        and economic equity.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <h2 class="section-title">Why it matters</h2>
+      <div class="approach-grid">
+        {approach.map((a) => (
+          <div class="approach-card">
+            <img src={a.icon} alt="" width="50" height="50" />
+            <h3>{a.title}</h3>
+            <p>{a.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-row">
+      <div>
+        <h2 class="section-title">See it in practice</h2>
+        <p class="lead">Explore the projects where we put this approach to work across Latin America and the US.</p>
+      </div>
+      <a href="/projects" class="btn btn-primary">
+        View projects
+        <img src="/icons/arrow-right.svg" alt="" width="20" />
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    max-width: 800px;
+  }
+  .lead strong {
+    color: var(--color-text);
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .approach-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 14px 0 10px;
+  }
+  .approach-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-row .lead {
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

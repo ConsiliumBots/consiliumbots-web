@@ -1,0 +1,494 @@
+[
+  {
+    "id": "christopher-neilson",
+    "name": "Christopher Neilson",
+    "title": "Founder & CEO",
+    "status": "active",
+    "location": "New Haven, CT / Santiago, Chile",
+    "bio": "Christopher Neilson is the founder of ConsiliumBots and a Professor of Economics at Yale University. His research focuses on how families make educational decisions and how technology can improve equity in access to education, housing, and government services. He has led national-scale education systems in Chile and large-scale RCTs across Latin America reaching over 1 million students.",
+    "photo": null,
+    "expertise": [
+      "Education Economics",
+      "Industrial Organization",
+      "Development Economics",
+      "Public Policy",
+      "Mechanism Design",
+      "School Assignment Algorithms",
+      "Information Interventions",
+      "RCT Design & Implementation",
+      "Large-Scale Government Systems"
+    ],
+    "affiliations": [
+      {
+        "organization": "Yale University",
+        "role": "Professor of Economics and Global Affairs",
+        "status": "Active"
+      },
+      {
+        "organization": "J-PAL",
+        "role": "Affiliated Professor",
+        "status": "Active"
+      },
+      {
+        "organization": "TetherEducation Inc",
+        "role": "Founder & CEO",
+        "status": "Active"
+      }
+    ],
+    "website": "https://christopherneilson.github.io/",
+    "scholar": "https://scholar.google.com/citations?user=6MZfok0AAAAJ"
+  },
+  {
+    "id": "mauro-cornejo",
+    "name": "Mauricio Cornejo",
+    "title": "Senior Project Manager / Impact Evaluation",
+    "status": "alumni",
+    "location": "Santiago, Chile",
+    "bio": "Mauro leads project implementation and impact evaluation for ConsiliumBots, with particular focus on DFM in Colombia and Chile. He manages the FID R&D grant and coordinates field operations.",
+    "photo": null,
+    "expertise": [
+      "Impact Evaluation",
+      "Project Management",
+      "Data Analysis",
+      "RCT Implementation",
+      "Budget Management",
+      "Government Relations"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "josefina-lavin",
+    "name": "Josefina Lavín",
+    "title": "Chief Operations Officer",
+    "status": "alumni",
+    "location": "Santiago, Chile",
+    "bio": "Josefina manages day-to-day operations, administrative processes, and coordination with partners including J-PAL and Yale.",
+    "photo": null,
+    "expertise": [
+      "Operations Management",
+      "Administrative Coordination",
+      "Document Management",
+      "Partner Relations",
+      "J-PAL Processes"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "leidy-gomez",
+    "name": "Leidy Gómez",
+    "title": "Data Analyst / Colombia Operations",
+    "status": "active",
+    "location": "Colombia",
+    "bio": "Leidy manages data operations in Colombia, including education data analysis for DFM and higher education systems research.",
+    "photo": null,
+    "expertise": [
+      "Data Analysis",
+      "Education Data Systems",
+      "Colombia Education Context",
+      "Higher Education Data",
+      "Field Operations"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "mayela-cerda",
+    "name": "Mayela Cerda",
+    "title": "Lead Designer",
+    "status": "active",
+    "location": "Chile",
+    "bio": "Mayela leads design and communications for ConsiliumBots, including brand identity, website, templates, and visual communications.",
+    "photo": null,
+    "expertise": [
+      "Graphic Design",
+      "Brand Management",
+      "Web Design",
+      "Communications Strategy",
+      "Template Design",
+      "Social Media"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "valentina-hurtado",
+    "name": "Valentina Hurtado",
+    "title": "Data Scientist",
+    "status": "active",
+    "location": null,
+    "bio": "Valentina leads dashboard and data-visualization work across ConsiliumBots projects, including the analytics platform built with the Dominican Republic's Ministry of Education.",
+    "photo": null,
+    "expertise": [
+      "Data Science",
+      "Data Visualization",
+      "Dashboards"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "constanza-munoz",
+    "name": "Constanza Muñoz",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "martin-sielfeld",
+    "name": "Martín Sielfeld",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "ria-deane",
+    "name": "Ria Deane",
+    "title": "Software Engineer",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "maria-fernanda-ramirez",
+    "name": "María Fernanda Ramírez",
+    "title": "Research Affiliate & Project Manager",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/maria-fernanda-ramirez.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "fernando-ochoa",
+    "name": "Fernando Ochoa",
+    "title": "Research Affiliate & Project Manager",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/fernando-ochoa.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "tomas-larroucau",
+    "name": "Tomás Larroucau",
+    "title": "Research Affiliate",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/tomas-larroucau.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "ignacio-rios",
+    "name": "Ignacio Ríos",
+    "title": "Research Affiliate",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/ignacio-rios.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "alvaro-carril",
+    "name": "Álvaro Carril",
+    "title": "Research Affiliate & Project Manager",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/alvaro-carril.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "magdalena-bennett",
+    "name": "Magdalena Bennett",
+    "title": "Research Affiliate",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/magdalena-bennett.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "felipe-arteaga",
+    "name": "Felipe Arteaga",
+    "title": "Research Affiliate",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/felipe-arteaga.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "carolina-concha-arriagada",
+    "name": "Carolina Concha-Arriagada",
+    "title": "Research Affiliate",
+    "status": "research-affiliate",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/carolina-concha-arriagada.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "anibal-guerrero",
+    "name": "Aníbal Guerrero",
+    "title": "Research Manager",
+    "status": "research-associate",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "javiera-gazmuri",
+    "name": "Javiera Gazmuri",
+    "title": "Research Associate at J-PAL",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "ferlisa-baez",
+    "name": "Ferlisa Báez",
+    "title": "Research Associate at J-PAL",
+    "status": "research-associate",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "manuela-cardona",
+    "name": "Manuela Cardona",
+    "title": "Predoctoral Fellow at Yale",
+    "status": "research-associate",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "sergio-arango",
+    "name": "Sergio Arango",
+    "title": "Predoctoral Fellow at Yale",
+    "status": "research-associate",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "ryan-cooper",
+    "name": "Ryan Cooper",
+    "title": "Director Weiss Fund, University of Chicago. President, Board of Directors ConsiliumBots",
+    "status": "board",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/ryan-cooper.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "veronica-zapata",
+    "name": "Verónica Zapata",
+    "title": "Education Policy Design Consultant",
+    "status": "board",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/veronica-zapata.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "norma-padron",
+    "name": "Norma Padrón",
+    "title": "Health Economics",
+    "status": "board",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/norma-padron.png",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "juan-ariel-jimenez",
+    "name": "Juan Ariel Jiménez",
+    "title": "Ex-Minister of Economics, Planning and Development of the Dominican Republic",
+    "status": "board",
+    "location": null,
+    "bio": null,
+    "photo": "/images/team/juan-ariel.jpg",
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "sergio",
+    "name": "Sergio",
+    "title": "Software Engineer",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [
+      "Software Development",
+      "Web Applications",
+      "Backend Systems"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "elisa-salas",
+    "name": "Elisa Salas",
+    "title": "Team Member",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "joaquin-grez",
+    "name": "Joaquín Grez",
+    "title": "Software Engineer / CTO",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "alejandrina-correa",
+    "name": "Alejandrina Correa",
+    "title": "Project Manager",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "adam-kapor",
+    "name": "Adam Kapor",
+    "title": "Research Collaborator",
+    "status": "collaborator",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [
+      "School Choice",
+      "Market Design",
+      "Industrial Organization"
+    ],
+    "affiliations": [
+      {
+        "organization": "Princeton University"
+      }
+    ],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "seth-zimmerman",
+    "name": "Seth Zimmerman",
+    "title": "Research Collaborator",
+    "status": "collaborator",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [
+      "Education Economics",
+      "Higher Education",
+      "Labor Economics"
+    ],
+    "affiliations": [
+      {
+        "organization": "University of Chicago"
+      }
+    ],
+    "website": null,
+    "scholar": null
+  }
+]

@@ -1,0 +1,375 @@
+[
+  {
+    "slug": "dfm-chile",
+    "name": "Decidiendo para un Futuro Mejor (DFM) — Chile",
+    "status": "active",
+    "country": "Chile",
+    "region": null,
+    "startYear": 2021,
+    "endYear": null,
+    "type": "Information Intervention + RCT",
+    "description": "National-scale digital curriculum to reduce school dropout and increase higher education access. Personalized 5-week in-school program with virtual counselor.",
+    "targetPopulation": "Grades 7–12, publicly funded schools nationwide",
+    "scale": "25,000 treated + 25,000 control",
+    "outcomes": [
+      "RCT endline analysis ongoing",
+      "76% of schools with vulnerability index ≥ 0.8",
+      "70%+ public schools, rest subsidized"
+    ],
+    "technologies": [
+      "Web application",
+      "Chatbot",
+      "WhatsApp integration"
+    ],
+    "partner": "J-PAL LAC",
+    "client": "Chile Ministry of Education",
+    "funders": [
+      "Agency Fund",
+      "FID"
+    ],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      },
+      {
+        "name": "Mauricio Cornejo",
+        "role": "Project Lead"
+      },
+      {
+        "name": "Josefina Lavín",
+        "role": "Operations"
+      }
+    ]
+  },
+  {
+    "slug": "dfm-colombia",
+    "name": "Decidiendo para un Futuro Mejor (DFM) — Colombia",
+    "status": "active",
+    "country": "Colombia",
+    "region": "Valle del Cauca (excluding Cali)",
+    "startYear": 2022,
+    "endYear": null,
+    "type": "Information Intervention + RCT",
+    "description": "Regional deployment of DFM targeting grades 6–11, reaching 64,000 students. 70% rural participants.",
+    "targetPopulation": "Grades 6–11, Valle del Cauca",
+    "scale": "38,000 reached in 2023, 64,000 target",
+    "outcomes": [
+      "Cost reduced 75% from $9.70 to $2.36/student (2022→2023)",
+      "81% coverage of grades 6–11",
+      "Trabun impact evaluation in progress"
+    ],
+    "technologies": [
+      "Web application",
+      "Chatbot"
+    ],
+    "partner": "J-PAL LAC",
+    "client": "Valle del Cauca Regional Government",
+    "funders": [
+      "Agency Fund",
+      "FID"
+    ],
+    "costEffectiveness": "Estimated 37x more cost-effective than unconditional cash transfers",
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      },
+      {
+        "name": "Mauricio Cornejo",
+        "role": "Project Lead"
+      },
+      {
+        "name": "Leidy Gómez",
+        "role": "Data / Field Operations"
+      }
+    ]
+  },
+  {
+    "slug": "ai-agents-100schools",
+    "name": "AI Education Agents — 100 Schools Pilot",
+    "status": "proposed",
+    "country": "Chile, Colombia",
+    "region": null,
+    "startYear": 2026,
+    "endYear": null,
+    "type": "AI Intervention + RCT",
+    "description": "AI-powered agents via WhatsApp helping families navigate enrollment and educational pathways. 200 schools across 2 cities.",
+    "targetPopulation": "Families in 200 public schools",
+    "scale": "100 schools per city",
+    "outcomes": [],
+    "technologies": [
+      "OpenAI API",
+      "WhatsApp Business",
+      "SMS"
+    ],
+    "partner": "OpenAI, TetherEducation",
+    "client": "Santiago & Medellín public schools",
+    "funders": [
+      "Tinker Foundation (proposed)",
+      "Various (proposed)"
+    ],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Lead"
+      },
+      {
+        "name": "Mayela Cerda",
+        "role": "Design & Communications"
+      }
+    ]
+  },
+  {
+    "slug": "melocreo-medellin",
+    "name": "Melocreo — Medellín",
+    "status": "active",
+    "country": "Colombia",
+    "region": "Medellín",
+    "startYear": 2024,
+    "endYear": null,
+    "type": "Education Technology",
+    "description": "Education technology project in Medellín, Colombia.",
+    "targetPopulation": null,
+    "scale": null,
+    "outcomes": [],
+    "technologies": [],
+    "partner": null,
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Mauricio Cornejo",
+        "role": "Project Lead"
+      }
+    ]
+  },
+  {
+    "slug": "icfesbot",
+    "name": "IcfesBot — Higher Education Guidance",
+    "status": "active",
+    "country": "Colombia",
+    "region": null,
+    "startYear": null,
+    "endYear": null,
+    "type": "Chatbot / Information Intervention",
+    "description": "AI chatbot helping Colombian students navigate higher education options based on ICFES exam results.",
+    "targetPopulation": null,
+    "scale": null,
+    "outcomes": [],
+    "technologies": [
+      "Chatbot",
+      "WhatsApp",
+      "AI"
+    ],
+    "partner": null,
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": []
+  },
+  {
+    "slug": "domus",
+    "name": "DOMUS — Subsidy Choice Platform",
+    "status": "active",
+    "country": "Chile",
+    "region": null,
+    "startYear": null,
+    "endYear": null,
+    "type": "Housing Technology",
+    "description": "Modular ecosystem helping families navigate complex housing subsidy systems. Partnership with TOCTOC and Chile's Ministry of Housing.",
+    "targetPopulation": null,
+    "scale": null,
+    "outcomes": [],
+    "technologies": [],
+    "partner": "TOCTOC, MINVU",
+    "client": null,
+    "funders": [
+      "Agency Fund"
+    ],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Lead"
+      }
+    ]
+  },
+  {
+    "slug": "ave-dominican-republic",
+    "name": "AVE — Aprendiendo el Valor de la Educación",
+    "status": "completed",
+    "country": "Dominican Republic",
+    "region": null,
+    "startYear": 2014,
+    "endYear": 2016,
+    "type": "Information Intervention + RCT",
+    "description": "Large-scale RCT using telenovela-style videos to inform students about value of education.",
+    "targetPopulation": "428,400 upper-primary students",
+    "scale": "428,400 students",
+    "outcomes": [
+      "Dropout in subsequent year: 3pp lower (p < 0.01)",
+      "Standardized test scores: +0.1 SD (p < 0.01)"
+    ],
+    "technologies": [],
+    "partner": null,
+    "client": "Dominican Republic Ministry of Education",
+    "funders": [
+      "USAID"
+    ],
+    "costEffectiveness": null,
+    "publication": "https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      }
+    ]
+  },
+  {
+    "slug": "peru-info-campaign",
+    "name": "Peru Information Campaign on Returns to Education",
+    "status": "completed",
+    "country": "Peru",
+    "region": null,
+    "startYear": 2016,
+    "endYear": 2018,
+    "type": "Information Intervention + RCT",
+    "description": "Paper-based and tablet-based information campaign on returns to education for primary school students.",
+    "targetPopulation": "~600,000 primary-school students",
+    "scale": "600,000 students",
+    "outcomes": [
+      "Urban: 2-year dropout rate 1.8pp (19%) lower (p < 0.01)",
+      "Rural: 2-year dropout rate 7.2pp (50%) lower (p < 0.01)",
+      "Urban math: +0.04 SD (p < 0.05)",
+      "Urban verbal: +0.03 SD (p < 0.01)"
+    ],
+    "technologies": [],
+    "partner": null,
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": "https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf",
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      }
+    ]
+  },
+  {
+    "slug": "nhps",
+    "name": "New Haven Public Schools — School Assignment",
+    "status": "completed",
+    "country": "United States",
+    "region": "New Haven, CT",
+    "startYear": 2019,
+    "endYear": 2025,
+    "type": "Smart Matching Platform",
+    "description": "Centralized student-to-school assignment system with school information platform for New Haven families.",
+    "targetPopulation": null,
+    "scale": null,
+    "outcomes": [],
+    "technologies": [],
+    "partner": null,
+    "client": "New Haven Public Schools",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Lead"
+      },
+      {
+        "name": "Adam Kapor",
+        "role": "Research Collaborator"
+      },
+      {
+        "name": "Seth Zimmerman",
+        "role": "Research Collaborator"
+      }
+    ]
+  },
+  {
+    "slug": "sae-chile",
+    "name": "Sistema de Admisión Escolar (SAE) — Chile",
+    "status": "completed",
+    "country": "Chile",
+    "region": null,
+    "startYear": 2016,
+    "endYear": null,
+    "type": "National Admissions System",
+    "description": "Chile's national school assignment system processing 2 million applications annually. Originally developed at ConsiliumBots, spun off to TetherEducation.",
+    "targetPopulation": null,
+    "scale": "National — 2 million applications/year",
+    "outcomes": [
+      "National-scale centralized school assignment",
+      "Improved transparency and equity",
+      "Led to TetherEducation spin-off"
+    ],
+    "technologies": [],
+    "partner": null,
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Lead"
+      }
+    ]
+  },
+  {
+    "slug": "women-in-stem",
+    "name": "Women in STEM",
+    "status": "research",
+    "country": null,
+    "region": null,
+    "startYear": null,
+    "endYear": null,
+    "type": "Research",
+    "description": "Research on gender gaps in STEM education and interventions to increase women's participation.",
+    "targetPopulation": null,
+    "scale": null,
+    "outcomes": [],
+    "technologies": [],
+    "partner": null,
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": []
+  },
+  {
+    "slug": "daycare-deserts",
+    "name": "Daycare Deserts",
+    "status": "research",
+    "country": "Chile",
+    "region": null,
+    "startYear": null,
+    "endYear": null,
+    "type": "Research",
+    "description": "Research on geographic access to early childhood education.",
+    "targetPopulation": null,
+    "scale": null,
+    "outcomes": [],
+    "technologies": [],
+    "partner": null,
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "contributors": []
+  }
+]

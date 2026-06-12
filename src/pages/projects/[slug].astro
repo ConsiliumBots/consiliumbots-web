@@ -1,0 +1,180 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/site-data.js';
+
+export function getStaticPaths() {
+  return projects.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+
+const meta = [
+  ['Country', [project.country, project.region].filter(Boolean).join(' — ')],
+  ['Years', [project.startYear, project.endYear].filter(Boolean).join('–')],
+  ['Type', project.type],
+  ['Partner', project.partner],
+  ['Client', project.client],
+  ['Scale', project.scale],
+].filter(([, v]) => v);
+---
+
+<BaseLayout
+  title={`${project.name} | ConsiliumBots`}
+  description={project.description ?? undefined}
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="breadcrumb"><a href="/projects">Projects</a> / {project.name}</p>
+      <span class={`badge badge-${project.status}`}>{project.status}</span>
+      <h1>{project.name}</h1>
+      {project.description && <p>{project.description}</p>}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap detail-grid">
+      <div class="detail-main">
+        {project.targetPopulation && (
+          <>
+            <h2 class="section-title">Target population</h2>
+            <p>{project.targetPopulation}</p>
+          </>
+        )}
+
+        {project.outcomes.length > 0 && (
+          <>
+            <h2 class="section-title">Key outcomes</h2>
+            <ul class="outcomes">{project.outcomes.map((o) => <li>{o}</li>)}</ul>
+          </>
+        )}
+
+        {project.costEffectiveness && <p class="highlight-note">{project.costEffectiveness}</p>}
+
+        {project.contributors.length > 0 && (
+          <>
+            <h2 class="section-title">Team</h2>
+            <ul class="contributors">
+              {project.contributors.map((c) => (
+                <li><strong>{c.name}</strong>{c.role ? ` — ${c.role}` : ''}</li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {project.publication && (
+          <p>
+            <a class="btn-arrow" href={project.publication} target="_blank" rel="noopener noreferrer">
+              Read the report
+              <img src="/icons/arrow-outward.svg" alt="" width="16" />
+            </a>
+          </p>
+        )}
+      </div>
+
+      <aside class="detail-side">
+        <div class="meta-list">
+          {meta.map(([k, v]) => (
+            <div class="meta-row">
+              <span class="meta-k">{k}</span>
+              <span class="meta-v">{v}</span>
+            </div>
+          ))}
+        </div>
+
+        {project.technologies.length > 0 && (
+          <div class="side-block">
+            <span class="meta-k">Technologies</span>
+            <div class="tag-row">{project.technologies.map((t) => <span class="tag">{t}</span>)}</div>
+          </div>
+        )}
+
+        {project.funders.length > 0 && (
+          <div class="side-block">
+            <span class="meta-k">Funders</span>
+            <div class="tag-row">{project.funders.map((f) => <span class="tag">{f}</span>)}</div>
+          </div>
+        )}
+      </aside>
+    </div>
+
+    <div class="wrap"><a href="/projects" class="btn-arrow">← All projects</a></div>
+  </section>
+</BaseLayout>
+
+<style>
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 32px;
+  }
+  .detail-main h2 {
+    margin-top: 28px;
+  }
+  .detail-main h2:first-child {
+    margin-top: 0;
+  }
+  .outcomes {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .contributors {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .outcomes li,
+  .contributors li {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+  }
+  .highlight-note {
+    background: var(--color-bg-light);
+    border-left: 3px solid var(--color-accent);
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    margin: 16px 0;
+  }
+  .detail-side {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .meta-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 14px;
+  }
+  .meta-k {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
+  .meta-v {
+    font-size: 0.92rem;
+    color: var(--color-text);
+  }
+  .side-block {
+    margin-top: 18px;
+  }
+  .side-block .meta-k {
+    display: block;
+    margin-bottom: 8px;
+  }
+  @media (max-width: 900px) {
+    .detail-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>

@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const publications = [
+  {
+    title: 'Smart Matching Platforms and School Choice in Chile',
+    authors: 'Allende, Gallego & Neilson',
+    venue: 'Quarterly Journal of Economics',
+    url: 'https://academic.oup.com/qje/article/137/3/1791/6544686',
+  },
+  {
+    title: 'Informed School Choice in Chile',
+    authors: 'Allende, Gallego & Neilson (2021)',
+    venue: 'Working paper',
+    url: 'https://dataspace.princeton.edu/handle/88435/dsp01fj2364948',
+  },
+  {
+    title: 'Application Mistakes in College Admissions in Chile',
+    authors: 'Christopher Neilson and coauthors',
+    venue: '',
+    url: 'https://christopherneilson.github.io/work/Application-Mistakes.html',
+  },
+  {
+    title: 'The Effects of Earnings Disclosure on College Enrollment Decisions',
+    authors: 'Hastings, Neilson & Zimmerman (2015)',
+    venue: 'NBER Working Paper',
+    url: 'https://www.nber.org/papers/w21300',
+  },
+];
+
+const reports = [
+  {
+    title: 'AVE — Aprendiendo el Valor de la Educación: USAID Endline Report',
+    url: 'https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf',
+  },
+  {
+    title: 'Decidiendo para un Futuro Mejor: DOL Endline Report',
+    url: 'https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf',
+  },
+];
+
+const evidence = [
+  {
+    title: 'The (Perceived) Returns to Education and the Demand for Schooling',
+    authors: 'Jensen (2010)',
+    venue: 'Quarterly Journal of Economics',
+    url: 'https://academic.oup.com/qje/article-abstract/125/2/515/1882172',
+  },
+];
+---
+
+<BaseLayout
+  title="Research | ConsiliumBots"
+  description="Our projects produce rigorous evidence of solutions to social problems, advancing knowledge in partnership with affiliated researchers."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Research</h1>
+      <p>
+        Our projects produce rigorous evidence of solutions to social problems and advance
+        knowledge in partnership with our affiliated researchers.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Selected publications</h2>
+      <div class="pub-list">
+        {publications.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub">
+            <div>
+              <span class="pub-title">{p.title}</span>
+              <span class="pub-meta">{[p.authors, p.venue].filter(Boolean).join(' · ')}</span>
+            </div>
+            <img src="/icons/arrow-outward.svg" alt="" width="16" />
+          </a>
+        ))}
+      </div>
+
+      <h2 class="section-title" style="margin-top:48px">Project reports</h2>
+      <div class="pub-list">
+        {reports.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub">
+            <span class="pub-title">{p.title}</span>
+            <img src="/icons/arrow-outward.svg" alt="" width="16" />
+          </a>
+        ))}
+      </div>
+
+      <h2 class="section-title" style="margin-top:48px">Research that motivates our work</h2>
+      <div class="pub-list">
+        {evidence.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub">
+            <div>
+              <span class="pub-title">{p.title}</span>
+              <span class="pub-meta">{[p.authors, p.venue].filter(Boolean).join(' · ')}</span>
+            </div>
+            <img src="/icons/arrow-outward.svg" alt="" width="16" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap more-links">
+      <a class="btn btn-primary" href="https://consiliumbots.github.io/working-papers-cb/" target="_blank" rel="noopener noreferrer">
+        Working papers repository
+        <img src="/icons/arrow-outward-white.svg" alt="" width="16" />
+      </a>
+      <a class="btn-arrow" href="https://scholar.google.com/citations?user=6MZfok0AAAAJ" target="_blank" rel="noopener noreferrer">
+        Christopher Neilson on Google Scholar
+        <img src="/icons/arrow-outward.svg" alt="" width="16" />
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .pub-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  .pub:hover {
+    background: var(--color-bg-light);
+  }
+  .pub-title {
+    display: block;
+    font-weight: 500;
+    font-size: 0.98rem;
+  }
+  .pub-meta {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+  .more-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+</style>

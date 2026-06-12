@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Page not found | ConsiliumBots" description="The page you were looking for could not be found.">
+  <section class="notfound">
+    <div class="wrap">
+      <p class="code">404</p>
+      <h1>Page not found</h1>
+      <p class="msg">The page you were looking for doesn't exist or may have moved.</p>
+      <div class="actions">
+        <a href="/" class="btn btn-primary">Back home</a>
+        <a href="/projects" class="btn-arrow">Browse projects →</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .notfound {
+    padding: 120px 0;
+    text-align: center;
+  }
+  .code {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin: 0;
+    line-height: 1;
+  }
+  .notfound h1 {
+    margin: 12px 0 8px;
+  }
+  .msg {
+    color: var(--color-text-light);
+    margin-bottom: 28px;
+  }
+  .actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

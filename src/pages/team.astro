@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { activeTeam, researchAffiliates, researchAssociates, board } from '../data/site-data.js';
+
+const initials = (name) =>
+  name
+    .split(' ')
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
+---
+
+<BaseLayout
+  title="Team | ConsiliumBots"
+  description="A diverse, interdisciplinary team based in the US, Chile, and Colombia, working alongside a network of affiliated researchers."
+>
+  <section class="page-hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Team</h1>
+        <p>
+          We're a diverse, interdisciplinary team based in the US, Chile, and Colombia, working
+          alongside a network of affiliated researchers.
+        </p>
+      </div>
+      <video
+        class="team-video"
+        src="/videos/team-loop.mp4"
+        poster="/videos/team-loop-poster.jpg"
+        autoplay
+        loop
+        muted
+        playsinline
+        width="600"
+        height="336"
+        aria-label="The ConsiliumBots team together at an event"
+      ></video>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">ConsiliumBots team</h2>
+      <div class="team-grid">
+        {activeTeam.map((m) => (
+          <div class="card member">
+            <div class="member-head">
+              <div class="avatar-initials">{initials(m.name)}</div>
+              <div>
+                <h3>{m.name}</h3>
+                <p class="member-title">{m.title}</p>
+                {m.location && <p class="member-loc">{m.location}</p>}
+              </div>
+            </div>
+            {m.bio && <p class="member-bio">{m.bio}</p>}
+            {m.expertise.length > 0 && (
+              <div class="tag-row">{m.expertise.slice(0, 5).map((e) => <span class="tag">{e}</span>)}</div>
+            )}
+            {(m.website || m.scholar) && (
+              <p class="member-links">
+                {m.website && <a href={m.website} target="_blank" rel="noopener noreferrer">Website</a>}
+                {m.scholar && <a href={m.scholar} target="_blank" rel="noopener noreferrer">Google Scholar</a>}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <h2 class="section-title">Research affiliates</h2>
+      <div class="researcher-grid">
+        {researchAffiliates.map((r) => (
+          <figure class="researcher">
+            {r.photo ? (
+              <img src={r.photo} alt={r.name} width="120" height="120" loading="lazy" />
+            ) : (
+              <div class="avatar-initials avatar-lg">{initials(r.name)}</div>
+            )}
+            <figcaption>
+              <span class="researcher-name">{r.name}</span>
+              {r.title && <span class="researcher-title">{r.title}</span>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Research associates</h2>
+      <ul class="associate-list">
+        {researchAssociates.map((m) => (
+          <li>
+            <strong>{m.name}</strong>
+            {m.title && <span class="associate-title"> — {m.title}</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <h2 class="section-title">Board</h2>
+      <div class="board-grid">
+        {board.map((b) => (
+          <figure class="board-member">
+            {b.photo ? (
+              <img src={b.photo} alt={b.name} width="140" height="140" loading="lazy" />
+            ) : (
+              <div class="avatar-initials avatar-lg">{initials(b.name)}</div>
+            )}
+            <figcaption>
+              <span class="researcher-name">{b.name}</span>
+              {b.title && <span class="researcher-title">{b.title}</span>}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Honor reduced-motion: show the poster instead of the looping video.
+  const v = document.querySelector<HTMLVideoElement>('.team-video');
+  if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay');
+    v.pause();
+  }
+</script>
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 48px;
+    align-items: center;
+  }
+  .team-video {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(15, 36, 64, 0.18);
+  }
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .team-video {
+      max-width: 480px;
+    }
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .member {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .member-head {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .member-head h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .member-title {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin: 2px 0 0;
+  }
+  .member-loc {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 2px 0 0;
+  }
+  .member-bio {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin: 0;
+  }
+  .member-links {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+  }
+  .member-links a {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .researcher-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 28px;
+  }
+  .researcher,
+  .board-member {
+    text-align: center;
+    margin: 0;
+  }
+  .researcher img,
+  .board-member img {
+    width: 100%;
+    max-width: 120px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+  }
+  .board-member img {
+    max-width: 140px;
+  }
+  .avatar-lg {
+    width: 120px;
+    height: 120px;
+    font-size: 1.6rem;
+    margin: 0 auto 10px;
+  }
+  .researcher-name {
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 600;
+  }
+  .researcher-title {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 3px;
+    line-height: 1.45;
+  }
+
+  .associate-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  .associate-list li {
+    font-size: 0.95rem;
+  }
+  .associate-title {
+    color: var(--color-text-muted);
+  }
+
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  .board-member figcaption {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 1024px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .researcher-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .board-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+    .researcher-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .board-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

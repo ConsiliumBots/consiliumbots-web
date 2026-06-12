@@ -1,0 +1,98 @@
+[
+  {
+    "id": "jpal-lac",
+    "name": "J-PAL LAC",
+    "fullName": "Abdul Latif Jameel Poverty Action Lab — Latin America & Caribbean",
+    "type": "Research Partner",
+    "status": "active",
+    "website": "https://www.povertyactionlab.org/lac"
+  },
+  {
+    "id": "openai",
+    "name": "OpenAI",
+    "fullName": null,
+    "type": "Technology Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "tethereducation",
+    "name": "TetherEducation Inc",
+    "fullName": null,
+    "type": "Spin-off",
+    "status": "active",
+    "website": "https://tether.education"
+  },
+  {
+    "id": "idb",
+    "name": "Inter-American Development Bank (IDB)",
+    "fullName": null,
+    "type": "Strategic Alliance",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "yale",
+    "name": "Yale University",
+    "fullName": null,
+    "type": "Academic Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "gdi",
+    "name": "Global Development Incubator (GDI)",
+    "fullName": null,
+    "type": "Incubator",
+    "status": "historical",
+    "website": null
+  },
+  {
+    "id": "chile-mineduc",
+    "name": "Chile Ministry of Education",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "colombia-mineduc",
+    "name": "Colombia Ministry of Education",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "valle-del-cauca",
+    "name": "Valle del Cauca Regional Government",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "medellin",
+    "name": "Medellín Municipal Government",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "toctoc",
+    "name": "TOCTOC",
+    "fullName": null,
+    "type": "Private Sector Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "minvu",
+    "name": "MINVU (Chile Ministry of Housing)",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "active",
+    "website": null
+  }
+]
