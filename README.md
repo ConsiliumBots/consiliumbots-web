@@ -1,43 +1,59 @@
-# Astro Starter Kit: Minimal
+# ConsiliumBots Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Source for the ConsiliumBots public website — **[www.consiliumbots.com](https://www.consiliumbots.com)**.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Built with [Astro](https://astro.build/). Content (team, projects, partners, copy) is
+data-driven from `src/data/`, so most updates are JSON edits rather than markup changes.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## Project structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+src/
+├── data/         # Site content: team.json, projects.json, partners.json, site-data.js
+├── components/   # Navbar, Footer
+├── layouts/      # BaseLayout (shared <head>, header, footer)
+├── pages/        # Routes (see below)
+├── styles/       # global.css
+└── assets/       # Imported/optimized images
+public/            # Static assets served as-is (images, logos, icons, videos, robots.txt)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Pages
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+| Route                 | File                          |
+| :-------------------- | :---------------------------- |
+| `/`                   | `src/pages/index.astro`       |
+| `/what-we-do`         | `src/pages/what-we-do.astro`  |
+| `/projects`           | `src/pages/projects/index.astro` |
+| `/projects/:slug`     | `src/pages/projects/[slug].astro` (generated from `projects.json`) |
+| `/research`           | `src/pages/research.astro`    |
+| `/team`               | `src/pages/team.astro`        |
+| `/contact`            | `src/pages/contact.astro`     |
+| 404                   | `src/pages/404.astro`         |
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Commands
 
-## 🧞 Commands
+Run from the project root:
 
-All commands are run from the root of the project, from a terminal:
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `npm install`     | Install dependencies                         |
+| `npm run dev`     | Start the dev server at `localhost:4321`     |
+| `npm run build`   | Build the production site to `./dist/`       |
+| `npm run preview` | Preview the production build locally         |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Editing content
 
-## 👀 Want to learn more?
+- **Team members** — `src/data/team.json`
+- **Projects** — `src/data/projects.json` (each entry generates a `/projects/:slug` page)
+- **Partners / collaborators** — `src/data/partners.json`
+- **Global copy & links** — `src/data/site-data.js`
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Images referenced by the data files live in `public/images/` (team photos, project art,
+government/collaborator logos).
+
+## Deployment
+
+Production is served at `https://www.consiliumbots.com` (configured as `site` in
+[`astro.config.mjs`](astro.config.mjs), which also generates the sitemap). Hosting is wired
+up outside this repo — there is no committed CI/deploy config.
