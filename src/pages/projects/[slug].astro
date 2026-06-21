@@ -77,6 +77,15 @@ const meta = [
           </>
         )}
 
+        {project.website && (
+          <p>
+            <a class="btn-arrow" href={project.website} target="_blank" rel="noopener">
+              Visit the project
+              <img src="/icons/arrow-outward.svg" alt="" width="16" />
+            </a>
+          </p>
+        )}
+
         {project.publication && (
           <p>
             <a class="btn-arrow" href={project.publication} target="_blank" rel="noopener noreferrer">

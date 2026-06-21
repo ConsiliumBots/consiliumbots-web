@@ -371,5 +371,130 @@
     "costEffectiveness": null,
     "publication": null,
     "contributors": []
+  },
+  {
+    "slug": "ccas-review",
+    "name": "Coordinated Choice & Assignment Systems (CCAS) — Global Review",
+    "status": "research",
+    "country": "Global",
+    "region": null,
+    "startYear": 2017,
+    "endYear": null,
+    "type": "Review paper + data platform",
+    "description": "A global review of how 149 countries use Coordinated Choice & Assignment Systems (CCAS) — the platforms and algorithms that match students to schools and universities when prices don't allocate access. It documents that about 60% of countries now use some coordinated mechanism (nearly double the last decade), maps the wide variation in how these systems are designed, and identifies evidence-based ways to make admissions more equitable and efficient. Findings are shared through an open, living data platform.",
+    "targetPopulation": "Students and families navigating school and university admissions worldwide; education policymakers",
+    "scale": "149 countries, 600+ cities, adoption data spanning 1950–2023",
+    "outcomes": [
+      "First global, cross-level documentation of CCAS adoption across 149 countries",
+      "~60% of countries use coordinated systems — nearly double the past decade",
+      "Identifies low-cost, evidence-based design improvements for equity and efficiency"
+    ],
+    "technologies": [
+      "Geospatial data analysis",
+      "Open data platform"
+    ],
+    "partner": "New Haven Public Schools (case study)",
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": "https://www.ccas.wiki",
+    "contributors": [
+      { "name": "Christopher A. Neilson", "role": "Author" },
+      { "name": "Javiera Gazmuri", "role": "Research" },
+      { "name": "Cecilia Moreira", "role": "Research" },
+      { "name": "Fabiola Alba", "role": "Research" }
+    ]
+  },
+  {
+    "slug": "mi-abogado-ai",
+    "name": "Mi Abogado AI",
+    "status": "active",
+    "country": "Chile",
+    "region": "Santiago Metropolitan Region",
+    "startYear": 2026,
+    "endYear": 2026,
+    "type": "AI case-management scoping study",
+    "description": "A scoping study exploring how AI-assisted tools can help lawyers and interdisciplinary teams in Chile's child-protection legal programs spend less time on administrative work and more on directly supporting children. Working with Programa Mi Abogado and NAD, it maps real workflows, identifies tasks suited to AI assistance, and produces design concepts, an MVP specification, and an evaluation-ready roadmap. It builds on causal evidence that stronger legal representation reduces children's time in institutional care, and is designed to augment professional judgment, not replace it.",
+    "targetPopulation": "Lawyers, social workers, and psychologists in Chile's child-protection legal-defense programs; ultimately children in alternative care",
+    "scale": "Stage 1 scoping: 15–25 stakeholder interviews, shadowing sessions, and a practitioner time-use survey",
+    "outcomes": [
+      "Workflow and bottleneck mapping",
+      "Design concepts and MVP specification",
+      "Evaluation-readiness plan for a future trial"
+    ],
+    "technologies": [
+      "AI-assisted case management",
+      "Web application"
+    ],
+    "partner": "Programa Mi Abogado (PMA); NAD",
+    "client": "Yale University",
+    "funders": ["Yale University"],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": [
+      { "name": "Winnie Van Dijk", "role": "Principal Investigator (Yale)" },
+      { "name": "Joseph J. Doyle", "role": "Co-Investigator (MIT)" },
+      { "name": "Andrés Hojman", "role": "Co-Investigator (PUC Chile)" },
+      { "name": "Christopher Neilson", "role": "Co-Investigator" },
+      { "name": "Valentina Hurtado", "role": "Project Lead, Chile" }
+    ]
+  },
+  {
+    "slug": "tiempo-para-liderar-con-ia",
+    "name": "Tiempo para Liderar con IA (Time to Lead with AI)",
+    "status": "proposed",
+    "country": "Chile",
+    "region": "Santiago Metropolitan Region",
+    "startYear": 2026,
+    "endYear": null,
+    "type": "Proposed school RCT",
+    "description": "A proposed randomized field experiment testing whether practical training and light coaching can help Chilean school principals adopt AI tools responsibly — reducing administrative burden and reclaiming time for instructional leadership. Motivated by evidence that Latin American school directors spend roughly three-quarters of their time on non-pedagogical work, it would randomize about 100 Santiago-area schools (prioritizing public and lower-income communities) and measure adoption, safe use, how recovered time is reallocated, and spillovers to teachers.",
+    "targetPopulation": "School principals and management teams in Chilean public and lower-income schools; teachers (measured for spillovers)",
+    "scale": "~100 Santiago-area schools (proposed)",
+    "outcomes": [],
+    "technologies": [
+      "Generative AI (LLM-based tools)"
+    ],
+    "partner": "Columbia University; Universidad Adolfo Ibáñez; Yale University",
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": [
+      { "name": "Sebastián Otero", "role": "Principal Investigator (Columbia)" },
+      { "name": "Carolina Concha-Arriagada", "role": "Co-PI (Teachers College, Columbia)" },
+      { "name": "Pablo Egaña Del Sol", "role": "Co-Investigator (UAI)" },
+      { "name": "Christopher Neilson", "role": "Co-Investigator" }
+    ]
+  },
+  {
+    "slug": "cien-pies",
+    "name": "CienPiés",
+    "status": "active",
+    "country": "Chile",
+    "region": "Santiago (pilot)",
+    "startYear": 2026,
+    "endYear": null,
+    "type": "Web platform",
+    "description": "CienPiés (\"centipede\") is a mobile-first platform that helps families and schools organize safe, supervised \"walking school buses\" — groups of children who walk to school together under rotating parent-volunteer supervision. Families who live near each other are clustered into optimized walking routes; guardians choose when they walk, lead, or back up, follow the live route, and can raise an alert if needed, while school administrators plan routes and track participation. It is bilingual and built for use across multiple schools.",
+    "targetPopulation": "School families, parent volunteers, and school administrators",
+    "scale": "Pilot with an initial school in Santiago",
+    "outcomes": [],
+    "technologies": [
+      "React",
+      "Supabase / PostGIS",
+      "Interactive maps",
+      "Progressive Web App"
+    ],
+    "partner": "Tether Education",
+    "client": null,
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": []
   }
 ]
