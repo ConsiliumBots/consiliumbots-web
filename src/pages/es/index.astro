@@ -1,0 +1,644 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import fieldPhoto1 from '../../assets/field-photo-1.png';
+import fieldPhoto2 from '../../assets/field-photo-2.png';
+---
+
+<BaseLayout
+  lang="es"
+  title="ConsiliumBots | Organización sin fines de lucro de tecnología"
+  description="ConsiliumBots es una organización sin fines de lucro que usa datos e IA para ayudar a las personas a tomar mejores decisiones sobre educación, vivienda y beneficios del gobierno en América Latina y EE. UU."
+>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="text-highlight">Usando datos y tecnología</span> para ayudar a las personas a tomar decisiones importantes
+        </h1>
+        <a href="/es/what-we-do" class="btn-arrow">
+          Qué Hacemos
+          <img src="/icons/arrow-right.svg" alt="" width="20" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="wrap">
+      <div class="mission-grid">
+        <div class="mission-content">
+          <h2>Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones personalizadas</h2>
+          <a href="/es/projects" class="btn btn-primary">
+            Proyectos
+            <img src="/icons/arrow-right.svg" alt="" width="20" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section">
+    <div class="wrap">
+      <p class="about-text">
+        Nuestra organización sin fines de lucro se dedica a aprovechar la tecnología para
+        <strong>conectar los datos del gobierno con la comunidad</strong>
+        con el fin de
+        <strong>ayudar a las personas a tomar decisiones mejor informadas que impacten positivamente su bienestar.</strong>
+        Nuestra misión es aumentar el
+        <strong>acceso a la educación, la vivienda y otros beneficios del gobierno</strong>
+        fomentando la innovación tecnológica. Así, buscamos empoderar a quienes más lo necesitan y promover la equidad social y económica.
+      </p>
+    </div>
+  </section>
+
+  <!-- IMPACT NUMBERS -->
+  <section class="impact section">
+    <div class="wrap">
+      <h2 class="section-title">Nuestro impacto en números</h2>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-number">36</div>
+          <div class="impact-label">Herramientas desarrolladas</div>
+          <p class="impact-desc">Soluciones digitales desarrolladas para abordar las asimetrías de información.</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">23</div>
+          <div class="impact-label">Alianzas</div>
+          <p class="impact-desc">Organizaciones internacionales, universidades, gobiernos locales y fundaciones</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">6 MM.</div>
+          <div class="impact-label">Vidas impactadas</div>
+          <p class="impact-desc">Total de padres, estudiantes y docentes impactados</p>
+        </div>
+      </div>
+      <div class="impact-row">
+        <div class="impact-card">
+          <div class="impact-number">7</div>
+          <div class="impact-label">Países impactados</div>
+          <p class="impact-desc">Chile, Colombia, Ecuador, Perú, Brasil, República Dominicana, EE. UU.</p>
+        </div>
+        <div class="impact-highlight">
+          <h3>Queremos llevar la revolución tecnológica y de la información a distintas áreas de impacto social.</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="research section">
+    <div class="wrap">
+      <h2 class="section-title">Investigación</h2>
+      <p class="research-subtitle">Nuestros proyectos permiten producir evidencia rigurosa sobre soluciones a problemas sociales y avanzar en el conocimiento en colaboración con nuestros investigadores afiliados.</p>
+      <div class="research-papers">
+        <a href="https://academic.oup.com/qje/article/137/3/1791/6544686" target="_blank" rel="noopener noreferrer" class="paper-link">
+          <span>Plataformas de emparejamiento inteligente y elección de escuela: Chile</span>
+          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+        </a>
+        <a href="https://christopherneilson.github.io/work/Application-Mistakes.html" target="_blank" rel="noopener noreferrer" class="paper-link">
+          <span>Errores de postulación en la admisión universitaria: Chile</span>
+          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+        </a>
+        <a href="https://dataspace.princeton.edu/handle/88435/dsp01fj2364948" target="_blank" rel="noopener noreferrer" class="paper-link">
+          <span>Elección informada de escuela: Chile</span>
+          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+        </a>
+      </div>
+      <a href="/es/research" class="btn-arrow">
+        Más publicaciones
+        <img src="/icons/blue-arrow.png" alt="" width="20" />
+      </a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section">
+    <div class="projects-intro">
+      <div class="wrap">
+        <div class="projects-intro-grid">
+          <div class="projects-intro-header">
+            <a href="/es/projects">
+              <h2>Proyectos</h2>
+              <p>Todos nuestros proyectos trabajan hacia nuestro objetivo.</p>
+            </a>
+          </div>
+          <p>Queremos lograr una mayor equidad en el acceso y la transparencia de los servicios y beneficios del gobierno, brindando mejor información para aumentar la satisfacción y mejorar las oportunidades para todos, especialmente para la población más vulnerable.</p>
+          <p>Como organización basada en datos, monitoreamos rigurosamente la efectividad de nuestros proyectos en colaboración con investigadores asociados, para aprender de forma continua e iterar sobre nuestro trabajo.</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="projects-grid">
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/chatbots-ia.svg" alt="Chatbots e IA - Reducir sesgos de información, promover la continuidad educativa y el acceso a la educación superior" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/ccas.svg" alt="CCAS - Sistemas Coordinados de Elección y Asignación" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/dfm.svg" alt="Decidiendo Para Un Futuro Mejor" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/feedback-mineduc.svg" alt="Retroalimentación para estudiantes" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/feedback-teachers.svg" alt="Informes de retroalimentación en la asignación docente" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/smart-matching.svg" alt="Plataformas de emparejamiento inteligente" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/subsidy.svg" alt="Proyecto de subsidios" />
+        </a>
+        <a href="/es/projects" class="project-card">
+          <img src="/images/projects/matricula-sae.svg" alt="Matrícula SAE" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DOES IT MATTER -->
+  <section class="why-matters section">
+    <div class="wrap">
+      <h2 class="section-title">¿Por qué es importante?</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-header">
+            <img src="/images/figure-info-interventions.png" alt="" width="50" />
+            <h3>Las intervenciones informativas son efectivas</h3>
+          </div>
+          <p>Existe evidencia científica de que brindar información relevante en el momento adecuado puede marcar una diferencia significativa en la vida de las personas. Por ejemplo:</p>
+          <div class="why-papers">
+            <a href="https://academic.oup.com/qje/article-abstract/125/2/515/1882172" target="_blank" rel="noopener noreferrer" class="why-paper-link">
+              <strong>Los retornos educativos pueden cambiar la trayectoria de los estudiantes.</strong> Jensen, 2010
+            </a>
+            <a href="https://dataspace.princeton.edu/handle/88435/dsp01fj2364948" target="_blank" rel="noopener noreferrer" class="why-paper-link">
+              <strong>La elección informada de escuela tiene resultados positivos.</strong> Allende, Gallego & Neilson, 2021
+            </a>
+            <a href="https://www.nber.org/papers/w21300" target="_blank" rel="noopener noreferrer" class="why-paper-link">
+              <strong>La divulgación de ingresos influye en las decisiones de matrícula universitaria.</strong> Hastings, Neilson & Zimmerman, 2015
+            </a>
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-header">
+            <img src="/images/figure-ai.png" alt="" width="50" />
+            <h3>Inteligencia Artificial: una realidad ahora disponible</h3>
+          </div>
+          <p>La Inteligencia Artificial, impulsada por la aparición de grandes modelos de lenguaje como GPT, ha abierto nuevas posibilidades para entregar información personalizada y dinámica a gran escala. Esta tecnología transformadora tiene el potencial de cambiar la forma en que las personas toman decisiones en áreas como la educación, la vivienda y el acceso a servicios del gobierno, ofreciendo soluciones más personalizadas y receptivas.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-header">
+            <img src="/images/figure-centralized.png" alt="" width="50" />
+            <h3>Los sistemas y datos centralizados ofrecen una oportunidad</h3>
+          </div>
+          <p>Los procesos de selección de beneficios del gobierno están cada vez más digitalizados y centralizados. Los datos centralizados resultantes han ampliado las posibilidades y reducido el costo de acompañar a las familias en el proceso de toma de decisiones con información personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIELD PHOTOS -->
+  <section class="photos">
+    <div class="photos-grid">
+      <Image
+        src={fieldPhoto1}
+        alt="Actividad de campo de ConsiliumBots en Colombia"
+        widths={[800, 1600]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+      <Image
+        src={fieldPhoto2}
+        alt="Actividad de campo de ConsiliumBots en Colombia"
+        widths={[800, 1600]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners section">
+    <div class="wrap">
+      <h2 class="section-title">Nuestros aliados</h2>
+
+      <div class="partner-main">
+        <a href="https://wpfund.org/?home=true" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/partners/wpf.png" alt="Wellspring Philanthropic Fund" width="67" />
+        </a>
+        <p>Agradecemos a Wellspring Philanthropic Fund por su generoso apoyo institucional, que nos permite avanzar en nuestra misión.</p>
+      </div>
+
+      <h3 class="partner-section-title">Colaboradores</h3>
+      <div class="logo-grid collaborators-grid">
+        <a href="https://www.povertyactionlab.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/jpal.png" alt="J-PAL" width="82" />
+        </a>
+        <a href="https://poverty-action.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/ipa.png" alt="IPA" width="72" />
+        </a>
+        <a href="https://www.agency.fund/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/agency-fund.png" alt="The Agency Fund" width="90" />
+        </a>
+        <a href="https://www.iadb.org/en" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/idb.png" alt="Banco Interamericano de Desarrollo" width="53" />
+        </a>
+        <a href="https://globaldevincubator.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/gdi.png" alt="Global Development Incubator" width="75" />
+        </a>
+        <a href="https://www.theigc.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/igc.png" alt="International Growth Centre" width="34" />
+        </a>
+        <a href="https://openai.com/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/collaborators/openai.png" alt="OpenAI" width="68" />
+        </a>
+      </div>
+
+      <h3 class="partner-section-title">Gobiernos</h3>
+      <div class="logo-grid governments-grid">
+        <a href="https://www.mineduc.cl/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/mineduc-chile.png" alt="Ministerio de Educación de Chile" width="50" />
+        </a>
+        <a href="https://www.icfes.gov.co/icfes-bot" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/icfes-colombia.png" alt="ICFES Colombia" width="59" />
+        </a>
+        <a href="https://www.nhps.net/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/nhps.png" alt="New Haven Public Schools" width="74" />
+        </a>
+        <a href="https://www.pe.gov.br/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/pernambuco.png" alt="Gobierno del Estado de Pernambuco" width="75" />
+        </a>
+        <a href="https://www.gob.pe/minedu" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/minedu-peru.png" alt="Ministerio de Educación del Perú" width="89" />
+        </a>
+        <a href="https://educacion.gob.ec/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/minedu-ecuador.png" alt="Ministerio de Educación del Ecuador" width="78" />
+        </a>
+        <a href="#" rel="noopener noreferrer">
+          <img src="/logos/governments/inafocam.png" alt="INAFOCAM" width="64" />
+        </a>
+        <a href="https://www.ministeriodeeducacion.gob.do/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/gobrd-educacion.png" alt="Gobierno de la República Dominicana - Educación" width="70" />
+        </a>
+        <a href="https://presidencia.gob.do/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/gobrd-presidencia.png" alt="Presidencia de la República Dominicana" width="79" />
+        </a>
+        <a href="https://mepyd.gob.do/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/gobrd-mepyd.png" alt="MEPyD" width="56" />
+        </a>
+        <a href="https://www.valledelcauca.gov.co/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/valle-del-cauca.png" alt="Gobernación del Valle del Cauca" width="140" />
+        </a>
+        <a href="https://www.educacionbogota.edu.co/portal_institucional/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/governments/secretaria-bogota.png" alt="Secretaría de Educación de Bogotá" width="140" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta section">
+    <div class="wrap">
+      <div class="cta-grid">
+        <div class="cta-card">
+          <img src="/icons/sms.svg" alt="" width="35" />
+          <p>Si tienes una idea o quieres formar parte del equipo de ConsiliumBots, te invitamos a contactarnos.</p>
+          <a href="/es/contact" class="btn-arrow">
+            Contáctanos
+            <img src="/icons/blue-arrow.png" alt="" width="20" />
+          </a>
+        </div>
+        <div class="cta-card">
+          <img src="/icons/team-icon.svg" alt="" width="35" />
+          <p>Somos un equipo diverso e interdisciplinario con base en EE. UU., Chile y Colombia.</p>
+          <a href="/es/team" class="btn-arrow">
+            Conoce a Nuestro Equipo
+            <img src="/icons/blue-arrow.png" alt="" width="20" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .hero {
+    background: var(--color-bg-light);
+    padding: 100px 0 80px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    max-width: 700px;
+    margin-bottom: 32px;
+    line-height: 1.15;
+  }
+
+  /* MISSION */
+  .mission {
+    background: var(--color-bg-blue);
+    color: var(--color-white);
+    padding: 80px 0;
+  }
+  .mission h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 500;
+    max-width: 700px;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  .about-text strong {
+    color: var(--color-text);
+  }
+
+  /* IMPACT */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .impact-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 24px;
+  }
+  .impact-card {
+    background: var(--color-bg-light);
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .impact-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+  }
+  .impact-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .impact-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .impact-highlight {
+    background: var(--color-bg-blue);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+  }
+  .impact-highlight h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* RESEARCH */
+  .research-subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+  .research-papers {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 24px;
+  }
+  .paper-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+  .paper-link:hover {
+    background: var(--color-bg-light);
+  }
+
+  /* PROJECTS */
+  .projects-section {
+    padding: 80px 0;
+  }
+  .projects-intro {
+    background: var(--color-bg-blue);
+    color: var(--color-white);
+    padding: 60px 0;
+    margin-bottom: 40px;
+  }
+  .projects-intro-grid {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .projects-intro-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .projects-intro-header p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  .projects-intro-grid > p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .project-card {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* WHY MATTERS */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .why-card {
+    padding: 24px 0;
+  }
+  .why-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .why-card-header h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .why-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  .why-papers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .why-paper-link {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    padding: 8px 12px;
+    border-left: 3px solid var(--color-accent);
+    transition: background 0.2s ease;
+  }
+  .why-paper-link:hover {
+    background: rgba(37, 99, 235, 0.05);
+  }
+  .why-paper-link strong {
+    color: var(--color-primary);
+  }
+
+  /* PHOTOS */
+  .photos {
+    padding: 0;
+  }
+  .photos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .photos-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  /* PARTNERS */
+  .partner-main {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .partner-main p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+  }
+  .partner-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-text-light);
+  }
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .logo-grid a {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+  .logo-grid a:hover {
+    opacity: 1;
+  }
+
+  /* CTA */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .cta-card {
+    padding: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  }
+  .cta-card img:first-child {
+    margin-bottom: 16px;
+  }
+  .cta-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .projects-intro-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .impact-grid {
+      grid-template-columns: 1fr;
+    }
+    .impact-row {
+      grid-template-columns: 1fr;
+    }
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+    .photos-grid {
+      grid-template-columns: 1fr;
+    }
+    .photos-grid img {
+      height: 250px;
+    }
+    .cta-grid {
+      grid-template-columns: 1fr;
+    }
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

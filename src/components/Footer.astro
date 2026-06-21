@@ -1,11 +1,16 @@
 ---
+import { useTranslations, localizePath } from '../i18n.js';
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
 const footerLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'What We Do', href: '/what-we-do' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Research', href: '/research' },
-  { label: 'Team', href: '/team' },
-  { label: 'Contact', href: '/contact' },
+  { key: 'nav.home', base: '/' },
+  { key: 'nav.whatWeDo', base: '/what-we-do' },
+  { key: 'nav.projects', base: '/projects' },
+  { key: 'nav.research', base: '/research' },
+  { key: 'nav.team', base: '/team' },
+  { key: 'nav.contact', base: '/contact' },
 ];
 ---
 
@@ -23,8 +28,8 @@ const footerLinks = [
 
       <div class="footer-nav">
         {footerLinks.map(link => (
-          <a href={link.href} class="footer-link">
-            {link.label}
+          <a href={localizePath(link.base, lang)} class="footer-link">
+            {t(link.key)}
             <img src="/icons/arrow-outward-white.svg" alt="" width="14" class="footer-link-arrow" />
           </a>
         ))}
@@ -41,9 +46,7 @@ const footerLinks = [
     </div>
 
     <div class="footer-bottom">
-      <p class="footer-mission">
-        ConsiliumBots is a nonprofit organization with the mission of fostering technological innovation to connect government data with the community.
-      </p>
+      <p class="footer-mission">{t('footer.mission')}</p>
     </div>
   </div>
 </footer>

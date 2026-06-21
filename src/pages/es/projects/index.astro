@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { projects } from '../../../data/site-data.js';
+
+const groups = [
+  { key: 'active', label: 'Activos' },
+  { key: 'completed', label: 'Completados' },
+  { key: 'proposed', label: 'Propuestos' },
+  { key: 'research', label: 'Investigación' },
+];
+const byStatus = (s) => projects.filter((p) => p.status === s);
+---
+
+<BaseLayout
+  lang="es"
+  title="Proyectos | ConsiliumBots"
+  description="Nuestros proyectos usan datos y tecnología para ayudar a las personas a tomar decisiones mejor informadas sobre educación, vivienda y beneficios del gobierno en América Latina y EE. UU."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Proyectos</h1>
+      <p>
+        Queremos lograr una mayor equidad en el acceso y la transparencia de los servicios y
+        beneficios del gobierno, brindando mejor información — aumentando la satisfacción y mejorando
+        las oportunidades para todos, especialmente para la población más vulnerable.
+      </p>
+    </div>
+  </section>
+
+  {groups.map((g) =>
+    byStatus(g.key).length > 0 ? (
+      <section class="section">
+        <div class="wrap">
+          <h2 class="section-title">{g.label}</h2>
+          <div class="proj-grid">
+            {byStatus(g.key).map((p) => (
+              <a href={`/projects/${p.slug}`} class="card proj-card">
+                <span class={`badge badge-${p.status}`}>{p.status}</span>
+                <h3>{p.name}</h3>
+                {(p.country || p.type) && (
+                  <p class="proj-meta">{[p.country, p.type].filter(Boolean).join(' · ')}</p>
+                )}
+                {p.description && <p class="proj-desc">{p.description}</p>}
+                <span class="proj-link">Ver proyecto →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    ) : null
+  )}
+</BaseLayout>
+
+<style>
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .proj-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .proj-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .proj-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .proj-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.6;
+  }
+  .proj-link {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 1024px) {
+    .proj-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .proj-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

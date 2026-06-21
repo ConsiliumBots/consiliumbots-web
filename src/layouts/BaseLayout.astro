@@ -1,6 +1,8 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import { GA_MEASUREMENT_ID } from '../config.js';
+import { stripLang, localizePath } from '../i18n.js';
 // Self-hosted fonts (latin subset covers English + Spanish) — no third-party request
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
@@ -13,18 +15,29 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  lang?: 'en' | 'es';
+  bilingual?: boolean;
 }
 
 const {
   title,
   description = 'Using technology to help families make important decisions in education and other social impact areas. Working with governments to reach out to their users.',
   ogImage = '/images/og-image.png',
+  lang = 'en',
+  bilingual = true,
 } = Astro.props;
 
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
 
 const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://www.consiliumbots.com';
+
+// hreflang alternates (only emitted when the page exists in both languages)
+const basePath = stripLang(Astro.url.pathname);
+const enHref = new URL(localizePath(basePath, 'en'), Astro.site);
+const esHref = new URL(localizePath(basePath, 'es'), Astro.site);
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
+const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_ES';
 
 // Organization + WebSite structured data (Schema.org) for entity recognition
 const structuredData = {
@@ -55,13 +68,21 @@ const structuredData = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
+
+    {bilingual && (
+      <>
+        <link rel="alternate" hreflang="en" href={enHref} />
+        <link rel="alternate" hreflang="es" href={esHref} />
+        <link rel="alternate" hreflang="x-default" href={enHref} />
+      </>
+    )}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -73,7 +94,8 @@ const structuredData = {
     <meta property="og:image:alt" content={title} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:site_name" content="ConsiliumBots" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale} />
+    {bilingual && <meta property="og:locale:alternate" content={ogLocaleAlt} />}
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -91,12 +113,20 @@ const structuredData = {
 
     <!-- Structured data (Schema.org) -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
+    <!-- Google Analytics 4 (only rendered when a Measurement ID is configured) -->
+    {GA_MEASUREMENT_ID && (
+      <>
+        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+        <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}></script>
+      </>
+    )}
   </head>
   <body>
-    <Navbar />
+    <Navbar lang={lang} bilingual={bilingual} />
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer lang={lang} />
   </body>
 </html>
