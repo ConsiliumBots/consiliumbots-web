@@ -432,7 +432,7 @@
     "funders": ["Yale University"],
     "costEffectiveness": null,
     "publication": null,
-    "website": null,
+    "website": "https://www.mi-abogado.ai",
     "contributors": [
       { "name": "Winnie Van Dijk", "role": "Principal Investigator (Yale)" },
       { "name": "Joseph J. Doyle", "role": "Co-Investigator (MIT)" },
@@ -462,7 +462,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
-    "website": null,
+    "website": "https://www.director.ai",
     "contributors": [
       { "name": "Sebastián Otero", "role": "Principal Investigator (Columbia)" },
       { "name": "Carolina Concha-Arriagada", "role": "Co-PI (Teachers College, Columbia)" },
