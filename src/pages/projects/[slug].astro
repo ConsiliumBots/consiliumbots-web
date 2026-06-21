@@ -8,6 +8,19 @@ export function getStaticPaths() {
 
 const { project } = Astro.props;
 
+const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://www.consiliumbots.com';
+
+// Breadcrumb structured data: Home > Projects > {project}
+const breadcrumbs = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+    { '@type': 'ListItem', position: 2, name: 'Projects', item: `${siteUrl}/projects/` },
+    { '@type': 'ListItem', position: 3, name: project.name, item: `${siteUrl}/projects/${project.slug}/` },
+  ],
+};
+
 const meta = [
   ['Country', [project.country, project.region].filter(Boolean).join(' — ')],
   ['Years', [project.startYear, project.endYear].filter(Boolean).join('–')],
@@ -22,6 +35,8 @@ const meta = [
   title={`${project.name} | ConsiliumBots`}
   description={project.description ?? undefined}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />
+
   <section class="page-hero">
     <div class="wrap">
       <p class="breadcrumb"><a href="/projects">Projects</a> / {project.name}</p>

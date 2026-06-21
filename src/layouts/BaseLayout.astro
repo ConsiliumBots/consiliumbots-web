@@ -1,6 +1,12 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+// Self-hosted fonts (latin subset covers English + Spanish) — no third-party request
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/latin-700.css';
+import '@fontsource/baskervville/latin-400.css';
 import '../styles/global.css';
 
 interface Props {
@@ -78,13 +84,7 @@ const structuredData = {
     <meta name="twitter:image" content={ogImageUrl} />
     <meta name="twitter:image:alt" content={title} />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Baskervville&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts are self-hosted via @fontsource (imported in the layout frontmatter) -->
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
