@@ -400,10 +400,22 @@
     "publication": null,
     "website": "https://www.ccas.wiki",
     "contributors": [
-      { "name": "Christopher A. Neilson", "role": "Author" },
-      { "name": "Javiera Gazmuri", "role": "Research" },
-      { "name": "Cecilia Moreira", "role": "Research" },
-      { "name": "Fabiola Alba", "role": "Research" }
+      {
+        "name": "Christopher A. Neilson",
+        "role": "Author"
+      },
+      {
+        "name": "Javiera Gazmuri",
+        "role": "Research"
+      },
+      {
+        "name": "Cecilia Moreira",
+        "role": "Research"
+      },
+      {
+        "name": "Fabiola Alba",
+        "role": "Research"
+      }
     ]
   },
   {
@@ -429,16 +441,33 @@
     ],
     "partner": "Programa Mi Abogado (PMA); NAD",
     "client": "Yale University",
-    "funders": ["Yale University"],
+    "funders": [
+      "Yale University"
+    ],
     "costEffectiveness": null,
     "publication": null,
     "website": "https://www.mi-abogado.ai",
     "contributors": [
-      { "name": "Winnie Van Dijk", "role": "Principal Investigator (Yale)" },
-      { "name": "Joseph J. Doyle", "role": "Co-Investigator (MIT)" },
-      { "name": "Andrés Hojman", "role": "Co-Investigator (PUC Chile)" },
-      { "name": "Christopher Neilson", "role": "Co-Investigator" },
-      { "name": "Valentina Hurtado", "role": "Project Lead, Chile" }
+      {
+        "name": "Winnie Van Dijk",
+        "role": "Principal Investigator (Yale)"
+      },
+      {
+        "name": "Joseph J. Doyle",
+        "role": "Co-Investigator (MIT)"
+      },
+      {
+        "name": "Andrés Hojman",
+        "role": "Co-Investigator (PUC Chile)"
+      },
+      {
+        "name": "Christopher Neilson",
+        "role": "Co-Investigator"
+      },
+      {
+        "name": "Valentina Hurtado",
+        "role": "Project Lead, Chile"
+      }
     ]
   },
   {
@@ -464,10 +493,22 @@
     "publication": null,
     "website": "https://directores.ai",
     "contributors": [
-      { "name": "Sebastián Otero", "role": "Principal Investigator (Columbia)" },
-      { "name": "Carolina Concha-Arriagada", "role": "Co-PI (Teachers College, Columbia)" },
-      { "name": "Pablo Egaña Del Sol", "role": "Co-Investigator (UAI)" },
-      { "name": "Christopher Neilson", "role": "Co-Investigator" }
+      {
+        "name": "Sebastián Otero",
+        "role": "Principal Investigator (Columbia)"
+      },
+      {
+        "name": "Carolina Concha-Arriagada",
+        "role": "Co-PI (Teachers College, Columbia)"
+      },
+      {
+        "name": "Pablo Egaña Del Sol",
+        "role": "Co-Investigator (UAI)"
+      },
+      {
+        "name": "Christopher Neilson",
+        "role": "Co-Investigator"
+      }
     ]
   },
   {
