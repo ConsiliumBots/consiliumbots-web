@@ -134,6 +134,62 @@
     "scholar": null
   },
   {
+    "id": "silvia-granados",
+    "name": "Silvia Granados",
+    "title": "Operations Manager & Country Manager — Colombia",
+    "status": "active",
+    "location": "Colombia",
+    "bio": "Silvia leads day-to-day operations at ConsiliumBots and serves as Country Manager for Colombia, coordinating administration, contracts, and in-country partnerships.",
+    "photo": null,
+    "expertise": [
+      "Operations Management",
+      "Administrative Coordination",
+      "Partner Relations",
+      "Field Operations"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "alonso-cornejo",
+    "name": "Alonso Cornejo",
+    "title": "Country Manager — Chile",
+    "status": "active",
+    "location": "Santiago, Chile",
+    "bio": "Alonso leads ConsiliumBots' work in Chile as Country Manager. He heads the Cien Pies project and the Encuesta de Habilidades Digitales y Uso de IA, a survey on digital skills and AI use.",
+    "photo": null,
+    "expertise": [
+      "Project Management",
+      "Government Partnerships",
+      "Field Operations",
+      "Survey Research"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "alonso-herrera",
+    "name": "Alonso Herrera",
+    "title": "Backend Developer",
+    "status": "active",
+    "location": "Santiago, Chile",
+    "bio": "Alonso builds and maintains the backend systems behind ConsiliumBots' platforms — APIs, data pipelines, and cloud infrastructure supporting the organization's education tools.",
+    "photo": null,
+    "expertise": [
+      "Backend Development",
+      "Python",
+      "Node.js",
+      "Django",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
     "id": "constanza-munoz",
     "name": "Constanza Muñoz",
     "title": "Data Scientist",
