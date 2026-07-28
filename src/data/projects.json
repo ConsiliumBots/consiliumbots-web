@@ -29,6 +29,7 @@
     ],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -73,6 +74,7 @@
     ],
     "costEffectiveness": "Estimated 37x more cost-effective than unconditional cash transfers",
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -114,6 +116,7 @@
     ],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -144,6 +147,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Mauricio Cornejo",
@@ -174,6 +178,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": []
   },
   {
@@ -197,6 +202,7 @@
     ],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -228,6 +234,7 @@
     ],
     "costEffectiveness": null,
     "publication": "https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -259,6 +266,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": "https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf",
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -285,6 +293,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -323,6 +332,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Christopher Neilson",
@@ -349,6 +359,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": []
   },
   {
@@ -370,6 +381,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": []
   },
   {
@@ -561,6 +573,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
+    "website": null,
     "contributors": [
       {
         "name": "Javiera Gazmuri",

@@ -1,33 +1,52 @@
 ---
-const currentPath = Astro.url.pathname;
+import { useTranslations, stripLang, localizePath } from '../i18n.js';
 
-const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'What We Do', href: '/what-we-do' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Research', href: '/research' },
-  { label: 'Team', href: '/team' },
-  { label: 'Working Papers', href: 'https://consiliumbots.github.io/working-papers-cb/', external: true },
-  { label: 'Contact', href: '/contact' },
+const { lang = 'en', bilingual = true } = Astro.props;
+const t = useTranslations(lang);
+
+const currentPath = Astro.url.pathname;
+const basePath = stripLang(currentPath);
+const otherLang = lang === 'es' ? 'en' : 'es';
+const switchHref = bilingual ? localizePath(basePath, otherLang) : localizePath('/', otherLang);
+
+const navItems = [
+  { key: 'nav.home', base: '/' },
+  { key: 'nav.whatWeDo', base: '/what-we-do' },
+  { key: 'nav.projects', base: '/projects' },
+  { key: 'nav.research', base: '/research' },
+  { key: 'nav.team', base: '/team' },
+  { key: 'nav.workingPapers', href: 'https://consiliumbots.github.io/working-papers-cb/', external: true },
+  { key: 'nav.contact', base: '/contact' },
 ];
+
+function isActive(base) {
+  if (base === '/') return basePath === '/';
+  return basePath === base || basePath.startsWith(base + '/');
+}
 ---
 
 <header class="navbar">
   <div class="navbar-inner wrap">
-    <a href="/" class="navbar-brand">
+    <a href={localizePath('/', lang)} class="navbar-brand">
       <img src="/images/consiliumbots-logo.svg" alt="ConsiliumBots" width="109" />
     </a>
 
     <nav class="navbar-menu" id="nav-menu">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class:list={['navbar-link', { active: currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href)) }]}
-          {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-        >
-          {link.label}
-        </a>
-      ))}
+      {navItems.map(item => {
+        const href = item.external ? item.href : localizePath(item.base, lang);
+        return (
+          <a
+            href={href}
+            class:list={['navbar-link', { active: !item.external && isActive(item.base) }]}
+            {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
+            {t(item.key)}
+          </a>
+        );
+      })}
+      <a href={switchHref} class="navbar-link navbar-lang" aria-label={t('nav.langSwitchLabel')} hreflang={otherLang}>
+        {t('nav.langSwitch')}
+      </a>
     </nav>
 
     <button class="navbar-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -83,6 +102,13 @@ const navLinks = [
     background: rgba(37, 99, 235, 0.06);
   }
 
+  .navbar-lang {
+    border: 1px solid var(--color-border);
+    font-weight: 600;
+    margin-left: 4px;
+    letter-spacing: 0.03em;
+  }
+
   .navbar-toggle {
     display: none;
     flex-direction: column;
@@ -127,6 +153,13 @@ const navLinks = [
     .navbar-link {
       width: 100%;
       padding: 12px 14px;
+    }
+
+    .navbar-lang {
+      width: auto;
+      align-self: flex-start;
+      margin-left: 0;
+      margin-top: 4px;
     }
   }
 </style>

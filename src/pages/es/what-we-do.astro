@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const approach = [
+  {
+    icon: '/images/figure-info-interventions.png',
+    title: 'Las intervenciones informativas son efectivas',
+    body: 'Existe evidencia científica de que brindar información relevante en el momento adecuado puede marcar una diferencia significativa en la forma en que viven las personas, mejorando las decisiones sobre escolaridad, matrícula y acceso a beneficios.',
+  },
+  {
+    icon: '/images/figure-ai.png',
+    title: 'Inteligencia Artificial: una realidad ahora disponible',
+    body: 'La IA, impulsada por los grandes modelos de lenguaje, ha abierto nuevas posibilidades para entregar información personalizada y dinámica a gran escala, transformando la forma en que las personas toman decisiones sobre educación, vivienda y servicios del gobierno.',
+  },
+  {
+    icon: '/images/figure-centralized.png',
+    title: 'Los sistemas y datos centralizados ofrecen una oportunidad',
+    body: 'Los procesos de beneficios del gobierno están cada vez más digitalizados y centralizados. Los datos resultantes reducen el costo de acompañar a las familias en la toma de decisiones con información personalizada.',
+  },
+];
+---
+
+<BaseLayout
+  lang="es"
+  title="Qué Hacemos | ConsiliumBots"
+  description="Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones personalizadas, ayudando a las personas a tomar decisiones mejor informadas."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Qué Hacemos</h1>
+      <p>
+        Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones
+        personalizadas.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <p class="lead">
+        Nuestra organización sin fines de lucro se dedica a aprovechar la tecnología para
+        <strong>conectar los datos del gobierno con la comunidad</strong> con el fin de
+        <strong>ayudar a las personas a tomar decisiones mejor informadas que puedan impactar positivamente su bienestar.</strong>
+        Nuestra misión es aumentar el <strong>acceso a la educación, la vivienda y otros beneficios del gobierno</strong>
+        fomentando la innovación tecnológica, empoderando a quienes más lo necesitan y promoviendo la equidad social
+        y económica.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <h2 class="section-title">Por qué es importante</h2>
+      <div class="approach-grid">
+        {approach.map((a) => (
+          <div class="approach-card">
+            <img src={a.icon} alt="" width="50" height="50" />
+            <h3>{a.title}</h3>
+            <p>{a.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-row">
+      <div>
+        <h2 class="section-title">Míralo en la práctica</h2>
+        <p class="lead">Explora los proyectos donde ponemos en práctica este enfoque en América Latina y EE. UU.</p>
+      </div>
+      <a href="/es/projects" class="btn btn-primary">
+        Ver proyectos
+        <img src="/icons/arrow-right.svg" alt="" width="20" />
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    max-width: 800px;
+  }
+  .lead strong {
+    color: var(--color-text);
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .approach-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 14px 0 10px;
+  }
+  .approach-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-row .lead {
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
