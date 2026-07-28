@@ -14,6 +14,34 @@ const initials = (name) =>
 const alumniByYear = [...alumni].sort(
   (a, b) => Number(b.departedYear ?? 0) - Number(a.departedYear ?? 0)
 );
+
+// Calculado desde los datos para que las cifras nunca se desalineen de la lista.
+const byType = (t) => alumni.filter((m) => m.destinationType === t).length;
+const years = alumni.map((m) => Number(m.departedYear)).filter(Boolean);
+const sinceYear = years.length ? Math.min(...years) : null;
+
+const alumniStats = [
+  {
+    n: alumni.length,
+    label: 'Ex integrantes',
+    desc: sinceYear ? `Colegas que han seguido otros caminos desde ${sinceYear}.` : 'Colegas que han seguido otros caminos.',
+  },
+  {
+    n: byType('academia'),
+    label: 'Continuaron estudios de posgrado',
+    desc: 'Programas de doctorado y de políticas públicas en universidades líderes.',
+  },
+  {
+    n: byType('government'),
+    label: 'Se integraron al sector público',
+    desc: 'Ministerios de educación y trabajo, llevando el trabajo al servicio público.',
+  },
+  {
+    n: byType('industry'),
+    label: 'Pasaron a la industria',
+    desc: 'Empresas de tecnología y organizaciones con propósito social.',
+  },
+].filter((s) => s.n > 0);
 ---
 
 <BaseLayout
@@ -138,6 +166,15 @@ const alumniByYear = [...alumni].sort(
         Antiguos miembros del equipo que hoy trabajan en gobiernos, en la industria y en programas
         de doctorado alrededor del mundo.
       </p>
+      <div class="alumni-stats">
+        {alumniStats.map((s) => (
+          <div class="alumni-stat">
+            <div class="alumni-stat-number">{s.n}</div>
+            <div class="alumni-stat-label">{s.label}</div>
+            <p class="alumni-stat-desc">{s.desc}</p>
+          </div>
+        ))}
+      </div>
       <ul class="alumni-list">
         {alumniByYear.map((m) => (
           <li class="alumni-row">
@@ -299,6 +336,42 @@ const alumniByYear = [...alumni].sort(
     max-width: 60ch;
     margin: -8px 0 28px;
   }
+  .alumni-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin: 0 0 40px;
+  }
+  .alumni-stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .alumni-stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .alumni-stat-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .alumni-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+  }
+  @media (max-width: 480px) {
+    .alumni-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .alumni-list {
     list-style: none;
     padding: 0;
