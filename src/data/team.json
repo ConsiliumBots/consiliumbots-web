@@ -39,51 +39,12 @@
     "scholar": "https://scholar.google.com/citations?user=6MZfok0AAAAJ"
   },
   {
-    "id": "mauro-cornejo",
-    "name": "Mauricio Cornejo",
-    "title": "Senior Project Manager / Impact Evaluation",
-    "status": "alumni",
-    "location": "Santiago, Chile",
-    "bio": "Mauro leads project implementation and impact evaluation for ConsiliumBots, with particular focus on DFM in Colombia and Chile. He manages the FID R&D grant and coordinates field operations.",
-    "photo": null,
-    "expertise": [
-      "Impact Evaluation",
-      "Project Management",
-      "Data Analysis",
-      "RCT Implementation",
-      "Budget Management",
-      "Government Relations"
-    ],
-    "affiliations": [],
-    "website": null,
-    "scholar": null
-  },
-  {
-    "id": "josefina-lavin",
-    "name": "Josefina Lavín",
-    "title": "Chief Operations Officer",
-    "status": "alumni",
-    "location": "Santiago, Chile",
-    "bio": "Josefina manages day-to-day operations, administrative processes, and coordination with partners including J-PAL and Yale.",
-    "photo": null,
-    "expertise": [
-      "Operations Management",
-      "Administrative Coordination",
-      "Document Management",
-      "Partner Relations",
-      "J-PAL Processes"
-    ],
-    "affiliations": [],
-    "website": null,
-    "scholar": null
-  },
-  {
     "id": "leidy-gomez",
     "name": "Leidy Gómez",
-    "title": "Data Analyst / Colombia Operations",
+    "title": "Lead Data Scientist",
     "status": "active",
     "location": "Colombia",
-    "bio": "Leidy manages data operations in Colombia, including education data analysis for DFM and higher education systems research.",
+    "bio": "Leidy leads data science at ConsiliumBots from Colombia, covering education data analysis for DFM and higher education systems research.",
     "photo": null,
     "expertise": [
       "Data Analysis",
@@ -134,40 +95,93 @@
     "scholar": null
   },
   {
-    "id": "constanza-munoz",
-    "name": "Constanza Muñoz",
-    "title": "Data Scientist",
-    "status": "alumni",
-    "location": null,
-    "bio": null,
+    "id": "silvia-granados",
+    "name": "Silvia Granados",
+    "title": "Head of Operations & Country Manager — Colombia",
+    "status": "active",
+    "location": "Medellín, Colombia",
+    "bio": "Silvia is Head of Operations at ConsiliumBots and Country Manager for Colombia. Based in Medellín, she oversees operations, administration, contracts, and in-country partnerships.",
     "photo": null,
-    "expertise": [],
+    "expertise": [
+      "Operations Management",
+      "Administrative Coordination",
+      "Partner Relations",
+      "Field Operations"
+    ],
     "affiliations": [],
     "website": null,
     "scholar": null
   },
   {
-    "id": "martin-sielfeld",
-    "name": "Martín Sielfeld",
-    "title": "Data Scientist",
-    "status": "alumni",
-    "location": null,
-    "bio": null,
+    "id": "alonso-cornejo",
+    "name": "Alonso Cornejo",
+    "title": "Country Manager — Chile",
+    "status": "active",
+    "location": "Santiago, Chile",
+    "bio": "Alonso leads ConsiliumBots' work in Chile as Country Manager. He heads the Cien Pies project and the Encuesta de Habilidades Digitales y Uso de IA, a survey on digital skills and AI use.",
     "photo": null,
-    "expertise": [],
+    "expertise": [
+      "Project Management",
+      "Government Partnerships",
+      "Field Operations",
+      "Survey Research"
+    ],
     "affiliations": [],
     "website": null,
     "scholar": null
   },
   {
-    "id": "ria-deane",
-    "name": "Ria Deane",
-    "title": "Software Engineer",
-    "status": "alumni",
-    "location": null,
-    "bio": null,
+    "id": "alonso-herrera",
+    "name": "Alonso Herrera",
+    "title": "Backend Developer",
+    "status": "active",
+    "location": "Santiago, Chile",
+    "bio": "Alonso builds and maintains the backend systems behind ConsiliumBots' platforms — APIs, data pipelines, and cloud infrastructure supporting the organization's education tools.",
     "photo": null,
-    "expertise": [],
+    "expertise": [
+      "Backend Development",
+      "Python",
+      "Node.js",
+      "Django",
+      "PostgreSQL",
+      "AWS"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "maria-jose-suarez",
+    "name": "María José Suárez",
+    "title": "Designer & Project Manager",
+    "status": "active",
+    "location": null,
+    "bio": "María José is a designer and project manager leading ConsiliumBots' work in the Dominican Republic. She is Product Lead on the Pruebas Nacionales platform, translating design principles into shipped product.",
+    "photo": null,
+    "expertise": [
+      "Product Design",
+      "Project Management",
+      "Web UX",
+      "User Research"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "david-diaz-tunjano",
+    "name": "David Díaz Tunjano",
+    "title": "AI / LLM Interventions Specialist",
+    "status": "active",
+    "location": null,
+    "bio": "David is the ConsiliumBots specialist on AI-assisted interventions — the chatbot, voice, and LLM-enabled survey tooling behind the personalized-information layer of the organization's platforms.",
+    "photo": null,
+    "expertise": [
+      "AI / LLM Interventions",
+      "Conversational Bots",
+      "Voice Interfaces",
+      "Survey Instrumentation"
+    ],
     "affiliations": [],
     "website": null,
     "scholar": null
@@ -207,7 +221,12 @@
     "bio": null,
     "photo": "/images/team/tomas-larroucau.png",
     "expertise": [],
-    "affiliations": [],
+    "affiliations": [
+      {
+        "organization": "Arizona State University",
+        "status": "Active"
+      }
+    ],
     "website": null,
     "scholar": null
   },
@@ -220,7 +239,12 @@
     "bio": null,
     "photo": "/images/team/ignacio-rios.png",
     "expertise": [],
-    "affiliations": [],
+    "affiliations": [
+      {
+        "organization": "University of Texas at Dallas",
+        "status": "Active"
+      }
+    ],
     "website": null,
     "scholar": null
   },
@@ -277,23 +301,38 @@
     "scholar": null
   },
   {
-    "id": "anibal-guerrero",
-    "name": "Aníbal Guerrero",
-    "title": "Research Manager",
-    "status": "research-associate",
+    "id": "javiera-gazmuri",
+    "name": "Javiera Gazmuri",
+    "title": "Research Affiliate",
+    "status": "research-affiliate",
     "location": null,
-    "bio": null,
+    "bio": "Javiera was a Data Scientist at ConsiliumBots before beginning her Economics PhD at the University of Chicago. As a research affiliate she works on the siblings project, which studies the strategic problem families face when applying to schools with more than one child and develops guidance for them.",
     "photo": null,
-    "expertise": [],
-    "affiliations": [],
+    "expertise": [
+      "Data Science",
+      "School Choice & Assignment",
+      "Applied Microeconomics"
+    ],
+    "affiliations": [
+      {
+        "organization": "University of Chicago",
+        "role": "PhD student in Economics",
+        "status": "Active"
+      },
+      {
+        "organization": "ConsiliumBots",
+        "role": "Research Affiliate",
+        "status": "Active"
+      }
+    ],
     "website": null,
     "scholar": null
   },
   {
-    "id": "javiera-gazmuri",
-    "name": "Javiera Gazmuri",
-    "title": "Research Associate at J-PAL",
-    "status": "alumni",
+    "id": "anibal-guerrero",
+    "name": "Aníbal Guerrero",
+    "title": "Research Manager",
+    "status": "research-associate",
     "location": null,
     "bio": null,
     "photo": null,
@@ -316,28 +355,65 @@
     "scholar": null
   },
   {
-    "id": "manuela-cardona",
-    "name": "Manuela Cardona",
+    "id": "ignacio-lepe",
+    "name": "Ignacio Lepe",
     "title": "Predoctoral Fellow at Yale",
     "status": "research-associate",
     "location": null,
-    "bio": null,
+    "bio": "Ignacio is a Data Scientist at ConsiliumBots and a Predoctoral Fellow at Yale. He leads the technical delivery and data infrastructure behind the Atenea Bogotá platform and the Simuladores system, and co-authors research on Chile's centralized school choice system.",
     "photo": null,
-    "expertise": [],
-    "affiliations": [],
+    "expertise": [
+      "Data Engineering",
+      "Data Infrastructure",
+      "School Choice & Admissions Systems",
+      "Supabase",
+      "API Development"
+    ],
+    "affiliations": [
+      {
+        "organization": "Yale University",
+        "role": "Predoctoral Fellow",
+        "status": "Active"
+      },
+      {
+        "organization": "ConsiliumBots",
+        "role": "Data Scientist",
+        "status": "Active"
+      },
+      {
+        "organization": "Universidad de Chile (FEN)",
+        "status": "Active"
+      }
+    ],
     "website": null,
     "scholar": null
   },
   {
-    "id": "sergio-arango",
-    "name": "Sergio Arango",
+    "id": "tamara-munoz",
+    "name": "Tamara Muñoz",
     "title": "Predoctoral Fellow at Yale",
     "status": "research-associate",
     "location": null,
-    "bio": null,
+    "bio": "Tamara is a Data Scientist at ConsiliumBots and a Predoctoral Fellow at Yale. She works on education data systems and survey instruments, and supports research grant development with collaborating universities.",
     "photo": null,
-    "expertise": [],
-    "affiliations": [],
+    "expertise": [
+      "Data Analysis",
+      "Education Data Systems",
+      "Survey Design",
+      "Grant Proposal Development"
+    ],
+    "affiliations": [
+      {
+        "organization": "Yale University",
+        "role": "Predoctoral Fellow",
+        "status": "Active"
+      },
+      {
+        "organization": "ConsiliumBots",
+        "role": "Data Scientist",
+        "status": "Active"
+      }
+    ],
     "website": null,
     "scholar": null
   },
@@ -394,17 +470,176 @@
     "scholar": null
   },
   {
-    "id": "sergio",
-    "name": "Sergio",
+    "id": "mauro-cornejo",
+    "name": "Mauricio Cornejo",
+    "title": "Senior Project Manager / Impact Evaluation",
+    "status": "alumni",
+    "location": "Santiago, Chile",
+    "bio": "Mauro led project implementation and impact evaluation for ConsiliumBots, with particular focus on DFM in Colombia and Chile. He managed the FID R&D grant and coordinated field operations.",
+    "photo": null,
+    "expertise": [
+      "Impact Evaluation",
+      "Project Management",
+      "Data Analysis",
+      "RCT Implementation",
+      "Budget Management",
+      "Government Relations"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "josefina-lavin",
+    "name": "Josefina Lavín",
+    "title": "Chief Operations Officer",
+    "status": "alumni",
+    "location": "Santiago, Chile",
+    "bio": "Josefina managed day-to-day operations, administrative processes, and coordination with partners including J-PAL and Yale.",
+    "photo": null,
+    "expertise": [
+      "Operations Management",
+      "Administrative Coordination",
+      "Document Management",
+      "Partner Relations",
+      "J-PAL Processes"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "constanza-munoz",
+    "name": "Constanza Muñoz",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": null,
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "martin-sielfeld",
+    "name": "Martín Sielfeld",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": "Martín was a Data Scientist at ConsiliumBots for several years before leaving to begin the Economics PhD program at the University of Pennsylvania.",
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "cristian-herrera",
+    "name": "Cristián Herrera",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": "Cristián was a Data Scientist at ConsiliumBots working on research and impact evaluation, before joining Chile's Ministry of Education.",
+    "photo": null,
+    "expertise": [
+      "Data Science",
+      "Impact Evaluation",
+      "Education Research"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "andres-fontaine",
+    "name": "Andrés Fontaine",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": "Andrés was a Data Scientist at ConsiliumBots working on survey data and analysis pipelines, before joining Chile's Ministry of Labour.",
+    "photo": null,
+    "expertise": [
+      "Data Science",
+      "Survey Data Analysis",
+      "Data Pipelines"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "ria-deane",
+    "name": "Ria Deane",
     "title": "Software Engineer",
     "status": "alumni",
     "location": null,
     "bio": null,
     "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "isidora-barria",
+    "name": "Isidora Barría",
+    "title": "Project Manager",
+    "status": "alumni",
+    "location": null,
+    "bio": "Isidora was a Project Manager at ConsiliumBots providing operational and coordination support across projects, before joining Chile's Ministry of Education.",
+    "photo": null,
     "expertise": [
-      "Software Development",
-      "Web Applications",
-      "Backend Systems"
+      "Project Management",
+      "Operations Support",
+      "Administrative Coordination"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "carolina-wiegand",
+    "name": "Carolina Wiegand",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": "Carolina was a Data Scientist at ConsiliumBots working on historical education and labor market data, including the PAA returns-to-education data and training records with SENCE. She went on to the Economics PhD program at Yale University.",
+    "photo": null,
+    "expertise": [
+      "Data Science",
+      "Education & Labor Data",
+      "Historical Data Recovery"
+    ],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "manuela-cardona",
+    "name": "Manuela Cardona",
+    "title": "Predoctoral Fellow at Yale",
+    "status": "alumni",
+    "location": "Medellín, Colombia (origin)",
+    "bio": "Manuela was a Predoctoral Fellow at Yale working with ConsiliumBots before beginning her PhD at Yale University.",
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
+    "id": "sergio-arango",
+    "name": "Sergio Arango",
+    "title": "Data Scientist",
+    "status": "alumni",
+    "location": null,
+    "bio": "Sergio was a Data Scientist at ConsiliumBots, working on the New Haven school explorer and personalized feedback reports. He went on to a Predoctoral Fellowship at Yale and then to a PhD at Stanford.",
+    "photo": null,
+    "expertise": [
+      "Data Science",
+      "Education Data Systems",
+      "Data Visualization"
     ],
     "affiliations": [],
     "website": null,
@@ -413,7 +648,7 @@
   {
     "id": "elisa-salas",
     "name": "Elisa Salas",
-    "title": "Team Member",
+    "title": "Project Coordinator",
     "status": "alumni",
     "location": null,
     "bio": null,
@@ -439,7 +674,7 @@
   {
     "id": "alejandrina-correa",
     "name": "Alejandrina Correa",
-    "title": "Project Manager",
+    "title": "CCO and Project Manager",
     "status": "alumni",
     "location": null,
     "bio": null,
