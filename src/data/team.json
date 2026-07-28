@@ -1,5 +1,7 @@
 [
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "christopher-neilson",
     "name": "Christopher Neilson",
     "title": "Founder & CEO",
@@ -39,6 +41,8 @@
     "scholar": "https://scholar.google.com/citations?user=6MZfok0AAAAJ"
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "leidy-gomez",
     "name": "Leidy Gómez",
     "title": "Lead Data Scientist",
@@ -58,6 +62,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "mayela-cerda",
     "name": "Mayela Cerda",
     "title": "Lead Designer",
@@ -78,6 +84,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "valentina-hurtado",
     "name": "Valentina Hurtado",
     "title": "Data Scientist",
@@ -95,6 +103,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "silvia-granados",
     "name": "Silvia Granados",
     "title": "Head of Operations & Country Manager — Colombia",
@@ -113,6 +123,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "alonso-cornejo",
     "name": "Alonso Cornejo",
     "title": "Country Manager — Chile",
@@ -131,6 +143,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "alonso-herrera",
     "name": "Alonso Herrera",
     "title": "Backend Developer",
@@ -151,6 +165,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "maria-jose-suarez",
     "name": "María José Suárez",
     "title": "Designer & Project Manager",
@@ -169,6 +185,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "david-diaz-tunjano",
     "name": "David Díaz Tunjano",
     "title": "AI / LLM Interventions Specialist",
@@ -187,6 +205,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "maria-fernanda-ramirez",
     "name": "María Fernanda Ramírez",
     "title": "Research Affiliate & Project Manager",
@@ -200,6 +220,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "fernando-ochoa",
     "name": "Fernando Ochoa",
     "title": "Research Affiliate & Project Manager",
@@ -213,6 +235,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "tomas-larroucau",
     "name": "Tomás Larroucau",
     "title": "Research Affiliate",
@@ -231,6 +255,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "ignacio-rios",
     "name": "Ignacio Ríos",
     "title": "Research Affiliate",
@@ -249,6 +275,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "alvaro-carril",
     "name": "Álvaro Carril",
     "title": "Research Affiliate & Project Manager",
@@ -262,6 +290,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "magdalena-bennett",
     "name": "Magdalena Bennett",
     "title": "Research Affiliate",
@@ -275,6 +305,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "felipe-arteaga",
     "name": "Felipe Arteaga",
     "title": "Research Affiliate",
@@ -288,6 +320,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "carolina-concha-arriagada",
     "name": "Carolina Concha-Arriagada",
     "title": "Research Affiliate",
@@ -301,6 +335,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "javiera-gazmuri",
     "name": "Javiera Gazmuri",
     "title": "Research Affiliate",
@@ -329,6 +365,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "anibal-guerrero",
     "name": "Aníbal Guerrero",
     "title": "Research Manager",
@@ -342,6 +380,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "ferlisa-baez",
     "name": "Ferlisa Báez",
     "title": "Research Associate at J-PAL",
@@ -355,6 +395,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "ignacio-lepe",
     "name": "Ignacio Lepe",
     "title": "Predoctoral Fellow at Yale",
@@ -389,6 +431,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "tamara-munoz",
     "name": "Tamara Muñoz",
     "title": "Predoctoral Fellow at Yale",
@@ -418,6 +462,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "ryan-cooper",
     "name": "Ryan Cooper",
     "title": "Director Weiss Fund, University of Chicago. President, Board of Directors ConsiliumBots",
@@ -431,6 +477,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "veronica-zapata",
     "name": "Verónica Zapata",
     "title": "Education Policy Design Consultant",
@@ -444,6 +492,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "norma-padron",
     "name": "Norma Padrón",
     "title": "Health Economics",
@@ -457,6 +507,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "juan-ariel-jimenez",
     "name": "Juan Ariel Jiménez",
     "title": "Ex-Minister of Economics, Planning and Development of the Dominican Republic",
@@ -470,6 +522,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2026",
+    "currentPosition": "Leadership position, MINEDUC",
     "id": "mauro-cornejo",
     "name": "Mauricio Cornejo",
     "title": "Senior Project Manager / Impact Evaluation",
@@ -490,6 +544,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2025",
+    "currentPosition": "Project Manager, Buk",
     "id": "josefina-lavin",
     "name": "Josefina Lavín",
     "title": "Chief Operations Officer",
@@ -509,6 +565,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2024",
+    "currentPosition": "PhD student in Economics, Wharton (UPenn)",
     "id": "constanza-munoz",
     "name": "Constanza Muñoz",
     "title": "Data Scientist",
@@ -522,6 +580,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2026",
+    "currentPosition": "PhD student in Economics, UPenn",
     "id": "martin-sielfeld",
     "name": "Martín Sielfeld",
     "title": "Data Scientist",
@@ -535,6 +595,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2026",
+    "currentPosition": "MINEDUC (Chile Ministry of Education)",
     "id": "cristian-herrera",
     "name": "Cristián Herrera",
     "title": "Data Scientist",
@@ -552,6 +614,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2026",
+    "currentPosition": "Ministerio del Trabajo (Chile)",
     "id": "andres-fontaine",
     "name": "Andrés Fontaine",
     "title": "Data Scientist",
@@ -569,6 +633,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2024",
+    "currentPosition": null,
     "id": "ria-deane",
     "name": "Ria Deane",
     "title": "Software Engineer",
@@ -582,6 +648,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2026",
+    "currentPosition": "MINEDUC (Chile Ministry of Education)",
     "id": "isidora-barria",
     "name": "Isidora Barría",
     "title": "Project Manager",
@@ -599,6 +667,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2023",
+    "currentPosition": "PhD student in Economics, Yale University",
     "id": "carolina-wiegand",
     "name": "Carolina Wiegand",
     "title": "Data Scientist",
@@ -616,6 +686,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2024",
+    "currentPosition": "PhD student, Yale University",
     "id": "manuela-cardona",
     "name": "Manuela Cardona",
     "title": "Predoctoral Fellow at Yale",
@@ -629,6 +701,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2024",
+    "currentPosition": "PhD student, Stanford University",
     "id": "sergio-arango",
     "name": "Sergio Arango",
     "title": "Data Scientist",
@@ -646,6 +720,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2022",
+    "currentPosition": null,
     "id": "elisa-salas",
     "name": "Elisa Salas",
     "title": "Project Coordinator",
@@ -659,6 +735,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2023",
+    "currentPosition": "Software Engineer, Meta",
     "id": "joaquin-grez",
     "name": "Joaquín Grez",
     "title": "Software Engineer / CTO",
@@ -672,6 +750,8 @@
     "scholar": null
   },
   {
+    "departedYear": "2021",
+    "currentPosition": "PM, CareerVillage; MPP candidate, Columbia University",
     "id": "alejandrina-correa",
     "name": "Alejandrina Correa",
     "title": "CCO and Project Manager",
@@ -685,6 +765,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "adam-kapor",
     "name": "Adam Kapor",
     "title": "Research Collaborator",
@@ -706,6 +788,8 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": null,
     "id": "seth-zimmerman",
     "name": "Seth Zimmerman",
     "title": "Research Collaborator",

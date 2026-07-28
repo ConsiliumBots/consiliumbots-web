@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { activeTeam, researchAffiliates, researchAssociates, board } from '../data/site-data.js';
+import { activeTeam, researchAffiliates, researchAssociates, board, alumni } from '../data/site-data.js';
 
 const initials = (name) =>
   name
@@ -9,6 +9,11 @@ const initials = (name) =>
     .map((w) => w[0])
     .join('')
     .toUpperCase();
+
+// Most recent departures first; undated entries sink to the bottom.
+const alumniByYear = [...alumni].sort(
+  (a, b) => Number(b.departedYear ?? 0) - Number(a.departedYear ?? 0)
+);
 ---
 
 <BaseLayout
@@ -122,6 +127,28 @@ const initials = (name) =>
           </figure>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">Alumni</h2>
+      <p class="alumni-lede">
+        Former team members now working in government, industry, and doctoral programs around the
+        world.
+      </p>
+      <ul class="alumni-list">
+        {alumniByYear.map((m) => (
+          <li class="alumni-row">
+            <span class="alumni-year">{m.departedYear}</span>
+            <span class="alumni-person">
+              <span class="alumni-name">{m.name}</span>
+              {m.title && <span class="alumni-role">{m.title}</span>}
+            </span>
+            {m.currentPosition && <span class="alumni-now">{m.currentPosition}</span>}
+          </li>
+        ))}
+      </ul>
     </div>
   </section>
 </BaseLayout>
@@ -264,6 +291,60 @@ const initials = (name) =>
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
+  }
+
+  .alumni-lede {
+    color: var(--color-text-light);
+    max-width: 60ch;
+    margin: -8px 0 28px;
+  }
+  .alumni-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-top: 1px solid var(--color-border, #e5e7eb);
+  }
+  .alumni-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 16px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+  }
+  .alumni-year {
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-muted);
+  }
+  .alumni-person {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .alumni-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .alumni-role {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+  .alumni-now {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+  }
+  .alumni-now::before {
+    content: '→ ';
+    color: var(--color-accent);
+  }
+  @media (max-width: 640px) {
+    .alumni-row {
+      grid-template-columns: 48px minmax(0, 1fr);
+    }
+    .alumni-now {
+      grid-column: 2;
+    }
   }
   .board-member figcaption {
     max-width: 240px;
