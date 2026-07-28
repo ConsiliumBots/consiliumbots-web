@@ -16,15 +16,16 @@ const alumniByYear = [...alumni].sort(
 );
 
 // Calculado desde los datos para que las cifras nunca se desalineen de la lista.
+// A propósito sin "desde <año>": ConsiliumBots se fundó en 2018 y el registro de
+// ex integrantes de los primeros años aún está incompleto, así que un año
+// derivado subestimaría la historia de la organización.
 const byType = (t) => alumni.filter((m) => m.destinationType === t).length;
-const years = alumni.map((m) => Number(m.departedYear)).filter(Boolean);
-const sinceYear = years.length ? Math.min(...years) : null;
 
 const alumniStats = [
   {
     n: alumni.length,
     label: 'Ex integrantes',
-    desc: sinceYear ? `Colegas que han seguido otros caminos desde ${sinceYear}.` : 'Colegas que han seguido otros caminos.',
+    desc: 'Colegas que han seguido otros caminos.',
   },
   {
     n: byType('academia'),

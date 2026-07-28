@@ -773,6 +773,22 @@
     "scholar": null
   },
   {
+    "departedYear": null,
+    "currentPosition": "MPP, Harvard University",
+    "destinationType": "academia",
+    "id": "eduardo-vargas",
+    "name": "Eduardo Vargas",
+    "title": null,
+    "status": "alumni",
+    "location": "Peru",
+    "bio": "Eduardo was part of the early ConsiliumBots team and went on to a Master of Public Policy at Harvard University. He remains connected to the organization's work in the region.",
+    "photo": null,
+    "expertise": [],
+    "affiliations": [],
+    "website": null,
+    "scholar": null
+  },
+  {
     "departedYear": "2021",
     "currentPosition": "PM, CareerVillage; MPP candidate, Columbia University",
     "destinationType": "industry",

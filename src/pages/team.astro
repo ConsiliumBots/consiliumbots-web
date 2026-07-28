@@ -16,15 +16,16 @@ const alumniByYear = [...alumni].sort(
 );
 
 // Derived from the data so the counts never drift from the list below.
+// Deliberately no "since <year>" claim: ConsiliumBots was founded in 2018 and
+// the roster of early alumni is still incomplete, so a derived earliest year
+// would understate the organization's history.
 const byType = (t) => alumni.filter((m) => m.destinationType === t).length;
-const years = alumni.map((m) => Number(m.departedYear)).filter(Boolean);
-const sinceYear = years.length ? Math.min(...years) : null;
 
 const alumniStats = [
   {
     n: alumni.length,
     label: 'Alumni',
-    desc: sinceYear ? `Colleagues who have moved on since ${sinceYear}.` : 'Colleagues who have moved on.',
+    desc: 'Colleagues who have gone on to new roles.',
   },
   {
     n: byType('academia'),
