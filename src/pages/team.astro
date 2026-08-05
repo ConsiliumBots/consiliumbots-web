@@ -80,7 +80,11 @@ const alumniStats = [
         {activeTeam.map((m) => (
           <div class="card member">
             <div class="member-head">
-              <div class="avatar-initials">{initials(m.name)}</div>
+              {m.photo ? (
+                <img class="member-photo" src={m.photo} alt={m.name} width="56" height="56" loading="lazy" />
+              ) : (
+                <div class="avatar-initials">{initials(m.name)}</div>
+              )}
               <div>
                 <h3>{m.name}</h3>
                 <p class="member-title">{m.title}</p>
@@ -237,6 +241,13 @@ const alumniStats = [
     display: flex;
     gap: 14px;
     align-items: center;
+  }
+  .member-photo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
   }
   .member-head h3 {
     font-size: 1.05rem;
