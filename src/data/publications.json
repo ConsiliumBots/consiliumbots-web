@@ -52,21 +52,27 @@
     ]
   },
   {
-    "title": "Application Mistakes in College Admissions in Chile",
-    "authors": "",
-    "year": null,
-    "venue": "Research project",
-    "url": "https://christopherneilson.github.io/work/Application-Mistakes.html",
-    "category": "working-paper"
+    "title": "Search and Biased Beliefs in Education Markets",
+    "authors": "Patrick Agte, Claudia Allende, Adam Kapor, Christopher A. Neilson & Nano Ochoa",
+    "year": 2024,
+    "venue": "Econometrica (revise & resubmit) · NBER Working Paper 32670",
+    "url": "https://www.nber.org/papers/w32670",
+    "category": "working-paper",
+    "project": "sae-chile",
+    "extraLinks": [
+      { "label": "PDF", "url": "https://christopherneilson.github.io/work/documents/w32670_july_2024.pdf" }
+    ]
   },
   {
-    "title": "AVE — Aprendiendo el Valor de la Educación: USAID Endline Report",
-    "authors": "",
-    "year": null,
-    "venue": "Impact evaluation · Dominican Republic",
-    "url": "https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
-    "category": "report",
-    "project": "ave-dominican-republic"
+    "title": "College Application Mistakes and the Design of Information Policies at Scale",
+    "authors": "Anais Fabre, Tomás Larroucau, Christopher A. Neilson & Ignacio Rios",
+    "year": 2025,
+    "venue": "Journal of Political Economy (conditionally accepted)",
+    "url": "https://christopherneilson.github.io/work/documents/Information_Frictions_and_Application_Mistakes_LRFN_2025.pdf",
+    "category": "working-paper",
+    "extraLinks": [
+      { "label": "Project page", "url": "https://christopherneilson.github.io/work/Application-Mistakes.html" }
+    ]
   },
   {
     "title": "Decidiendo para un Futuro Mejor: DOL Endline Report",
@@ -76,6 +82,14 @@
     "url": "https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf",
     "category": "report",
     "project": "dfm-chile"
+  },
+  {
+    "title": "AVE — Aprendiendo el Valor de la Educación: USAID Endline Report",
+    "authors": "",
+    "year": 2016,
+    "venue": "Impact evaluation · Dominican Republic · prior work that inspired ConsiliumBots",
+    "url": "https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
+    "category": "motivating"
   },
   {
     "title": "The (Perceived) Returns to Education and the Demand for Schooling",

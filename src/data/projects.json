@@ -219,7 +219,7 @@
     "startYear": 2014,
     "endYear": 2016,
     "type": "Information Intervention + RCT",
-    "description": "Large-scale RCT using telenovela-style videos to inform students about value of education.",
+    "description": "Large-scale RCT using telenovela-style videos to inform students about value of education. This work predates ConsiliumBots and was not run by the organization — it is earlier research by our founding team that directly inspired the approach ConsiliumBots was created to scale.",
     "targetPopulation": "428,400 upper-primary students",
     "scale": "428,400 students",
     "outcomes": [
