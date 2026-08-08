@@ -341,6 +341,37 @@
     ]
   },
   {
+    "slug": "acceso-libre-peru",
+    "name": "Acceso Libre — Peru",
+    "status": "completed",
+    "country": "Peru",
+    "region": null,
+    "startYear": 2018,
+    "endYear": 2020,
+    "type": "Centralized Admissions Algorithm",
+    "description": "Working with Peru's Ministry of Education, ConsiliumBots designed the algorithm behind Acceso Libre, the country's centralized process for applying to and being assigned a place in higher education. The work brought a coordinated, rules-based assignment mechanism to a process that determines which students get access to which programs.",
+    "targetPopulation": "Peruvian students applying to higher education",
+    "scale": null,
+    "outcomes": [],
+    "technologies": [],
+    "partner": null,
+    "client": "Ministerio de Educación del Perú (MINEDU)",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": [
+      {
+        "name": "Karen Eichhorn",
+        "role": "Project Lead"
+      },
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      }
+    ]
+  },
+  {
     "slug": "women-in-stem",
     "name": "Women in STEM",
     "status": "research",
