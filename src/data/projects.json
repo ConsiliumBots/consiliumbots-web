@@ -524,6 +524,45 @@
     ]
   },
   {
+    "slug": "pruebas-nacionales-dr",
+    "name": "Pruebas Nacionales — \"Tienes Talento\" (Dominican Republic)",
+    "status": "active",
+    "country": "Dominican Republic",
+    "region": "Nationwide (all 18 administrative regions)",
+    "startYear": 2026,
+    "endYear": null,
+    "type": "Information Intervention + RCT",
+    "description": "A ten-minute, mobile-first digital experience delivered to Dominican students right after they sit the Pruebas Nacionales, the national high-school exit exam. Students predict and then see how they performed relative to their peers, and those who score well receive an identity-affirming message — \"Tienes Talento\" — along with a four-step guide to applying for MESCyT scholarships and a personalized AI coach. The study tests whether that affirmation increases applications to selective higher-education programs and scholarships, using a combined randomized trial and regression-discontinuity design.",
+    "targetPopulation": "Students graduating from Dominican high schools who sit the Pruebas Nacionales (ages 17–18)",
+    "scale": "~140,000 students per annual cohort; randomized trial targeting at least 12,000 students",
+    "outcomes": [
+      "Pre-analysis plan registered before launch (May 2026)",
+      "Primary outcomes: intention to apply to a selective program and self-reported likelihood of applying",
+      "Long-term follow-up links to scholarship applications and 2027 higher-education enrollment"
+    ],
+    "technologies": [
+      "Mobile web application",
+      "WhatsApp / SMS delivery",
+      "AI coach"
+    ],
+    "partner": "Tether Education",
+    "client": "MESCyT; MINERD",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      },
+      {
+        "name": "David Díaz Tunjano",
+        "role": "Implementation Lead"
+      }
+    ]
+  },
+  {
     "slug": "cien-pies",
     "name": "CienPiés",
     "status": "active",
