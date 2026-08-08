@@ -5,13 +5,15 @@ import { projects } from '../data/site-data.js';
 
 const nameBySlug = Object.fromEntries(projects.map((p) => [p.slug, p.name]));
 
-const byCategory = (c) => publications.filter((p) => p.category === c);
+const byCategory = (c) =>
+  publications.filter((p) => p.category === c).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
 const sections = [
   {
     id: 'journal',
     title: 'Peer-reviewed publications',
-    blurb: 'Work from our collaborations published in academic journals.',
+    blurb:
+      'Peer-reviewed research by our team and affiliated researchers on school choice, centralized assignment, and information interventions.',
     items: byCategory('journal'),
   },
   {

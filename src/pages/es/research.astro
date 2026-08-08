@@ -5,13 +5,15 @@ import { projects } from '../../data/site-data.js';
 
 const nameBySlug = Object.fromEntries(projects.map((p) => [p.slug, p.name]));
 
-const byCategory = (c) => publications.filter((p) => p.category === c);
+const byCategory = (c) =>
+  publications.filter((p) => p.category === c).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));
 
 const sections = [
   {
     id: 'journal',
     title: 'Publicaciones con revisión de pares',
-    blurb: 'Trabajos de nuestras colaboraciones publicados en revistas académicas.',
+    blurb:
+      'Investigación con revisión de pares de nuestro equipo e investigadores afiliados sobre elección de escuela, asignación centralizada e intervenciones informativas.',
     items: byCategory('journal'),
   },
   {
