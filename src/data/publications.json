@@ -1,0 +1,96 @@
+[
+  {
+    "title": "Smart Matching Platforms and Heterogeneous Beliefs in Centralized School Choice",
+    "authors": "Felipe Arteaga, Adam J. Kapor, Christopher A. Neilson & Seth D. Zimmerman",
+    "year": 2022,
+    "venue": "The Quarterly Journal of Economics, 137(3)",
+    "url": "https://academic.oup.com/qje/article/137/3/1791/6544686",
+    "category": "journal",
+    "project": "sae-chile",
+    "extraLinks": [
+      { "label": "NBER working paper", "url": "https://www.nber.org/papers/w28946" }
+    ]
+  },
+  {
+    "title": "The Global Gender Gap in STEM Applications: Pipeline vs. Choice",
+    "authors": "Isaac Ahimbisibwe, Adam Altjmed, Georgy Artemov, Andrés Barrios-Fernández, Aspasia Bizopoulou, Martti Kaila, Jin-Tan Liu, Rigissa Megalokonomou, José Montalbán, Christopher Neilson, Jintao Sun, Sebastián Otero & Xiaoyang Ye",
+    "year": 2025,
+    "venue": "ConsiliumBots Working Paper Series · Issue 03",
+    "url": "https://consiliumbots.github.io/working-papers-cb/stem_gender_gaps/01_draft/03_EER/01_manuscript/EER_Submission.pdf",
+    "category": "working-paper",
+    "project": "women-in-stem"
+  },
+  {
+    "title": "Designing Smart School Choice Recommendations: Heuristics for Sure Alternatives",
+    "authors": "Ignacio Lepe",
+    "year": 2025,
+    "venue": "ConsiliumBots Working Paper Series · Issue 02",
+    "url": "https://consiliumbots.github.io/working-papers-cb/L_2025/working_paper/L_2025.pdf",
+    "category": "working-paper"
+  },
+  {
+    "title": "Approximating the Equilibrium Effects of Informed School Choice",
+    "authors": "Claudia Allende, Francisco Gallego & Christopher Neilson",
+    "year": 2019,
+    "venue": "ConsiliumBots Working Paper Series · Issue 01",
+    "url": "https://consiliumbots.github.io/working-papers-cb/AGN_2019/working_paper/AGN_2019.pdf",
+    "category": "working-paper",
+    "extraLinks": [
+      {
+        "label": "Policy brief",
+        "url": "https://consiliumbots.github.io/working-papers-cb/AGN_2019/working_paper/policy-brief.pdf"
+      }
+    ]
+  },
+  {
+    "title": "The Rise of Coordinated Choice and Assignment Systems in Education Markets Around the World",
+    "authors": "Christopher A. Neilson",
+    "year": 2026,
+    "venue": "Review paper · 149 countries, 600+ cities",
+    "url": "https://www.ccas.wiki",
+    "category": "working-paper",
+    "project": "ccas-review"
+  },
+  {
+    "title": "The Effects of Earnings Disclosure on College Enrollment Decisions",
+    "authors": "Justine Hastings, Christopher A. Neilson & Seth D. Zimmerman",
+    "year": 2015,
+    "venue": "NBER Working Paper 21300",
+    "url": "https://www.nber.org/papers/w21300",
+    "category": "working-paper"
+  },
+  {
+    "title": "Application Mistakes in College Admissions in Chile",
+    "authors": "",
+    "year": null,
+    "venue": "Research project",
+    "url": "https://christopherneilson.github.io/work/Application-Mistakes.html",
+    "category": "working-paper"
+  },
+  {
+    "title": "AVE — Aprendiendo el Valor de la Educación: USAID Endline Report",
+    "authors": "",
+    "year": null,
+    "venue": "Impact evaluation · Dominican Republic",
+    "url": "https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
+    "category": "report",
+    "project": "ave-dominican-republic"
+  },
+  {
+    "title": "Decidiendo para un Futuro Mejor: DOL Endline Report",
+    "authors": "",
+    "year": null,
+    "venue": "Impact evaluation",
+    "url": "https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf",
+    "category": "report",
+    "project": "dfm-chile"
+  },
+  {
+    "title": "The (Perceived) Returns to Education and the Demand for Schooling",
+    "authors": "Robert Jensen",
+    "year": 2010,
+    "venue": "The Quarterly Journal of Economics, 125(2)",
+    "url": "https://academic.oup.com/qje/article-abstract/125/2/515/1882172",
+    "category": "motivating"
+  }
+]

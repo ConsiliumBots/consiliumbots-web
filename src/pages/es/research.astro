@@ -1,106 +1,118 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import publications from '../../data/publications.json';
+import { projects } from '../../data/site-data.js';
 
-const publications = [
+const nameBySlug = Object.fromEntries(projects.map((p) => [p.slug, p.name]));
+
+const byCategory = (c) => publications.filter((p) => p.category === c);
+
+const sections = [
   {
-    title: 'Plataformas de emparejamiento inteligente y elección de escuela en Chile',
-    authors: 'Allende, Gallego & Neilson',
-    venue: 'Quarterly Journal of Economics',
-    url: 'https://academic.oup.com/qje/article/137/3/1791/6544686',
+    id: 'journal',
+    title: 'Publicaciones con revisión de pares',
+    blurb: 'Trabajos de nuestras colaboraciones publicados en revistas académicas.',
+    items: byCategory('journal'),
   },
   {
-    title: 'Elección informada de escuela en Chile',
-    authors: 'Allende, Gallego & Neilson (2021)',
-    venue: 'Documento de trabajo',
-    url: 'https://dataspace.princeton.edu/handle/88435/dsp01fj2364948',
+    id: 'working-papers',
+    title: 'Documentos de trabajo',
+    blurb:
+      'Investigación en curso, incluida la Serie de Documentos de Trabajo de ConsiliumBots y artículos de nuestros investigadores afiliados.',
+    items: byCategory('working-paper'),
   },
   {
-    title: 'Errores de postulación en la admisión universitaria en Chile',
-    authors: 'Christopher Neilson and coauthors',
-    venue: '',
-    url: 'https://christopherneilson.github.io/work/Application-Mistakes.html',
+    id: 'reports',
+    title: 'Informes de proyectos y evaluaciones',
+    blurb:
+      'Informes finales y evaluaciones de impacto elaborados junto a nuestros socios gubernamentales y financiadores.',
+    items: byCategory('report'),
   },
   {
-    title: 'Los efectos de la divulgación de ingresos en las decisiones de matrícula universitaria',
-    authors: 'Hastings, Neilson & Zimmerman (2015)',
-    venue: 'NBER Working Paper',
-    url: 'https://www.nber.org/papers/w21300',
+    id: 'motivating',
+    title: 'Investigación que motiva nuestro trabajo',
+    blurb: 'Evidencia fundamental que orienta el diseño de nuestras intervenciones.',
+    items: byCategory('motivating'),
   },
 ];
 
-const reports = [
-  {
-    title: 'AVE — Aprendiendo el Valor de la Educación: USAID Endline Report',
-    url: 'https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf',
-  },
-  {
-    title: 'Decidiendo para un Futuro Mejor: DOL Endline Report',
-    url: 'https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf',
-  },
-];
+const total = publications.length;
 
-const evidence = [
-  {
-    title: 'Los retornos (percibidos) de la educación y la demanda de escolaridad',
-    authors: 'Jensen (2010)',
-    venue: 'Quarterly Journal of Economics',
-    url: 'https://academic.oup.com/qje/article-abstract/125/2/515/1882172',
-  },
-];
+// Datos estructurados para que los buscadores indexen estos trabajos académicos.
+const publicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Publicaciones de las colaboraciones de ConsiliumBots',
+  numberOfItems: total,
+  itemListElement: publications.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'ScholarlyArticle',
+      name: p.title,
+      url: p.url,
+      ...(p.year ? { datePublished: String(p.year) } : {}),
+      ...(p.authors ? { author: { '@type': 'Person', name: p.authors } } : {}),
+      ...(p.venue ? { publication: p.venue } : {}),
+    },
+  })),
+};
 ---
 
 <BaseLayout
   lang="es"
-  title="Investigación | ConsiliumBots"
-  description="Nuestros proyectos producen evidencia rigurosa sobre soluciones a problemas sociales, avanzando en el conocimiento en colaboración con investigadores afiliados."
+  title="Publicaciones e Investigación | ConsiliumBots"
+  description="Publicaciones con revisión de pares, documentos de trabajo y evaluaciones de impacto producidos a través de las colaboraciones de ConsiliumBots en elección de escuela, admisión universitaria e intervenciones informativas."
 >
   <section class="page-hero">
     <div class="wrap">
-      <h1>Investigación</h1>
+      <h1>Publicaciones e Investigación</h1>
       <p>
-        Nuestros proyectos producen evidencia rigurosa sobre soluciones a problemas sociales y
-        avanzan en el conocimiento en colaboración con nuestros investigadores afiliados.
+        Nuestros proyectos permiten producir evidencia rigurosa sobre soluciones a problemas
+        sociales y avanzar en el conocimiento en colaboración con nuestros investigadores
+        afiliados. A continuación están las publicaciones, documentos de trabajo y evaluaciones
+        que han surgido de estas colaboraciones.
       </p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <h2 class="section-title">Publicaciones seleccionadas</h2>
-      <div class="pub-list">
-        {publications.map((p) => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub">
-            <div>
-              <span class="pub-title">{p.title}</span>
-              <span class="pub-meta">{[p.authors, p.venue].filter(Boolean).join(' · ')}</span>
-            </div>
-            <img src="/icons/arrow-outward.svg" alt="" width="16" />
-          </a>
-        ))}
-      </div>
-
-      <h2 class="section-title" style="margin-top:48px">Reportes de proyectos</h2>
-      <div class="pub-list">
-        {reports.map((p) => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub">
-            <span class="pub-title">{p.title}</span>
-            <img src="/icons/arrow-outward.svg" alt="" width="16" />
-          </a>
-        ))}
-      </div>
-
-      <h2 class="section-title" style="margin-top:48px">Investigación que motiva nuestro trabajo</h2>
-      <div class="pub-list">
-        {evidence.map((p) => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub">
-            <div>
-              <span class="pub-title">{p.title}</span>
-              <span class="pub-meta">{[p.authors, p.venue].filter(Boolean).join(' · ')}</span>
-            </div>
-            <img src="/icons/arrow-outward.svg" alt="" width="16" />
-          </a>
-        ))}
-      </div>
+      {sections.filter((s) => s.items.length > 0).map((section) => (
+        <div class="pub-section">
+          <h2 class="section-title" id={section.id}>{section.title}</h2>
+          <p class="section-blurb">{section.blurb}</p>
+          <div class="pub-list">
+            {section.items.map((p) => (
+              <div class="pub">
+                <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub-main">
+                  <div>
+                    <span class="pub-title">{p.title}</span>
+                    <span class="pub-meta">
+                      {[p.authors, p.venue, p.year].filter(Boolean).join(' · ')}
+                    </span>
+                  </div>
+                  <img src="/icons/arrow-outward.svg" alt="" width="16" />
+                </a>
+                {(p.project || p.extraLinks) && (
+                  <div class="pub-links">
+                    {p.project && nameBySlug[p.project] && (
+                      <a href={`/projects/${p.project}`} class="pub-tag">
+                        {nameBySlug[p.project]}
+                      </a>
+                    )}
+                    {(p.extraLinks ?? []).map((l) => (
+                      <a href={l.url} target="_blank" rel="noopener noreferrer" class="pub-tag pub-tag-alt">
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   </section>
 
@@ -116,25 +128,41 @@ const evidence = [
       </a>
     </div>
   </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(publicationSchema)} />
 </BaseLayout>
 
 <style>
+  .pub-section {
+    margin-bottom: 56px;
+  }
+  .pub-section:last-child {
+    margin-bottom: 0;
+  }
+  .section-blurb {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    max-width: 640px;
+    margin: -8px 0 20px;
+  }
   .pub-list {
     display: flex;
     flex-direction: column;
     gap: 2px;
   }
   .pub {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 16px 20px;
     border-radius: 8px;
     transition: background 0.2s ease;
   }
   .pub:hover {
     background: var(--color-bg-light);
+  }
+  .pub-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 20px 6px;
   }
   .pub-title {
     display: block;
@@ -146,6 +174,32 @@ const evidence = [
     font-size: 0.82rem;
     color: var(--color-text-muted);
     margin-top: 2px;
+    line-height: 1.5;
+  }
+  .pub-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0 20px 14px;
+  }
+  .pub-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    background: rgba(37, 99, 235, 0.08);
+    border-radius: 999px;
+    padding: 4px 10px;
+    transition: background 0.2s ease;
+  }
+  .pub-tag:hover {
+    background: rgba(37, 99, 235, 0.16);
+  }
+  .pub-tag-alt {
+    color: var(--color-text-muted);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  .pub-tag-alt:hover {
+    background: rgba(0, 0, 0, 0.09);
   }
   .more-links {
     display: flex;
