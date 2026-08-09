@@ -564,10 +564,11 @@
     "startYear": 2021,
     "endYear": 2024,
     "type": "Assignment Algorithm Operations + Information Intervention",
-    "description": "A multi-year engagement with Chile's Ministry of Education supporting the Sistema de Admisión Escolar (SAE), the national system that assigns students to schools. ConsiliumBots maintained the deferred-acceptance assignment algorithm, built a risk API that estimates a family's chances of admission to the schools they are considering, produced congestion reports on where demand outstrips available seats, and delivered personalized feedback to families during the application process. The risk API was handed over to MINEDUC in 2024 for the ministry to run itself.",
+    "description": "A three-year contract with Chile's Ministry of Education, won through public procurement, supporting the Sistema de Admisión Escolar (SAE), the national system that assigns students to schools. ConsiliumBots maintained the deferred-acceptance assignment algorithm, built a risk API that estimates a family's chances of admission to the schools they are considering, produced congestion reports on where demand outstrips available seats, and delivered personalized feedback to families during the application process. The risk API was handed over to MINEDUC in 2024 for the ministry to run itself.",
     "targetPopulation": "Families applying to schools through Chile's national admission system",
     "scale": null,
     "outcomes": [
+      "Three-year contract awarded through public procurement",
       "Admission-risk API delivered to MINEDUC in 2024 for the ministry to operate",
       "Personalized application feedback delivered to families during the admission process",
       "Congestion reporting on oversubscribed schools and programs"
