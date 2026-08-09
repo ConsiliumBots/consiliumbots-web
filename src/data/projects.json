@@ -14,7 +14,11 @@
     "outcomes": [
       "RCT endline analysis ongoing",
       "76% of schools with vulnerability index ≥ 0.8",
-      "70%+ public schools, rest subsidized"
+      "70%+ public schools, rest subsidized",
+      "1,100 schools reached across Chile and Colombia, with more than 8 million interactions",
+      "60% of students completed the program, against a 6.5% average for open online courses",
+      "70% of students rated the content good or very good",
+      "Awareness of financial aid options increased fivefold; salary perception bias fell 87%"
     ],
     "technologies": [
       "Web application",
@@ -438,10 +442,13 @@
     "startYear": 2021,
     "endYear": 2022,
     "type": "Information Intervention",
-    "description": "Personalized feedback for teachers applying through Ecuador's centralized teacher selection competitions, Quiero Ser Maestro-IB and Quiero Ser Maestro-7. Each teacher received clearer information about the positions open to them and how the assignment worked, developed and implemented with the Inter-American Development Bank.",
+    "description": "Personalized feedback for teachers applying through Ecuador's centralized teacher selection competitions, Quiero Ser Maestro-IB and Quiero Ser Maestro-7. Reports were sent by SMS and WhatsApp carrying a non-assignment risk alert and recommending posts where the teacher stood a better chance, timed so they could still change their application. Developed and implemented with the Inter-American Development Bank.",
     "targetPopulation": "Teachers applying through Ecuador's Quiero Ser Maestro selection competitions",
     "scale": null,
-    "outcomes": [],
+    "outcomes": [
+      "37% increase in the probability of a teacher being assigned a post",
+      "Higher average scores among selected teachers, and more vacancies filled"
+    ],
     "technologies": [
       "Vue.js",
       "API"
@@ -530,7 +537,9 @@
     "description": "Centralized student-to-school assignment system with school information platform for New Haven families.",
     "targetPopulation": null,
     "scale": null,
-    "outcomes": [],
+    "outcomes": [
+      "Live application feedback cut the risk of going unplaced by 58% across the New Haven and Chilean choice systems"
+    ],
     "technologies": [],
     "partner": null,
     "client": "New Haven Public Schools",
