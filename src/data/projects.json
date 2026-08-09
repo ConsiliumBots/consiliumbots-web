@@ -263,6 +263,42 @@
     "contributors": []
   },
   {
+    "slug": "application-mistakes-chile",
+    "name": "College Application Mistakes — Chile",
+    "status": "completed",
+    "country": "Chile",
+    "region": null,
+    "startYear": 2021,
+    "endYear": 2024,
+    "type": "Information Intervention + RCT",
+    "description": "A multi-year collaboration with Chile's higher-education admissions system to stop students from losing places they had earned. Nationwide surveys found that 40% of students were not applying to the program they most wanted, and that one in ten of those students would have been better off had they applied. Working with the Ministry of Education and DEMRE, ConsiliumBots delivered personalized information during the application window — what each program involves, a student's real chances of admission, and alternative majors worth considering — first as a large-scale field experiment and then as national policy.",
+    "targetPopulation": "Chilean students applying to university through the centralized admissions process",
+    "scale": null,
+    "outcomes": [
+      "40% of students were not applying to their preferred program; 10% of them would have benefited from doing so",
+      "Field experiment raised the probability of assignment for unmatched students by 20%, and of a better assignment for undermatched students by 38%",
+      "After scaling nationally, roughly doubled the matching probability for unmatched and undermatched students",
+      "Tripled the likelihood of enrollment for students who would otherwise have gone unmatched"
+    ],
+    "technologies": [
+      "Web application",
+      "Personalized reports",
+      "Admission probability models"
+    ],
+    "partner": null,
+    "client": "Chile Ministry of Education; DEMRE",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": "https://christopherneilson.github.io/work/documents/Information_Frictions_and_Application_Mistakes_LRFN_2025.pdf",
+    "website": null,
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      }
+    ]
+  },
+  {
     "slug": "chatbot-highered-chile",
     "name": "Higher Education Chatbot — Chile",
     "status": "completed",
@@ -347,8 +383,8 @@
     "startYear": 2021,
     "endYear": 2024,
     "type": "Information Intervention",
-    "description": "Personalized reports — cartillas — delivered to families at the moment they are making a decision, summarizing what their options are and what each one would mean for them. Deployments covered early-childhood admissions and higher-education access in Chile, and pilots in Tacna, Peru and Espírito Santo, Brazil.",
-    "targetPopulation": "Families applying to early-childhood programs, schools and higher education",
+    "description": "Personalized reports — cartillas — delivered to families at the moment they are making a decision, summarizing what their options are and what each one would mean for them. Deployments covered early-childhood admissions in Chile and school-choice pilots in Tacna, Peru and Espírito Santo, Brazil. The higher-education version of this work in Chile is covered by the College Application Mistakes project.",
+    "targetPopulation": "Families applying to early-childhood programs and schools",
     "scale": null,
     "outcomes": [],
     "technologies": [
