@@ -341,6 +341,37 @@
     ]
   },
   {
+    "slug": "sae-algorithm-feedback-chile",
+    "name": "SAE — Algorithm Management and School Choice Feedback (Chile)",
+    "status": "completed",
+    "country": "Chile",
+    "region": null,
+    "startYear": 2021,
+    "endYear": 2024,
+    "type": "Assignment Algorithm Operations + Information Intervention",
+    "description": "A multi-year engagement with Chile's Ministry of Education supporting the Sistema de Admisión Escolar (SAE), the national system that assigns students to schools. ConsiliumBots maintained the deferred-acceptance assignment algorithm, built a risk API that estimates a family's chances of admission to the schools they are considering, produced congestion reports on where demand outstrips available seats, and delivered personalized feedback to families during the application process. The risk API was handed over to MINEDUC in 2024 for the ministry to run itself.",
+    "targetPopulation": "Families applying to schools through Chile's national admission system",
+    "scale": null,
+    "outcomes": [
+      "Admission-risk API delivered to MINEDUC in 2024 for the ministry to operate",
+      "Personalized application feedback delivered to families during the admission process",
+      "Congestion reporting on oversubscribed schools and programs"
+    ],
+    "technologies": [
+      "Deferred acceptance algorithm",
+      "Java",
+      ".NET",
+      "Web application"
+    ],
+    "partner": null,
+    "client": "Chile Ministry of Education (MINEDUC)",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": []
+  },
+  {
     "slug": "acceso-libre-peru",
     "name": "Acceso Libre — Peru",
     "status": "completed",
