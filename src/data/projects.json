@@ -164,10 +164,14 @@
     "startYear": null,
     "endYear": null,
     "type": "Chatbot / Information Intervention",
-    "description": "AI chatbot helping Colombian students navigate higher education options based on ICFES exam results.",
-    "targetPopulation": null,
-    "scale": null,
-    "outcomes": [],
+    "description": "AI chatbot helping Colombian students navigate higher education options based on ICFES exam results, delivered over WhatsApp and reaching students nationwide each year since 2017.",
+    "targetPopulation": "Colombian students receiving Saber 11 (ICFES) results",
+    "scale": "430,000+ students reached in 2023 (seventh consecutive year), 41.5% response rate",
+    "outcomes": [
+      "Higher education application rates increased 36%",
+      "Student loan take-up increased 27%",
+      "Largest effects among students receiving personalized information"
+    ],
     "technologies": [
       "Chatbot",
       "WhatsApp",
@@ -350,6 +354,31 @@
     "contributors": []
   },
   {
+    "slug": "osobot-bogota",
+    "name": "OSObot — Vocational Guidance, Bogotá",
+    "status": "completed",
+    "country": "Colombia",
+    "region": "Bogotá",
+    "startYear": null,
+    "endYear": null,
+    "type": "Chatbot / Information Intervention",
+    "description": "A vocational guidance chatbot for students in their final two years of secondary education in Bogotá, helping them think through what to study and what comes after school.",
+    "targetPopulation": "Students in the final two years of secondary education in Bogotá",
+    "scale": "48,000+ students reached, 44.5% response rate",
+    "outcomes": [],
+    "technologies": [
+      "Chatbot",
+      "WhatsApp"
+    ],
+    "partner": null,
+    "client": "Secretaría de Educación de Bogotá",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": []
+  },
+  {
     "slug": "explorer-colombia",
     "name": "School Explorer — Colombia",
     "status": "completed",
@@ -409,15 +438,15 @@
     "startYear": 2021,
     "endYear": 2022,
     "type": "Information Intervention",
-    "description": "Personalized reports for teachers taking part in Ecuador's teacher assignment process, giving each teacher clearer information about the positions available to them and how the assignment works.",
-    "targetPopulation": "Teachers applying for positions through Ecuador's assignment process",
+    "description": "Personalized feedback for teachers applying through Ecuador's centralized teacher selection competitions, Quiero Ser Maestro-IB and Quiero Ser Maestro-7. Each teacher received clearer information about the positions open to them and how the assignment worked, developed and implemented with the Inter-American Development Bank.",
+    "targetPopulation": "Teachers applying through Ecuador's Quiero Ser Maestro selection competitions",
     "scale": null,
     "outcomes": [],
     "technologies": [
       "Vue.js",
       "API"
     ],
-    "partner": null,
+    "partner": "Inter-American Development Bank (IDB)",
     "client": null,
     "funders": [],
     "costEffectiveness": null,
@@ -566,7 +595,7 @@
     "type": "Assignment Algorithm Operations + Information Intervention",
     "description": "A three-year contract with Chile's Ministry of Education, won through public procurement, supporting the Sistema de Admisión Escolar (SAE), the national system that assigns students to schools. ConsiliumBots maintained the deferred-acceptance assignment algorithm, built a risk API that estimates a family's chances of admission to the schools they are considering, produced congestion reports on where demand outstrips available seats, and delivered personalized feedback to families during the application process. The risk API was handed over to MINEDUC in 2024 for the ministry to run itself.",
     "targetPopulation": "Families applying to schools through Chile's national admission system",
-    "scale": null,
+    "scale": "Over 500,000 families per admission cycle; ConsiliumBots ran the assignment for the 2022, 2023 and 2024 cycles",
     "outcomes": [
       "Three-year contract awarded through public procurement",
       "Admission-risk API delivered to MINEDUC in 2024 for the ministry to operate",
