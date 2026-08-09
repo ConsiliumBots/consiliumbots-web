@@ -263,6 +263,57 @@
     "contributors": []
   },
   {
+    "slug": "chatbot-highered-chile",
+    "name": "Higher Education Chatbot — Chile",
+    "status": "completed",
+    "country": "Chile",
+    "region": null,
+    "startYear": 2020,
+    "endYear": 2021,
+    "type": "Chatbot / Information Intervention",
+    "description": "A conversational assistant built with Chile's Ministry of Education that answered students' questions about higher education — what they could study, where, and what it would cost — at the point they were deciding whether and where to apply. A machine-learning recommender behind the chatbot tailored suggested programs to each student.",
+    "targetPopulation": "Chilean students considering higher education",
+    "scale": null,
+    "outcomes": [],
+    "technologies": [
+      "Chatbot",
+      "Machine learning recommender",
+      "WhatsApp / SMS"
+    ],
+    "partner": null,
+    "client": "Chile Ministry of Education (MINEDUC)",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": []
+  },
+  {
+    "slug": "risk-api-pernambuco",
+    "name": "Admission Risk API — Pernambuco, Brazil",
+    "status": "completed",
+    "country": "Brazil",
+    "region": "Pernambuco",
+    "startYear": 2020,
+    "endYear": 2020,
+    "type": "Smart Matching Platform",
+    "description": "An implementation of ConsiliumBots' admission-risk API for Pernambuco's centralized school assignment, estimating how likely a family is to be admitted to each school they are considering so they can apply with a realistic picture of their chances.",
+    "targetPopulation": "Families applying through Pernambuco's centralized school assignment",
+    "scale": null,
+    "outcomes": [],
+    "technologies": [
+      "Risk API",
+      "Deferred acceptance algorithm"
+    ],
+    "partner": null,
+    "client": "Governo do Estado de Pernambuco",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": null,
+    "website": null,
+    "contributors": []
+  },
+  {
     "slug": "explorer-colombia",
     "name": "School Explorer — Colombia",
     "status": "completed",
