@@ -52,6 +52,19 @@ Run from the project root:
 Images referenced by the data files live in `public/images/` (team photos, project art,
 government/collaborator logos).
 
+### Internal data boundary
+
+The files in `src/data/` are the website's canonical **public** content. They are curated separately from the private `consiliumbots-data` repository and are not synchronized automatically.
+
+When transferring information from the internal repository:
+
+1. Copy only fields approved for publication.
+2. Exclude private contact details, grant budgets, payroll information, internal notes, compliance records, and unpublished results.
+3. Rewrite internal operational language for a public audience where necessary.
+4. Review the resulting website diff before deployment.
+
+See `src/data/README.md` for field-level handling guidance.
+
 ## Deployment
 
 Production is served at `https://www.consiliumbots.com` (configured as `site` in
