@@ -1,0 +1,279 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { localizePath, useTranslations } from '../i18n.js';
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  authors?: string[];
+  heroImage?: string;
+  ogImage?: string;
+  tags?: string[];
+  paperUrl?: string;
+  paperLabel?: string;
+  lang?: 'en' | 'es';
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  pubDate,
+  updatedDate,
+  authors = [],
+  heroImage,
+  ogImage,
+  tags = [],
+  paperUrl,
+  paperLabel,
+  lang = 'en',
+} = Astro.props;
+
+const t = useTranslations(lang);
+const locale = lang === 'es' ? 'es-ES' : 'en-US';
+const fmt = (d: Date) =>
+  d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<!--
+  bilingual={false} on purpose: /es/blog/<slug> currently serves the English
+  post as a fallback, so emitting an hreflang="es" alternate would claim a
+  Spanish translation that does not exist. Flip this to true once posts are
+  actually translated under src/content/blog/es/.
+-->
+<BaseLayout
+  title={`${title} — ConsiliumBots`}
+  description={description}
+  ogImage={ogImage ?? heroImage}
+  lang={lang}
+  bilingual={false}
+>
+  <article class="post">
+    <div class="wrap post-wrap">
+      <a href={localizePath('/blog', lang)} class="post-back">{t('blog.back')}</a>
+
+      <header class="post-header">
+        <h1>{title}</h1>
+        {subtitle && <p class="post-subtitle">{subtitle}</p>}
+
+        <div class="post-meta">
+          <time datetime={pubDate.toISOString()}>{fmt(pubDate)}</time>
+          {authors.length > 0 && <span class="post-dot">·</span>}
+          {authors.length > 0 && <span>{authors.join(' · ')}</span>}
+          {updatedDate && (
+            <span class="post-updated">{t('blog.updated')} {fmt(updatedDate)}</span>
+          )}
+        </div>
+
+        {tags.length > 0 && (
+          <ul class="post-tags">
+            {tags.map((tag) => <li>{tag}</li>)}
+          </ul>
+        )}
+      </header>
+
+      {heroImage && (
+        <img class="post-hero" src={heroImage} alt="" width="2400" height="1000" />
+      )}
+
+      <div class="post-body">
+        <slot />
+      </div>
+
+      {paperUrl && (
+        <aside class="post-cta">
+          <p class="post-cta-label">{t('blog.readPaper')}</p>
+          <a href={paperUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            {paperLabel ?? t('blog.downloadPdf')}
+          </a>
+        </aside>
+      )}
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .post {
+    padding: 56px 0 96px;
+  }
+  .post-wrap {
+    max-width: 760px;
+  }
+  .post-back {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+  .post-back:hover {
+    text-decoration: underline;
+  }
+
+  .post-header h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 18px;
+  }
+  .post-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+  }
+  .post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+  }
+  .post-dot {
+    color: var(--color-border);
+  }
+  .post-updated {
+    width: 100%;
+    font-style: italic;
+  }
+  .post-tags {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .post-tags li {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 4px 12px;
+  }
+
+  .post-hero {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    margin: 40px 0 8px;
+  }
+
+  /* ── article body ─────────────────────────────────────── */
+  .post-body {
+    margin-top: 40px;
+    font-size: 1.06rem;
+    line-height: 1.75;
+    color: var(--color-text);
+  }
+  .post-body :global(h2) {
+    font-size: 1.5rem;
+    margin: 52px 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .post-body :global(h3) {
+    font-size: 1.18rem;
+    margin: 36px 0 12px;
+  }
+  .post-body :global(p) {
+    margin-bottom: 22px;
+  }
+  .post-body :global(a) {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .post-body :global(strong) {
+    font-weight: 600;
+  }
+  .post-body :global(ul),
+  .post-body :global(ol) {
+    margin: 0 0 22px 1.2rem;
+  }
+  .post-body :global(li) {
+    margin-bottom: 8px;
+  }
+  .post-body :global(img) {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin: 32px 0 8px;
+  }
+  .post-body :global(figure) {
+    margin: 36px 0;
+  }
+  .post-body :global(figcaption) {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+  .post-body :global(blockquote) {
+    margin: 32px 0;
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--color-accent);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--color-primary);
+  }
+  .post-body :global(blockquote p:last-child) {
+    margin-bottom: 0;
+  }
+  .post-body :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--color-border);
+    margin: 48px 0;
+  }
+  .post-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin: 28px 0;
+  }
+  .post-body :global(th),
+  .post-body :global(td) {
+    border: 1px solid var(--color-border);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+  }
+  .post-body :global(th) {
+    background: var(--color-bg-light);
+    font-weight: 600;
+  }
+  .post-body :global(em) {
+    color: var(--color-text-light);
+  }
+
+  .post-cta {
+    margin-top: 56px;
+    padding: 28px 32px;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  }
+  .post-cta-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 768px) {
+    .post {
+      padding: 32px 0 64px;
+    }
+    .post-body {
+      font-size: 1.02rem;
+    }
+  }
+</style>
