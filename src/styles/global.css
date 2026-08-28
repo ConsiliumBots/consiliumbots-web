@@ -14,22 +14,41 @@
   --color-accent-hover: #1d4ed8;
   --color-text: #1a1a2e;
   --color-text-light: #555;
-  --color-text-muted: #777;
+  /* Keep >= 4.5:1 (WCAG AA) on both --color-bg and --color-bg-light */
+  --color-text-muted: #666;
   --color-bg: #ffffff;
   --color-bg-light: #f8f9fa;
   --color-bg-blue: #1a3a5c;
   --color-border: #e5e7eb;
   --color-white: #ffffff;
 
-  --font-serif: 'Baskervville', Georgia, serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --max-width: 1200px;
   --nav-height: 72px;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Visually hidden until focused; first focusable element on every page */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 2000;
+  padding: 10px 16px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 16px;
 }
 
 body {

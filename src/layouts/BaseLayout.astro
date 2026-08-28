@@ -2,13 +2,12 @@
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { GA_MEASUREMENT_ID } from '../config.js';
-import { stripLang, localizePath } from '../i18n.js';
+import { stripLang, localizePath, useTranslations } from '../i18n.js';
 // Self-hosted fonts (latin subset covers English + Spanish) — no third-party request
 import '@fontsource/inter/latin-400.css';
 import '@fontsource/inter/latin-500.css';
 import '@fontsource/inter/latin-600.css';
 import '@fontsource/inter/latin-700.css';
-import '@fontsource/baskervville/latin-400.css';
 import '../styles/global.css';
 
 interface Props {
@@ -17,6 +16,19 @@ interface Props {
   ogImage?: string;
   lang?: 'en' | 'es';
   bilingual?: boolean;
+  /** Canonicalize to this path instead of the page's own URL (e.g. untranslated /es/blog/ fallbacks point at the English post). */
+  canonicalPath?: string;
+  ogType?: 'website' | 'article';
+  /** Emitted as article:* meta when ogType is "article". */
+  article?: { publishedTime: string; modifiedTime?: string };
+  /** Extra Schema.org nodes appended to the JSON-LD @graph. */
+  extraSchema?: Record<string, unknown>[];
+  /** Where the nav language switcher lands when the page has no translation (bilingual={false}). */
+  langSwitchBase?: string;
+  /** Language of the page's main content when it differs from the chrome (untranslated fallbacks). Drives og:locale. */
+  contentLang?: 'en' | 'es';
+  /** Ask crawlers not to index (e.g. the 404 page); also suppresses the canonical link. */
+  noindex?: boolean;
 }
 
 const {
@@ -25,19 +37,32 @@ const {
   ogImage = '/images/og-image.png',
   lang = 'en',
   bilingual = true,
+  canonicalPath,
+  ogType = 'website',
+  article,
+  extraSchema = [],
+  langSwitchBase = '/',
+  contentLang = lang,
+  noindex = false,
 } = Astro.props;
 
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const t = useTranslations(lang);
+
+// GitHub Pages serves the trailing-slash directory URLs; the slash-less form
+// 301-redirects, so canonical and hreflang must both use the slash form.
+const withTrailingSlash = (p: string) => (p.endsWith('/') ? p : `${p}/`);
+
+const canonicalUrl = new URL(withTrailingSlash(canonicalPath ?? Astro.url.pathname), Astro.site);
 const ogImageUrl = new URL(ogImage, Astro.site);
 
 const siteUrl = Astro.site ? Astro.site.href.replace(/\/$/, '') : 'https://www.consiliumbots.com';
 
 // hreflang alternates (only emitted when the page exists in both languages)
 const basePath = stripLang(Astro.url.pathname);
-const enHref = new URL(localizePath(basePath, 'en'), Astro.site);
-const esHref = new URL(localizePath(basePath, 'es'), Astro.site);
-const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
-const ogLocaleAlt = lang === 'es' ? 'en_US' : 'es_ES';
+const enHref = new URL(withTrailingSlash(localizePath(basePath, 'en')), Astro.site);
+const esHref = new URL(withTrailingSlash(localizePath(basePath, 'es')), Astro.site);
+const ogLocale = contentLang === 'es' ? 'es_ES' : 'en_US';
+const ogLocaleAlt = contentLang === 'es' ? 'en_US' : 'es_ES';
 
 // Organization + WebSite structured data (Schema.org) for entity recognition
 const structuredData = {
@@ -63,6 +88,7 @@ const structuredData = {
       url: `${siteUrl}/`,
       publisher: { '@id': `${siteUrl}/#organization` },
     },
+    ...extraSchema,
   ],
 };
 ---
@@ -74,7 +100,7 @@ const structuredData = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonicalUrl} />}
 
     {bilingual && (
       <>
@@ -85,7 +111,13 @@ const structuredData = {
     )}
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    {ogType === 'article' && article && (
+      <>
+        <meta property="article:published_time" content={article.publishedTime} />
+        {article.modifiedTime && <meta property="article:modified_time" content={article.modifiedTime} />}
+      </>
+    )}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
@@ -111,6 +143,9 @@ const structuredData = {
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
 
+    <!-- Blog feed -->
+    <link rel="alternate" type="application/rss+xml" title="ConsiliumBots Blog" href="/rss.xml" />
+
     <!-- Structured data (Schema.org) -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
@@ -123,8 +158,9 @@ const structuredData = {
     )}
   </head>
   <body>
-    <Navbar lang={lang} bilingual={bilingual} />
-    <main>
+    <a class="skip-link" href="#main">{t('a11y.skipToContent')}</a>
+    <Navbar lang={lang} bilingual={bilingual} switchBase={langSwitchBase} />
+    <main id="main">
       <slot />
     </main>
     <Footer lang={lang} />

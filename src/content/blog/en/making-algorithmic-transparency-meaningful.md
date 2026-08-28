@@ -27,7 +27,7 @@ Nobody tells her. The window closes. In March her son starts at a school she nev
 That family is a composite. The arithmetic is not. Across four admissions cycles and roughly 140,000 surveyed families, among applicants the platform can identify *in advance* as high-risk, the median family put their risk of going unassigned at around 20 percent when it was actually around 80 percent — a gap of 49 to 62 points, in every single cycle.
 
 <figure>
-  <img src="/images/blog/transparency2/believed-vs-actual.png" alt="Dumbbell chart comparing what the median high-risk family believes their risk of going unassigned to be — 19 to 30 percent — against their actual simulated risk of 78 to 82 percent, for each admissions cycle from 2020 to 2023." />
+  <img src="/images/blog/transparency2/believed-vs-actual.png" alt="Dumbbell chart comparing what the median high-risk family believes their risk of going unassigned to be — 19 to 30 percent — against their actual simulated risk of 78 to 82 percent, for each admissions cycle from 2020 to 2023." width="1520" height="1036" loading="lazy" />
   <figcaption>Among applicants the system can flag in advance as high-risk, believed risk sits roughly 60 points below the truth — in every cycle.</figcaption>
 </figure>
 
@@ -50,7 +50,7 @@ Chile's family-application rule lets siblings be considered together under a sha
 The share who could correctly identify what the rule actually does went from **2.3% to 4.9%**.
 
 <figure>
-  <img src="/images/blog/transparency2/declared-vs-verified.png" alt="Slope chart showing declared familiarity with the family-application rule rising from 36.8 percent to 60.4 percent between cycles, while verifiable comprehension rises only from 2.3 percent to 4.9 percent — a 55.5 point gap." />
+  <img src="/images/blog/transparency2/declared-vs-verified.png" alt="Slope chart showing declared familiarity with the family-application rule rising from 36.8 percent to 60.4 percent between cycles, while verifiable comprehension rises only from 2.3 percent to 4.9 percent — a 55.5 point gap." width="1520" height="1332" loading="lazy" />
   <figcaption>Declared familiarity nearly doubled in a single year. Verified comprehension barely moved.</figcaption>
 </figure>
 
@@ -69,7 +69,7 @@ Now hold that against what the SAE was built for. It replaced a regime where sch
 The mechanism is progressive. The information layer wrapped around it is not.
 
 <figure>
-  <img src="/images/blog/transparency2/equity-inversion.png" alt="Two-panel chart. Left: the priority structure lowers objective risk for lower-income applicants by 6 to 12 percentage points in every cycle. Right: at the same true risk, those same applicants understate their risk by 5.1 to 14 percentage points more than better-off applicants, across two independent measures of socioeconomic status." />
+  <img src="/images/blog/transparency2/equity-inversion.png" alt="Two-panel chart. Left: the priority structure lowers objective risk for lower-income applicants by 6 to 12 percentage points in every cycle. Right: at the same true risk, those same applicants understate their risk by 5.1 to 14 percentage points more than better-off applicants, across two independent measures of socioeconomic status." width="1520" height="797" loading="lazy" />
   <figcaption>The priority structure lowers true risk for lower-income applicants. The information layer makes those same families more wrong about it.</figcaption>
 </figure>
 
@@ -98,7 +98,7 @@ The fix is tested. It runs on infrastructure these systems already have: the pla
 Before reaching for better information, it's worth asking whether the user needed to make the decision at all. There's a hierarchy here, and most systems start at the wrong end of it.
 
 <figure>
-  <img src="/images/blog/transparency2/burden-ladder.png" alt="A four-rung ladder ordered by how much comprehension each approach demands of the user: eliminate the decision, make the decision belief-independent, deliver the belief, and publish the rules and hope." />
+  <img src="/images/blog/transparency2/burden-ladder.png" alt="A four-rung ladder ordered by how much comprehension each approach demands of the user: eliminate the decision, make the decision belief-independent, deliver the belief, and publish the rules and hope." width="1520" height="1014" loading="lazy" />
   <figcaption>Ranked by how much each approach demands of the user. MAT sits at rung three; most systems operate at rung four.</figcaption>
 </figure>
 

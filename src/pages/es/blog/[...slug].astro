@@ -15,6 +15,6 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<PostLayout {...post.data} lang="es">
+<PostLayout {...post.data} lang="es" postLang={post.data.lang}>
   <Content />
 </PostLayout>

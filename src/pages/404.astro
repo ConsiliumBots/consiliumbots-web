@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Page not found | ConsiliumBots" description="The page you were looking for could not be found." bilingual={false}>
+<BaseLayout title="Page not found | ConsiliumBots" description="The page you were looking for could not be found." bilingual={false} noindex>
   <section class="notfound">
     <div class="wrap">
       <p class="code">404</p>
@@ -12,6 +12,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="/" class="btn btn-primary">Back home</a>
         <a href="/projects" class="btn-arrow">Browse projects →</a>
       </div>
+      <!-- GitHub Pages serves this one page for every missing URL, /es/ included -->
+      <p class="msg msg-es" lang="es">
+        La página que buscas no existe o puede haberse movido.
+        <a href="/es/">Volver al inicio en español</a>.
+      </p>
     </div>
   </section>
 </BaseLayout>
@@ -27,6 +32,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-accent);
     margin: 0;
     line-height: 1;
+  }
+  .msg-es {
+    margin-top: 40px;
+    font-size: 0.92rem;
+  }
+  .msg-es a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
   .notfound h1 {
     margin: 12px 0 8px;

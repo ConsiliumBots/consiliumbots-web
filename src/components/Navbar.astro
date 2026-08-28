@@ -1,13 +1,15 @@
 ---
 import { useTranslations, stripLang, localizePath } from '../i18n.js';
 
-const { lang = 'en', bilingual = true } = Astro.props;
+// switchBase: where the language switcher lands when the page itself has no
+// translation (bilingual={false}) — e.g. "/projects" from an EN-only detail page.
+const { lang = 'en', bilingual = true, switchBase = '/' } = Astro.props;
 const t = useTranslations(lang);
 
 const currentPath = Astro.url.pathname;
 const basePath = stripLang(currentPath);
 const otherLang = lang === 'es' ? 'en' : 'es';
-const switchHref = bilingual ? localizePath(basePath, otherLang) : localizePath('/', otherLang);
+const switchHref = bilingual ? localizePath(basePath, otherLang) : localizePath(switchBase, otherLang);
 
 const navItems = [
   { key: 'nav.home', base: '/' },
@@ -50,7 +52,7 @@ function isActive(base) {
       </a>
     </nav>
 
-    <button class="navbar-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <button class="navbar-toggle" id="nav-toggle" aria-label={t('nav.menuToggle')} aria-controls="nav-menu" aria-expanded="false">
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>
       <span class="hamburger-line"></span>

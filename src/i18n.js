@@ -37,6 +37,8 @@ export const ui = {
     'nav.contact': 'Contact',
     'nav.langSwitch': 'ES',
     'nav.langSwitchLabel': 'Ver en español',
+    'nav.menuToggle': 'Toggle navigation menu',
+    'a11y.skipToContent': 'Skip to content',
     'blog.title': 'Blog',
     'blog.intro':
       'Notes on the research and the systems behind it — what we are learning from building information tools with governments.',
@@ -62,6 +64,8 @@ export const ui = {
     'nav.contact': 'Contacto',
     'nav.langSwitch': 'EN',
     'nav.langSwitchLabel': 'View in English',
+    'nav.menuToggle': 'Abrir o cerrar el menú de navegación',
+    'a11y.skipToContent': 'Saltar al contenido',
     'blog.title': 'Blog',
     'blog.intro':
       'Notas sobre la investigación y los sistemas detrás de ella: lo que aprendemos construyendo herramientas de información junto a gobiernos.',
@@ -72,7 +76,7 @@ export const ui = {
     'blog.downloadPdf': 'Descargar el PDF',
     'blog.empty': 'Aún no hay entradas.',
     'blog.englishNotice':
-      'Esta entrada está disponible sólo en inglés.',
+      'Esta entrada está disponible solo en inglés.',
     'footer.mission':
       'ConsiliumBots es una organización sin fines de lucro cuya misión es fomentar la innovación tecnológica para conectar los datos del gobierno con la comunidad.',
   },

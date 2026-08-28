@@ -8,6 +8,12 @@ const groups = [
   { key: 'proposed', label: 'Propuestos' },
   { key: 'research', label: 'Investigación' },
 ];
+const statusLabel = {
+  active: 'Activo',
+  completed: 'Completado',
+  proposed: 'Propuesto',
+  research: 'Investigación',
+};
 const byStatus = (s) => projects.filter((p) => p.status === s);
 ---
 
@@ -35,13 +41,14 @@ const byStatus = (s) => projects.filter((p) => p.status === s);
           <div class="proj-grid">
             {byStatus(g.key).map((p) => (
               <a href={`/projects/${p.slug}`} class="card proj-card">
-                <span class={`badge badge-${p.status}`}>{p.status}</span>
+                <span class={`badge badge-${p.status}`}>{statusLabel[p.status] ?? p.status}</span>
                 <h3>{p.name}</h3>
                 {(p.country || p.type) && (
                   <p class="proj-meta">{[p.country, p.type].filter(Boolean).join(' · ')}</p>
                 )}
                 {p.description && <p class="proj-desc">{p.description}</p>}
-                <span class="proj-link">Ver proyecto →</span>
+                {/* Detail pages exist only in English for now */}
+                <span class="proj-link">Ver proyecto (en inglés) →</span>
               </a>
             ))}
           </div>
