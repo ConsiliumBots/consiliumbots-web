@@ -1,6 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
+// Las familias de herramientas reflejan la taxonomía `type` de src/data/projects.json.
+const families = [
+  {
+    title: 'Chatbots y asistentes de IA',
+    body: 'Orientación conversacional por WhatsApp y la web que responde las preguntas de las familias y entrega recomendaciones personalizadas durante los períodos de postulación.',
+    examples: [
+      { name: 'IcfesBot — Colombia', slug: 'icfesbot' },
+      { name: 'Chatbot de Educación Superior — Chile', slug: 'chatbot-highered-chile' },
+    ],
+  },
+  {
+    title: 'Cartillas de retroalimentación personalizada',
+    body: 'Reportes individualizados que muestran a cada postulante sus opciones y sus riesgos reales de admisión antes de que cierren los plazos.',
+    examples: [
+      { name: 'Cartillas para estudiantes y familias', slug: 'feedback-reports-families' },
+      { name: 'Retroalimentación docente — Ecuador', slug: 'teacher-feedback-ecuador' },
+    ],
+  },
+  {
+    title: 'Exploradores de escuelas y carreras',
+    body: 'Plataformas de búsqueda que hacen comparables las escuelas, los programas y los resultados laborales para todas las familias.',
+    examples: [
+      { name: 'MIME — Chile', slug: 'mime-explorer-chile' },
+      { name: 'Explorador de Colegios — Colombia', slug: 'explorer-colombia' },
+    ],
+  },
+  {
+    title: 'Sistemas de postulación y asignación centralizada',
+    body: 'Hemos diseñado y ayudado a operar sistemas centralizados de elección y asignación — desde la gestión del algoritmo hasta la comunicación con los postulantes.',
+    examples: [
+      { name: 'Sistema de Admisión Escolar — Chile', slug: 'sae-chile' },
+      { name: 'New Haven Public Schools — EE. UU.', slug: 'nhps' },
+    ],
+  },
+  {
+    title: 'APIs de apoyo a decisiones',
+    body: 'Servicios de riesgo y recomendación que se integran a plataformas de gobierno para alertar a los postulantes en tiempo real.',
+    examples: [{ name: 'API de Riesgo de Admisión — Pernambuco, Brasil', slug: 'risk-api-pernambuco' }],
+  },
+];
+
 const approach = [
   {
     icon: '/images/figure-info-interventions.png',
@@ -50,6 +91,30 @@ const approach = [
 
   <section class="section section-alt">
     <div class="wrap">
+      <h2 class="section-title">Cómo trabajamos</h2>
+      <p class="lead how-lead">
+        Construimos y operamos herramientas de información gratuitas junto a gobiernos, y medimos su
+        impacto con nuestros investigadores afiliados. La mayor parte de nuestro trabajo se organiza
+        en cinco familias:
+      </p>
+      <div class="family-grid">
+        {families.map((f) => (
+          <div class="family-card">
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+            <div class="family-examples">
+              {f.examples.map((e) => (
+                <a href={`/projects/${e.slug}`} class="family-example">{e.name} →</a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
       <h2 class="section-title">Por qué es importante</h2>
       <div class="approach-grid">
         {approach.map((a) => (
@@ -87,6 +152,47 @@ const approach = [
   .lead strong {
     color: var(--color-text);
   }
+  .how-lead {
+    margin-bottom: 32px;
+  }
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .family-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .family-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .family-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .family-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .family-example {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  .family-example:hover {
+    text-decoration: underline;
+  }
   .approach-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -115,6 +221,9 @@ const approach = [
   }
   @media (max-width: 768px) {
     .approach-grid {
+      grid-template-columns: 1fr;
+    }
+    .family-grid {
       grid-template-columns: 1fr;
     }
   }

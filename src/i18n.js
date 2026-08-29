@@ -52,6 +52,8 @@ export const ui = {
       'This post is available in English only.',
     'footer.mission':
       'ConsiliumBots is a nonprofit organization with the mission of fostering technological innovation to connect government data with the community.',
+    'footer.privacy': 'Privacy',
+    'footer.accessibility': 'Accessibility',
   },
   es: {
     'nav.home': 'Inicio',
@@ -79,6 +81,8 @@ export const ui = {
       'Esta entrada está disponible solo en inglés.',
     'footer.mission':
       'ConsiliumBots es una organización sin fines de lucro cuya misión es fomentar la innovación tecnológica para conectar los datos del gobierno con la comunidad.',
+    'footer.privacy': 'Privacidad',
+    'footer.accessibility': 'Accesibilidad',
   },
 };
 

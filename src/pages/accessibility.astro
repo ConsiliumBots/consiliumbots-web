@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Accessibility | ConsiliumBots"
+  description="ConsiliumBots' accessibility commitment for this website: our WCAG 2.1 AA target, what we have implemented, and known limitations."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Accessibility</h1>
+      <p>Equitable access to information is our mission — including on this website.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap policy">
+      <p class="policy-date">Last updated: August 29, 2026</p>
+
+      <h2>Our commitment</h2>
+      <p>
+        We aim for this site to conform to the
+        <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">
+          Web Content Accessibility Guidelines (WCAG) 2.1</a>, Level AA.
+      </p>
+
+      <h2>What we have implemented</h2>
+      <ul>
+        <li>Semantic landmarks and a skip-to-content link on every page</li>
+        <li>Text colors checked against WCAG AA contrast minimums</li>
+        <li>Descriptive alternative text on informative images</li>
+        <li>Full keyboard operability, including the mobile navigation</li>
+        <li>Animations and autoplaying media honor the reduced-motion preference</li>
+        <li>Language attributes that identify English and Spanish content correctly</li>
+      </ul>
+
+      <h2>Known limitations</h2>
+      <ul>
+        <li>Some linked research reports are PDFs produced elsewhere and may not be fully accessible</li>
+        <li>Some content — including project detail pages and blog posts — is currently available in English only</li>
+        <li>The working-papers archive is a separate, older site that predates this accessibility work</li>
+      </ul>
+
+      <h2>Feedback</h2>
+      <p>
+        If you encounter a barrier using this site, please tell us via
+        <a href="https://www.linkedin.com/company/consiliumbots/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        or through the offices listed on the <a href="/contact">contact page</a>. We will do our
+        best to fix it and to provide the information in an accessible form.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .policy {
+    max-width: 760px;
+  }
+  .policy-date {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+  }
+  .policy h2 {
+    font-size: 1.15rem;
+    margin: 32px 0 10px;
+  }
+  .policy p,
+  .policy li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--color-text-light);
+  }
+  .policy p {
+    margin-bottom: 14px;
+  }
+  .policy ul {
+    margin: 0 0 14px 1.2rem;
+  }
+  .policy li {
+    margin-bottom: 6px;
+  }
+  .policy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

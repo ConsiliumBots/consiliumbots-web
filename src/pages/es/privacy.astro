@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="es"
+  title="Privacidad | ConsiliumBots"
+  description="Cómo el sitio web de ConsiliumBots maneja la analítica, las cookies y la información personal."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Privacidad</h1>
+      <p>Cómo este sitio web maneja la analítica, las cookies y la información personal.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap policy">
+      <p class="policy-date">Última actualización: 29 de agosto de 2026</p>
+
+      <h2>Alcance</h2>
+      <p>
+        Este aviso cubre el sitio web de ConsiliumBots en www.consiliumbots.com. Las herramientas
+        de información que construimos y operamos con gobiernos (chatbots, cartillas de
+        retroalimentación y servicios relacionados) funcionan en infraestructura separada y se
+        rigen por los acuerdos y términos de privacidad de cada programa — no por este aviso.
+      </p>
+
+      <h2>Qué recopila este sitio</h2>
+      <p>
+        Este sitio no tiene cuentas de usuario ni formularios, y no solicita información personal.
+        Los únicos datos recopilados son estadísticas de uso a través de Google Analytics 4, que
+        instala cookies para medir visitas y estadísticas agregadas y aproximadas de audiencia
+        (como país y tipo de dispositivo). Las usamos únicamente para entender qué contenido es
+        útil.
+      </p>
+
+      <h2>Analítica y tus opciones</h2>
+      <p>
+        Puedes impedir la recopilación de analítica bloqueando las cookies de este sitio en tu
+        navegador, usando un bloqueador de contenido, o con el
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">
+          complemento de exclusión de Google</a>. El tratamiento de estos datos por parte de Google
+        se describe en la
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+          Política de Privacidad de Google</a>.
+      </p>
+
+      <h2>Alojamiento</h2>
+      <p>
+        El sitio está alojado en GitHub Pages, que puede registrar direcciones IP de los visitantes
+        por motivos de seguridad y operación, como se describe en la
+        <a
+          href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection"
+          target="_blank"
+          rel="noopener noreferrer"
+        >documentación de GitHub</a>.
+      </p>
+
+      <h2>Enlaces externos</h2>
+      <p>
+        Las páginas de este sitio enlazan a organizaciones aliadas, servicios de gobierno, revistas
+        académicas y repositorios de investigación. Esos sitios tienen sus propias prácticas de
+        privacidad, que no controlamos.
+      </p>
+
+      <h2>Contacto</h2>
+      <p>
+        Las preguntas sobre este aviso pueden dirigirse a nuestras oficinas listadas en la
+        <a href="/es/contact">página de contacto</a> o vía
+        <a href="https://www.linkedin.com/company/consiliumbots/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .policy {
+    max-width: 760px;
+  }
+  .policy-date {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+  }
+  .policy h2 {
+    font-size: 1.15rem;
+    margin: 32px 0 10px;
+  }
+  .policy p {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--color-text-light);
+    margin-bottom: 14px;
+  }
+  .policy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

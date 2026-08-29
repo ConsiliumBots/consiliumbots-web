@@ -1,6 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+// The tool families below mirror the `type` taxonomy in src/data/projects.json.
+const families = [
+  {
+    title: 'Chatbots & AI assistants',
+    body: "Conversational guidance on WhatsApp and the web that answers families' questions and delivers personalized recommendations during application windows.",
+    examples: [
+      { name: 'IcfesBot — Colombia', slug: 'icfesbot' },
+      { name: 'Higher Education Chatbot — Chile', slug: 'chatbot-highered-chile' },
+    ],
+  },
+  {
+    title: 'Personalized feedback reports',
+    body: 'Individualized reports that show applicants their options and real admission risks before applications close.',
+    examples: [
+      { name: 'Feedback Reports for Students and Families', slug: 'feedback-reports-families' },
+      { name: 'Teacher Assignment Feedback — Ecuador', slug: 'teacher-feedback-ecuador' },
+    ],
+  },
+  {
+    title: 'School & career explorers',
+    body: 'Search platforms that make schools, programs, and career outcomes comparable for every family.',
+    examples: [
+      { name: 'MIME — Chile', slug: 'mime-explorer-chile' },
+      { name: 'School Explorer — Colombia', slug: 'explorer-colombia' },
+    ],
+  },
+  {
+    title: 'Smart matching & assignment systems',
+    body: 'We have designed and helped operate centralized choice and assignment systems — from algorithm management to applicant communication.',
+    examples: [
+      { name: 'Sistema de Admisión Escolar — Chile', slug: 'sae-chile' },
+      { name: 'New Haven Public Schools — USA', slug: 'nhps' },
+    ],
+  },
+  {
+    title: 'Decision-support APIs',
+    body: 'Risk and recommendation services that plug into government platforms to warn applicants in real time.',
+    examples: [{ name: 'Admission Risk API — Pernambuco, Brazil', slug: 'risk-api-pernambuco' }],
+  },
+];
+
 const approach = [
   {
     icon: '/images/figure-info-interventions.png',
@@ -9,7 +50,7 @@ const approach = [
   },
   {
     icon: '/images/figure-ai.png',
-    title: 'Artificial Intelligence: a reality now available',
+    title: 'AI makes personalized guidance possible at scale',
     body: 'AI, empowered by large language models, has opened up new possibilities for delivering personalized, dynamic information at massive scale — reshaping how individuals make decisions about education, housing, and government services.',
   },
   {
@@ -49,6 +90,29 @@ const approach = [
 
   <section class="section section-alt">
     <div class="wrap">
+      <h2 class="section-title">How we work</h2>
+      <p class="lead how-lead">
+        We build and operate free information tools together with governments, and measure their
+        impact with our affiliated researchers. Most of our work falls into five families:
+      </p>
+      <div class="family-grid">
+        {families.map((f) => (
+          <div class="family-card">
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+            <div class="family-examples">
+              {f.examples.map((e) => (
+                <a href={`/projects/${e.slug}`} class="family-example">{e.name} →</a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
       <h2 class="section-title">Why it matters</h2>
       <div class="approach-grid">
         {approach.map((a) => (
@@ -86,6 +150,47 @@ const approach = [
   .lead strong {
     color: var(--color-text);
   }
+  .how-lead {
+    margin-bottom: 32px;
+  }
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .family-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .family-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .family-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .family-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .family-example {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  .family-example:hover {
+    text-decoration: underline;
+  }
   .approach-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,6 +219,9 @@ const approach = [
   }
   @media (max-width: 768px) {
     .approach-grid {
+      grid-template-columns: 1fr;
+    }
+    .family-grid {
       grid-template-columns: 1fr;
     }
   }

@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+
+// Headshots live in src/assets/team so Astro can resize and convert them;
+// team.json (SSOT-generated) still refers to them by their old public path,
+// so we match on the filename. Callers handle the photo-less initials case.
+const photos = import.meta.glob('../assets/team/*.{png,jpg,jpeg}', { eager: true });
+
+const { photo, name, size, class: className } = Astro.props;
+
+const file = photo ? photo.split('/').pop() : null;
+const asset = file
+  ? Object.entries(photos).find(([path]) => path.endsWith(`/${file}`))?.[1]?.default
+  : undefined;
+
+// Fail the build loudly instead of shipping a broken image: the public/
+// copies were removed, so an unmatched filename has nothing to fall back to.
+if (photo && !asset) {
+  throw new Error(
+    `TeamPhoto: no file matching "${photo}" in src/assets/team/ — add the image there (team.json points at it).`
+  );
+}
+---
+
+{asset && (
+  <Image
+    class={className}
+    src={asset}
+    alt={name}
+    width={size}
+    height={size}
+    densities={[1, 2]}
+    format="webp"
+    quality={80}
+    loading="lazy"
+  />
+)}

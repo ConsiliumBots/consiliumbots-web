@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  lang="es"
+  title="Accesibilidad | ConsiliumBots"
+  description="El compromiso de accesibilidad de ConsiliumBots para este sitio web: nuestra meta WCAG 2.1 AA, lo implementado y las limitaciones conocidas."
+>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>Accesibilidad</h1>
+      <p>El acceso equitativo a la información es nuestra misión — también en este sitio web.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap policy">
+      <p class="policy-date">Última actualización: 29 de agosto de 2026</p>
+
+      <h2>Nuestro compromiso</h2>
+      <p>
+        Buscamos que este sitio cumpla las
+        <a href="https://www.w3.org/TR/WCAG21/" target="_blank" rel="noopener noreferrer">
+          Pautas de Accesibilidad para el Contenido Web (WCAG) 2.1</a>, nivel AA.
+      </p>
+
+      <h2>Qué hemos implementado</h2>
+      <ul>
+        <li>Regiones semánticas y un enlace para saltar al contenido en todas las páginas</li>
+        <li>Colores de texto verificados contra los mínimos de contraste AA de WCAG</li>
+        <li>Texto alternativo descriptivo en las imágenes informativas</li>
+        <li>Operación completa por teclado, incluida la navegación móvil</li>
+        <li>Las animaciones y los medios con reproducción automática respetan la preferencia de movimiento reducido</li>
+        <li>Atributos de idioma que identifican correctamente el contenido en inglés y en español</li>
+      </ul>
+
+      <h2>Limitaciones conocidas</h2>
+      <ul>
+        <li>Algunos informes de investigación enlazados son PDFs producidos por terceros y pueden no ser plenamente accesibles</li>
+        <li>Parte del contenido — incluidas las páginas de detalle de proyectos y las entradas del blog — está disponible solo en inglés por ahora</li>
+        <li>El archivo de documentos de trabajo es un sitio separado y más antiguo, anterior a este trabajo de accesibilidad</li>
+      </ul>
+
+      <h2>Comentarios</h2>
+      <p>
+        Si encuentras una barrera al usar este sitio, cuéntanos vía
+        <a href="https://www.linkedin.com/company/consiliumbots/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        o a través de las oficinas listadas en la <a href="/es/contact">página de contacto</a>.
+        Haremos lo posible por corregirla y por entregar la información en un formato accesible.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .policy {
+    max-width: 760px;
+  }
+  .policy-date {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+  }
+  .policy h2 {
+    font-size: 1.15rem;
+    margin: 32px 0 10px;
+  }
+  .policy p,
+  .policy li {
+    font-size: 0.97rem;
+    line-height: 1.75;
+    color: var(--color-text-light);
+  }
+  .policy p {
+    margin-bottom: 14px;
+  }
+  .policy ul {
+    margin: 0 0 14px 1.2rem;
+  }
+  .policy li {
+    margin-bottom: 6px;
+  }
+  .policy a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+</style>

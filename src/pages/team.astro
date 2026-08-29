@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TeamPhoto from '../components/TeamPhoto.astro';
 import { activeTeam, researchAffiliates, researchAssociates, board, alumni } from '../data/site-data.js';
 
 const initials = (name) =>
@@ -81,7 +82,7 @@ const alumniStats = [
           <div class="card member">
             <div class="member-head">
               {m.photo ? (
-                <img class="member-photo" src={m.photo} alt={m.name} width="56" height="56" loading="lazy" />
+                <TeamPhoto class="member-photo" photo={m.photo} name={m.name} size={56} />
               ) : (
                 <div class="avatar-initials">{initials(m.name)}</div>
               )}
@@ -114,7 +115,7 @@ const alumniStats = [
         {researchAffiliates.map((r) => (
           <figure class="researcher">
             {r.photo ? (
-              <img src={r.photo} alt={r.name} width="120" height="120" loading="lazy" />
+              <TeamPhoto photo={r.photo} name={r.name} size={120} />
             ) : (
               <div class="avatar-initials avatar-lg">{initials(r.name)}</div>
             )}
@@ -149,7 +150,7 @@ const alumniStats = [
         {board.map((b) => (
           <figure class="board-member">
             {b.photo ? (
-              <img src={b.photo} alt={b.name} width="140" height="140" loading="lazy" />
+              <TeamPhoto photo={b.photo} name={b.name} size={140} />
             ) : (
               <div class="avatar-initials avatar-lg">{initials(b.name)}</div>
             )}
@@ -242,7 +243,8 @@ const alumniStats = [
     gap: 14px;
     align-items: center;
   }
-  .member-photo {
+  /* :global() — the imgs are rendered inside TeamPhoto, outside this page's scope */
+  .member-head :global(.member-photo) {
     width: 56px;
     height: 56px;
     border-radius: 50%;
@@ -291,8 +293,8 @@ const alumniStats = [
     text-align: center;
     margin: 0;
   }
-  .researcher img,
-  .board-member img {
+  .researcher :global(img),
+  .board-member :global(img) {
     width: 100%;
     max-width: 120px;
     aspect-ratio: 1;
@@ -300,7 +302,7 @@ const alumniStats = [
     border-radius: 50%;
     margin: 0 auto 10px;
   }
-  .board-member img {
+  .board-member :global(img) {
     max-width: 140px;
   }
   .avatar-lg {
