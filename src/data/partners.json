@@ -56,6 +56,22 @@
     "website": null
   },
   {
+    "id": "icfes",
+    "name": "ICFES (Instituto Colombiano para la Evaluación de la Educación)",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "active",
+    "website": null
+  },
+  {
+    "id": "banco-republica",
+    "name": "Banco de la República (Central Bank of Colombia)",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "historical",
+    "website": null
+  },
+  {
     "id": "colombia-mineduc",
     "name": "Colombia Ministry of Education",
     "fullName": null,

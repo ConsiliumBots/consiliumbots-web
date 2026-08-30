@@ -160,15 +160,71 @@
     ]
   },
   {
+    "slug": "icfes-nudge-to-search",
+    "name": "ICFES Nudge to Search — Colombia",
+    "status": "completed",
+    "country": "Colombia",
+    "region": null,
+    "startYear": 2017,
+    "endYear": 2018,
+    "type": "Information Intervention + RCT",
+    "description": "Pop-up messages on the ICFES Saber 11 results platform linked students to a purpose-built information portal, built with Banco de la República, centralizing earnings by degree level for the nation and each department, employment rates, costs, and financial-aid eligibility. Two nationwide randomized experiments tested which messages move information search. The precursor to IcfesBot — no chatbot was involved.",
+    "targetPopulation": "All Saber 11 takers — the fall 2017 national cohort and the spring 2018 cohort",
+    "scale": "519,355 students across two nationwide experiments",
+    "outcomes": [
+      "Pop-ups moved attention at national scale: 15.2% of treated students clicked through in 2017, 24.6% in 2018",
+      "A plain invitation to search (20.9%) beat every belief-targeting message variant (13.1-16.7%) by 4-8 percentage points",
+      "Loss-framed messages did worse than gain-framed equivalents (13.1% vs 16.7%), contrary to prospect-theory predictions",
+      "Enrollment did not move: average effects above 2.6 percentage points are ruled out",
+      "The experimental nulls motivated the personalized WhatsApp guidance that became IcfesBot"
+    ],
+    "technologies": [
+      "Web platform",
+      "Information portal"
+    ],
+    "partner": "Banco de la República",
+    "client": "ICFES",
+    "funders": [],
+    "costEffectiveness": null,
+    "publication": "https://www.christopher-neilson.com/paper-nudge2search-web/documents/manuscript.pdf",
+    "website": "https://www.christopher-neilson.com/paper-nudge2search-web/projects/nudge2search",
+    "contributors": [
+      {
+        "name": "Christopher Neilson",
+        "role": "Principal Investigator"
+      },
+      {
+        "name": "Eric Bettinger",
+        "role": "Co-author"
+      },
+      {
+        "name": "Michael Kremer",
+        "role": "Co-author"
+      },
+      {
+        "name": "Felipe Lizarazo",
+        "role": "Co-author"
+      },
+      {
+        "name": "Christian Posso",
+        "role": "Co-author"
+      },
+      {
+        "name": "Juan Saavedra",
+        "role": "Co-author"
+      }
+    ]
+  },
+  {
     "slug": "icfesbot",
     "name": "IcfesBot — Higher Education Guidance",
     "status": "active",
     "country": "Colombia",
     "region": null,
-    "startYear": null,
+    "startYear": 2018,
     "endYear": null,
     "type": "Chatbot / Information Intervention",
-    "description": "AI chatbot helping Colombian students navigate higher education options based on ICFES exam results, delivered over WhatsApp and reaching students nationwide each year since 2017.",
+    "description": "AI chatbot helping Colombian students navigate higher education options from their own ICFES exam results, delivered over WhatsApp. Built and hosted by ConsiliumBots and distributed through ICFES, it followed the 2017 Nudge to Search experiments, whose null results pointed toward personalized guidance anchored in each student's own scores.",
     "targetPopulation": "Colombian students receiving Saber 11 (ICFES) results",
     "scale": "430,000+ students reached in 2023 (seventh consecutive year), 41.5% response rate",
     "outcomes": [
@@ -182,7 +238,7 @@
       "AI"
     ],
     "partner": null,
-    "client": null,
+    "client": "ICFES",
     "funders": [],
     "costEffectiveness": null,
     "publication": null,

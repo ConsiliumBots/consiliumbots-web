@@ -66,12 +66,19 @@ const relatedPubs = publications.filter(
 );
 
 // Up to 3 related projects, ranked by shared program prefix, type, then country.
+// Prefix match is lenient enough to pair a program with its offshoot
+// (icfes-nudge-to-search ↔ icfesbot) without matching short generic stems.
 const firstToken = project.slug.split('-')[0];
+const sameProgram = (token) =>
+  token === firstToken ||
+  (Math.min(token.length, firstToken.length) >= 4 &&
+    (token.startsWith(firstToken) || firstToken.startsWith(token)));
+
 const related = projects
   .filter((p) => p.slug !== project.slug)
   .map((p) => {
     let score = 0;
-    if (p.slug.split('-')[0] === firstToken) score += 3;
+    if (sameProgram(p.slug.split('-')[0])) score += 3;
     if (p.type && p.type === project.type) score += 2;
     if (p.country && p.country === project.country) score += 1;
     return { p, score };
