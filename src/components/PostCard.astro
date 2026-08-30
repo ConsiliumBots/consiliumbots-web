@@ -12,6 +12,8 @@ const dateLabel = pubDate.toLocaleDateString(locale, {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
+  // frontmatter dates are UTC midnight; format in UTC so the day never shifts
+  timeZone: 'UTC',
 });
 // Only the "original is in English" case is supported today; guard on it
 // explicitly so the notice can never label a post with the wrong language.

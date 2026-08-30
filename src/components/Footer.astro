@@ -9,6 +9,7 @@ const footerLinks = [
   { key: 'nav.whatWeDo', base: '/what-we-do' },
   { key: 'nav.projects', base: '/projects' },
   { key: 'nav.research', base: '/research' },
+  { key: 'nav.workingPapers', href: 'https://consiliumbots.github.io/working-papers-cb/', external: true },
   { key: 'nav.team', base: '/team' },
   { key: 'nav.blog', base: '/blog' },
   { key: 'nav.contact', base: '/contact' },
@@ -29,7 +30,11 @@ const footerLinks = [
 
       <div class="footer-nav">
         {footerLinks.map(link => (
-          <a href={localizePath(link.base, lang)} class="footer-link">
+          <a
+            href={link.external ? link.href : localizePath(link.base, lang)}
+            class="footer-link"
+            {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+          >
             {t(link.key)}
             <img src="/icons/arrow-outward-white.svg" alt="" width="14" class="footer-link-arrow" />
           </a>

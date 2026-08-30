@@ -69,7 +69,7 @@
     "category": "working-paper",
     "project": "sae-chile",
     "extraLinks": [
-      { "label": "PDF", "url": "https://christopherneilson.github.io/work/documents/w32670_july_2024.pdf" }
+      { "label": "PDF", "url": "https://www.christopher-neilson.com/work/documents/w32670_july_2024.pdf" }
     ]
   },
   {
@@ -77,11 +77,11 @@
     "authors": "Anais Fabre, Tomás Larroucau, Christopher A. Neilson & Ignacio Rios",
     "year": 2025,
     "venue": "Journal of Political Economy (conditionally accepted)",
-    "url": "https://christopherneilson.github.io/work/documents/Information_Frictions_and_Application_Mistakes_LRFN_2025.pdf",
+    "url": "https://www.christopher-neilson.com/work/documents/Information_Frictions_and_Application_Mistakes_LRFN_2025.pdf",
     "category": "working-paper",
     "project": "application-mistakes-chile",
     "extraLinks": [
-      { "label": "Project page", "url": "https://christopherneilson.github.io/work/Application-Mistakes.html" }
+      { "label": "Project page", "url": "https://www.christopher-neilson.com/work/Application-Mistakes.html" }
     ]
   },
   {
@@ -89,7 +89,7 @@
     "authors": "Christopher A. Neilson, Francisco Gallego & Oswaldo Molina",
     "year": 2018,
     "venue": "Impact evaluation · IPA, for the U.S. Department of Labor",
-    "url": "https://christopherneilson.github.io/work/documents/DFM/DFM_DOL_EndlineReport.pdf",
+    "url": "https://www.christopher-neilson.com/work/documents/DFM/DFM_DOL_EndlineReport.pdf",
     "category": "report",
     "project": "peru-info-campaign"
   },
@@ -98,7 +98,7 @@
     "authors": "",
     "year": 2016,
     "venue": "Impact evaluation · Dominican Republic · prior work that inspired ConsiliumBots",
-    "url": "https://christopherneilson.github.io/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
+    "url": "https://www.christopher-neilson.com/work/documents/AVE/AVE_USAID_EndlineReport.pdf",
     "category": "motivating"
   },
   {

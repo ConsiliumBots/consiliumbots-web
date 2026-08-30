@@ -38,6 +38,23 @@ const sections = [
 
 const total = publications.length;
 
+// "Journal (revise & resubmit) · ..." carries a review status worth surfacing
+// as a badge instead of leaving it buried in the muted meta line.
+const reviewStatus = (venue) => {
+  const m = venue?.match(/^[^(·]+\((?<status>[^)]+)\)/);
+  const s = m?.groups.status;
+  return s && /accepted|resubmit|under review|forthcoming/i.test(s)
+    ? s.charAt(0).toUpperCase() + s.slice(1)
+    : null;
+};
+
+const splitAuthors = (authors) =>
+  authors
+    .split(/,\s*|\s*&\s*/)
+    .filter(Boolean)
+    .map((name) => ({ '@type': 'Person', name }));
+
+
 // Structured data so search engines can index these as scholarly works.
 const publicationSchema = {
   '@context': 'https://schema.org',
@@ -52,8 +69,10 @@ const publicationSchema = {
       name: p.title,
       url: p.url,
       ...(p.year ? { datePublished: String(p.year) } : {}),
-      ...(p.authors ? { author: { '@type': 'Person', name: p.authors } } : {}),
-      ...(p.venue ? { publication: p.venue } : {}),
+      ...(p.authors ? { author: splitAuthors(p.authors) } : {}),
+      ...((p.category === 'journal' || /journal/i.test(p.venue ?? '')) && p.venue
+        ? { isPartOf: { '@type': 'Periodical', name: p.venue.split(',')[0] } }
+        : {}),
     },
   })),
 };
@@ -85,7 +104,10 @@ const publicationSchema = {
               <div class="pub">
                 <a href={p.url} target="_blank" rel="noopener noreferrer" class="pub-main">
                   <div>
-                    <span class="pub-title">{p.title}</span>
+                    <span class="pub-title">
+                      {p.title}
+                      {reviewStatus(p.venue) && <span class="pub-status">{reviewStatus(p.venue)}</span>}
+                    </span>
                     <span class="pub-meta">
                       {[p.authors, p.venue, p.year].filter(Boolean).join(' · ')}
                     </span>
@@ -161,6 +183,20 @@ const publicationSchema = {
     justify-content: space-between;
     gap: 16px;
     padding: 16px 20px 6px;
+  }
+  .pub-status {
+    display: inline-block;
+    vertical-align: 2px;
+    margin-left: 8px;
+    padding: 2px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--color-accent);
+    background: rgba(37, 99, 235, 0.08);
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    border-radius: 999px;
+    white-space: nowrap;
   }
   .pub-title {
     display: block;

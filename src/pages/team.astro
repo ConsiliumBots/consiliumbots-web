@@ -122,6 +122,12 @@ const alumniStats = [
             <figcaption>
               <span class="researcher-name">{r.name}</span>
               {r.title && <span class="researcher-title">{r.title}</span>}
+              {(r.website || r.scholar) && (
+                <span class="researcher-links">
+                  {r.website && <a href={r.website} target="_blank" rel="noopener noreferrer">Website</a>}
+                  {r.scholar && <a href={r.scholar} target="_blank" rel="noopener noreferrer">Scholar</a>}
+                </span>
+              )}
             </figcaption>
           </figure>
         ))}
@@ -304,6 +310,20 @@ const alumniStats = [
   }
   .board-member :global(img) {
     max-width: 140px;
+  }
+  .researcher-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 4px;
+    font-size: 0.8rem;
+  }
+  .researcher-links a {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+  .researcher-links a:hover {
+    text-decoration: underline;
   }
   .avatar-lg {
     width: 120px;

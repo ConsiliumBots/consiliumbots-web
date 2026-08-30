@@ -3,6 +3,9 @@ import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import fieldPhoto1 from '../assets/field-photo-1.png';
 import fieldPhoto2 from '../assets/field-photo-2.png';
+import { getPostsFor, postSlug } from '../lib/posts.js';
+
+const latestPosts = (await getPostsFor('en')).slice(0, 3);
 ---
 
 <BaseLayout
@@ -127,7 +130,7 @@ import fieldPhoto2 from '../assets/field-photo-2.png';
           <span>Smart Matching Platforms and Heterogeneous Beliefs in Centralized School Choice</span>
           <img src="/icons/arrow-outward.svg" alt="" width="16" />
         </a>
-        <a href="https://christopherneilson.github.io/work/Application-Mistakes.html" target="_blank" rel="noopener noreferrer" class="paper-link">
+        <a href="https://www.christopher-neilson.com/work/Application-Mistakes.html" target="_blank" rel="noopener noreferrer" class="paper-link">
           <span>Application Mistakes in College Admissions: Chile</span>
           <img src="/icons/arrow-outward.svg" alt="" width="16" />
         </a>
@@ -254,13 +257,40 @@ import fieldPhoto2 from '../assets/field-photo-2.png';
     </div>
   </section>
 
+  <!-- FROM THE BLOG -->
+  {latestPosts.length > 0 && (
+    <section class="blog-strip section">
+      <div class="wrap">
+        <div class="blog-strip-head">
+          <h2 class="section-title">From the blog</h2>
+          <a href="/blog" class="btn-arrow">
+            All posts
+            <img src="/icons/blue-arrow.png" alt="" width="20" />
+          </a>
+        </div>
+        <div class="blog-strip-grid">
+          {latestPosts.map((post) => (
+            <a href={`/blog/${postSlug(post)}`} class="blog-strip-card">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
+              </time>
+              <h3>{post.data.title}</h3>
+              <p>{post.data.description}</p>
+              <span class="result-link">Read the post →</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <!-- PARTNERS -->
   <section class="partners section">
     <div class="wrap">
       <h2 class="section-title">Our Partners</h2>
 
       <div class="partner-main">
-        <a href="https://wpfund.org/?home=true" target="_blank" rel="noopener noreferrer">
+        <a href="https://wpfund.org/" target="_blank" rel="noopener noreferrer">
           <img src="/logos/partners/wpf.png" alt="Wellspring Philanthropic Fund" width="67" height="24" loading="lazy" />
         </a>
         <p>We thank Wellspring Philanthropic Fund for their generous core support, enabling us to pursue our mission.</p>
@@ -484,6 +514,50 @@ import fieldPhoto2 from '../assets/field-photo-2.png';
     color: var(--color-accent);
   }
 
+  .blog-strip-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .blog-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 12px;
+  }
+  .blog-strip-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--color-white);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+  }
+  .blog-strip-card:hover {
+    box-shadow: 0 6px 24px rgba(26, 58, 92, 0.09);
+    transform: translateY(-2px);
+  }
+  .blog-strip-card time {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .blog-strip-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .blog-strip-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+  }
+
   /* RESEARCH */
   .research-subtitle {
     color: var(--color-text-muted);
@@ -678,6 +752,15 @@ import fieldPhoto2 from '../assets/field-photo-2.png';
     .projects-grid {
       grid-template-columns: repeat(2, 1fr);
     }
+    .why-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .results-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .blog-strip-grid {
+      grid-template-columns: 1fr 1fr;
+    }
     .projects-intro-grid {
       grid-template-columns: 1fr;
     }
@@ -691,6 +774,9 @@ import fieldPhoto2 from '../assets/field-photo-2.png';
       grid-template-columns: 1fr;
     }
     .results-grid {
+      grid-template-columns: 1fr;
+    }
+    .blog-strip-grid {
       grid-template-columns: 1fr;
     }
     .why-grid {

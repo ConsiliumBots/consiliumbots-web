@@ -38,7 +38,7 @@ const {
 const t = useTranslations(lang);
 const locale = lang === 'es' ? 'es-ES' : 'en-US';
 const fmt = (d: Date) =>
-  d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric' });
+  d.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
 
 // An untranslated post served under the other language's URL. The canonical
 // points at the original post's URL so the fallback never competes with it.
