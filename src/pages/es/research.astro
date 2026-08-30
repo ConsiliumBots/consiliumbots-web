@@ -55,11 +55,13 @@ const reviewStatus = (venue) => {
   return statusEs[s.toLowerCase()] ?? s.charAt(0).toUpperCase() + s.slice(1);
 };
 
-const splitAuthors = (authors) =>
-  authors
-    .split(/,\s*|\s*&\s*/)
-    .filter(Boolean)
-    .map((name) => ({ '@type': 'Person', name }));
+const splitAuthors = (authors, type) =>
+  type === 'Organization'
+    ? [{ '@type': 'Organization', name: authors }]
+    : authors
+        .split(/,\s*|\s*&\s*/)
+        .filter(Boolean)
+        .map((name) => ({ '@type': 'Person', name }));
 
 
 // Datos estructurados para que los buscadores indexen estos trabajos académicos.
@@ -76,7 +78,7 @@ const publicationSchema = {
       name: p.title,
       url: p.url,
       ...(p.year ? { datePublished: String(p.year) } : {}),
-      ...(p.authors ? { author: splitAuthors(p.authors) } : {}),
+      ...(p.authors ? { author: splitAuthors(p.authors, p.authorType) } : {}),
       ...((p.category === 'journal' || /journal/i.test(p.venue ?? '')) && p.venue
         ? { isPartOf: { '@type': 'Periodical', name: p.venue.split(',')[0] } }
         : {}),
