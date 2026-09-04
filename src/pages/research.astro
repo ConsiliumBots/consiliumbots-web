@@ -195,8 +195,8 @@ const publicationSchema = {
     font-weight: 600;
     letter-spacing: 0.02em;
     color: var(--color-accent);
-    background: rgba(37, 99, 235, 0.08);
-    border: 1px solid rgba(37, 99, 235, 0.25);
+    background: rgb(var(--accent-rgb) / 0.08);
+    border: 1px solid rgb(var(--accent-rgb) / 0.25);
     border-radius: 999px;
     white-space: nowrap;
   }
@@ -222,13 +222,13 @@ const publicationSchema = {
     font-size: 0.75rem;
     font-weight: 500;
     color: var(--color-accent);
-    background: rgba(37, 99, 235, 0.08);
+    background: rgb(var(--accent-rgb) / 0.08);
     border-radius: 999px;
     padding: 4px 10px;
     transition: background 0.2s ease;
   }
   .pub-tag:hover {
-    background: rgba(37, 99, 235, 0.16);
+    background: rgb(var(--accent-rgb) / 0.16);
   }
   .pub-tag-alt {
     color: var(--color-text-muted);

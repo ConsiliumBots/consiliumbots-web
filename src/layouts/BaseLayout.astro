@@ -3,8 +3,10 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { GA_MEASUREMENT_ID } from '../config.js';
 import { stripLang, localizePath, useTranslations } from '../i18n.js';
-// Self-hosted variable font (one file covers weights 100-900) — no third-party request
-import '@fontsource-variable/inter/index.css';
+// Self-hosted brand fonts — no third-party request.
+// DM Sans (variable) for body and UI, Baskervville for display headings.
+import '@fontsource-variable/dm-sans/index.css';
+import '@fontsource/baskervville/latin-400.css';
 import '../styles/global.css';
 
 interface Props {
@@ -140,8 +142,12 @@ const structuredData = {
 
     <!-- Fonts are self-hosted via @fontsource (imported in the layout frontmatter) -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <!-- Favicon and app icons (generated from the brand mark) -->
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0C1749" />
 
     <!-- Blog feed -->
     <link rel="alternate" type="application/rss+xml" title="ConsiliumBots Blog" href="/rss.xml" />

@@ -8,21 +8,30 @@
 }
 
 :root {
-  --color-primary: #1a3a5c;
-  --color-primary-dark: #0f2440;
-  --color-accent: #2563eb;
-  --color-accent-hover: #1d4ed8;
-  --color-text: #1a1a2e;
-  --color-text-light: #555;
-  /* Keep >= 4.5:1 (WCAG AA) on both --color-bg and --color-bg-light */
-  --color-text-muted: #666;
-  --color-bg: #ffffff;
-  --color-bg-light: #f8f9fa;
-  --color-bg-blue: #1a3a5c;
-  --color-border: #e5e7eb;
-  --color-white: #ffffff;
+  /* Brand tokens — consiliumbotsData/brand-assets/figma/design-tokens.json
+     (same palette as cb-branding.sty, so web and documents stay in step). */
+  --color-primary: #0C1749;        /* navy — headings, footer, dark surfaces */
+  --color-accent: #384BFF;         /* vivid blue — links, CTAs, highlights */
+  --color-accent-hover: #3042DE;   /* derived: brand blue mixed toward navy */
+  --color-periwinkle: #8EA2FF;     /* soft accent, watermarks */
+  --color-text: #14142B;
 
-  --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Brand gray #6E7191 clears AA on white (4.74) but not on --color-bg-light
+     (4.16). These keep its hue and saturation, darkened enough to pass on both. */
+  --color-text-light: #54566E;     /* 7.16 / 6.30 */
+  --color-text-muted: #656885;     /* 5.42 / 4.77 */
+
+  --color-bg: #FFFFFF;
+  --color-bg-light: #EFF0F6;
+  --color-border: #DCDEEA;         /* derived hairline in the brand neutral family */
+  --color-white: #FFFFFF;
+
+  /* Channel triplets so tints and shadows derive their alpha from one source */
+  --accent-rgb: 56 75 255;
+  --navy-rgb: 12 23 73;
+
+  --font-sans: 'DM Sans Variable', 'DM Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Baskervville', Georgia, serif;
 
   --max-width: 1200px;
   --nav-height: 72px;
@@ -80,6 +89,14 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-sans);
   line-height: 1.2;
   font-weight: 600;
+}
+
+/* Display serif is reserved for top-level page titles (brand guide: report
+   titles, pull quotes, formal headings). Everything else stays sans. */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
 }
 
 h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
@@ -213,7 +230,7 @@ p {
 }
 .page-hero h1 {
   font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 16px;
 }
 .page-hero p {

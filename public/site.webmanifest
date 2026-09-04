@@ -1,0 +1,14 @@
+{
+  "name": "ConsiliumBots",
+  "short_name": "ConsiliumBots",
+  "description": "A technology nonprofit using data and AI to help people make better decisions about education, housing, and government benefits.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FFFFFF",
+  "theme_color": "#0C1749",
+  "icons": [
+    { "src": "/favicon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/favicon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/icon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }
+  ]
+}
