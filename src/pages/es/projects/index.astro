@@ -62,14 +62,14 @@ const countryLabel = {
           <h2 class="section-title">{g.label}</h2>
           <div class="proj-grid">
             {byStatus(g.key).map((p) => (
-              <a href={`/projects/${p.slug}`} class="card proj-card" data-countries={p.country ?? ''}>
+              <a href={`/es/projects/${p.slug}`} class="card proj-card" data-countries={p.country ?? ''}>
                 <span class={`badge badge-${p.status}`}>{statusLabel[p.status] ?? p.status}</span>
                 <h3>{p.name}</h3>
                 {(p.country || p.type) && (
                   <p class="proj-meta">{[p.country, p.type].filter(Boolean).join(' · ')}</p>
                 )}
                 {p.description && <p class="proj-desc">{p.description}</p>}
-                {/* Detail pages exist only in English for now */}
+                {/* Detail pages have Spanish chrome; project content stays English until the SSOT exports it */}
                 <span class="proj-link">Ver proyecto (en inglés) →</span>
               </a>
             ))}

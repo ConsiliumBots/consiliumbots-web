@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import { readdirSync } from 'node:fs';
+import { readdirSync, readFileSync } from 'node:fs';
 
 import sitemap from '@astrojs/sitemap';
 
@@ -19,9 +19,24 @@ const postSlugs = (dir) => {
 const esSlugs = new Set(postSlugs('es'));
 const untranslated = postSlugs('en').filter((s) => !esSlugs.has(s));
 
+// The i18n fallback rewrite serves every project at /es/projects/<slug>/ too.
+// Until the SSOT exports a Spanish description, those pages are English-content
+// duplicates that canonicalize to the EN URL, so keep them out of the sitemap.
+const projects = JSON.parse(readFileSync(new URL('./src/data/projects.json', import.meta.url), 'utf8'));
+const untranslatedProjects = projects.filter((p) => !p.descriptionEs).map((p) => p.slug);
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.consiliumbots.com',
+  // Spanish lives under /es/. Routes with no es/ counterpart are served at
+  // /es/... from the English component (fallback rewrite); the component reads
+  // Astro.currentLocale to localize its chrome. Today that is the project pages.
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+    routing: { prefixDefaultLocale: false, fallbackType: 'rewrite' },
+    fallback: { es: 'en' },
+  },
   // Safety net for stale inbound links to the previous site's /eng/ structure
   // (the external working-papers site linked there for a while).
   redirects: {
@@ -34,7 +49,9 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !untranslated.some((s) => page.endsWith(`/es/blog/${s}/`)),
+      filter: (page) =>
+        !untranslated.some((s) => page.endsWith(`/es/blog/${s}/`)) &&
+        !untranslatedProjects.some((s) => page.endsWith(`/es/projects/${s}/`)),
     }),
   ],
 });
