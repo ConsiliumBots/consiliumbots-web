@@ -1,0 +1,194 @@
+---
+// Shared template for /projects and /es/projects — the routes only pass `lang`.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { projects } from '../../data/site-data.js';
+import { localizePath } from '../../i18n.js';
+
+const { lang = 'en' } = Astro.props;
+
+const copy = {
+  en: {
+    title: 'Projects | ConsiliumBots',
+    description:
+      'Our projects use data and technology to help people make better-informed decisions about education, housing, and government benefits across Latin America and the US.',
+    heading: 'Projects',
+    intro:
+      'We want to achieve greater equity and transparency in access to government services and benefits — using better information to improve satisfaction and opportunities for everyone, especially the most vulnerable.',
+    groups: { active: 'Active', completed: 'Completed', proposed: 'Proposed', research: 'Research initiatives' },
+    filterLabel: 'Filter projects by country',
+    allCountries: 'All countries',
+    view: 'View project →',
+    // Badges and chips show the raw snapshot values in English.
+    status: null,
+    country: null,
+  },
+  es: {
+    title: 'Proyectos | ConsiliumBots',
+    description:
+      'Nuestros proyectos usan datos y tecnología para ayudar a las personas a tomar decisiones mejor informadas sobre educación, vivienda y beneficios del gobierno en América Latina y EE. UU.',
+    heading: 'Proyectos',
+    intro:
+      'Queremos lograr una mayor equidad en el acceso y la transparencia de los servicios y beneficios del gobierno, brindando mejor información — aumentando la satisfacción y mejorando las oportunidades para todos, especialmente para la población más vulnerable.',
+    groups: { active: 'Activos', completed: 'Completados', proposed: 'Propuestos', research: 'Iniciativas de investigación' },
+    filterLabel: 'Filtrar proyectos por país',
+    allCountries: 'Todos los países',
+    // Detail pages have Spanish chrome; project content stays English until the SSOT exports it.
+    view: 'Ver proyecto (en inglés) →',
+    status: { active: 'Activo', completed: 'Completado', proposed: 'Propuesto', research: 'Investigación' },
+    // Visible labels only — data-country keeps the raw snapshot value so the
+    // filter script still matches.
+    country: { Brazil: 'Brasil', 'Dominican Republic': 'República Dominicana', Peru: 'Perú', 'United States': 'Estados Unidos' },
+  },
+}[lang];
+
+const groups = ['active', 'completed', 'proposed', 'research'].map((key) => ({ key, label: copy.groups[key] }));
+const byStatus = (s) => projects.filter((p) => p.status === s);
+
+// Distinct single countries for the filter chips ("Chile, Peru, Brazil" counts
+// for each of the three).
+const countries = [
+  ...new Set(projects.flatMap((p) => (p.country ? p.country.split(', ') : []))),
+].sort();
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description}>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>{copy.heading}</h1>
+      <p>{copy.intro}</p>
+    </div>
+  </section>
+
+  <div class="wrap filter-bar" id="country-filter" role="group" aria-label={copy.filterLabel}>
+    <button class="chip active" data-country="" aria-pressed="true">{copy.allCountries}</button>
+    {countries.map((c) => (
+      <button class="chip" data-country={c} aria-pressed="false">{copy.country?.[c] ?? c}</button>
+    ))}
+  </div>
+
+  {groups.map((g) =>
+    byStatus(g.key).length > 0 ? (
+      <section class="section proj-section">
+        <div class="wrap">
+          <h2 class="section-title">{g.label}</h2>
+          <div class="proj-grid">
+            {byStatus(g.key).map((p) => (
+              <a href={localizePath(`/projects/${p.slug}`, lang)} class="card proj-card" data-countries={p.country ?? ''}>
+                <span class={`badge badge-${p.status}`}>{copy.status?.[p.status] ?? p.status}</span>
+                <h3>{p.name}</h3>
+                {(p.country || p.type) && (
+                  <p class="proj-meta">{[p.country, p.type].filter(Boolean).join(' · ')}</p>
+                )}
+                {p.description && <p class="proj-desc">{p.description}</p>}
+                <span class="proj-link">{copy.view}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    ) : null
+  )}
+</BaseLayout>
+
+<script>
+  const bar = document.getElementById('country-filter');
+  bar?.addEventListener('click', (e) => {
+    const btn = e.target instanceof Element ? e.target.closest('button[data-country]') : null;
+    if (!(btn instanceof HTMLElement)) return;
+    bar.querySelectorAll('button').forEach((b) => {
+      const active = b === btn;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-pressed', String(active));
+    });
+    const c = btn.dataset.country ?? '';
+    document.querySelectorAll('.proj-card').forEach((card) => {
+      if (!(card instanceof HTMLElement)) return;
+      const match = !c || (card.dataset.countries ?? '').split(', ').includes(c);
+      card.classList.toggle('is-hidden', !match);
+    });
+    document.querySelectorAll('.proj-section').forEach((sec) => {
+      sec.classList.toggle('is-hidden', !sec.querySelector('.proj-card:not(.is-hidden)'));
+    });
+  });
+</script>
+
+<style>
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 28px;
+  }
+  .chip {
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .chip:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+  .chip.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+  }
+  .is-hidden {
+    /* utility toggled by the filter script; must beat .proj-card{display:flex} */
+    display: none !important;
+  }
+
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .proj-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .proj-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .proj-meta {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+  .proj-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin: 0;
+    flex-grow: 1;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+  .proj-link {
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 1024px) {
+    .proj-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 640px) {
+    .proj-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

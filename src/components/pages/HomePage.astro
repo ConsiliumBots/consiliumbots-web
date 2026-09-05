@@ -1,0 +1,945 @@
+---
+// Shared template for / and /es/ — the routes only pass `lang`. Both
+// languages' copy lives here, side by side, so the two homepages can no
+// longer drift apart structurally.
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import fieldPhoto1 from '../../assets/field-photo-1.png';
+import fieldPhoto2 from '../../assets/field-photo-2.png';
+import { getPostsFor, postSlug } from '../../lib/posts.js';
+import { localizePath } from '../../i18n.js';
+
+const { lang = 'en' } = Astro.props;
+const es = lang === 'es';
+const to = (path) => localizePath(path, lang);
+const latestPosts = (await getPostsFor(lang)).slice(0, 3);
+
+const copy = {
+  en: {
+    title: 'ConsiliumBots | Technology nonprofit',
+    description:
+      'ConsiliumBots is a technology nonprofit using data and AI to help people make better decisions about education, housing, and government benefits across Latin America and the U.S.',
+    heroHighlight: 'Using Data & Technology',
+    heroRest: ' to Help People Make Important Decisions',
+    heroLink: 'What We Do',
+    mission: 'We turn complex and underutilized information into virtual assistance and personalized recommendations',
+    missionButton: 'Projects',
+    impactTitle: 'Our impact in numbers',
+    impact: [
+      ['36', 'Tools developed', 'Digital solutions developed to address information asymmetries.'],
+      ['23', 'Partnerships', 'International Organizations, Universities, Local Governments & Foundations'],
+      ['6M+', 'Lives impacted', 'Parents, students, and teachers reached'],
+    ],
+    countries: ['7', 'Countries impacted', 'Chile, Colombia, Ecuador, Peru, Brazil, Dominican Republic, USA'],
+    highlight: 'Free, personalized guidance — built with governments, delivered at national scale.',
+    results: [
+      ['icfesbot', '+36%', 'in higher-education application rates among students guided by IcfesBot, which reached 430,000+ students in Colombia in 2023.', 'IcfesBot →'],
+      ['dfm-chile', '8M+', 'interactions across 1,100 schools in Chile and Colombia through the Decidiendo para un Futuro Mejor information campaigns.', 'DFM →'],
+      ['dfm-colombia', '37x', 'estimated cost-effectiveness relative to unconditional cash transfers for the DFM program in Colombia.', 'DFM Colombia →'],
+    ],
+    researchTitle: 'Research',
+    researchSubtitle:
+      'Our projects produce rigorous evidence of solutions to social problems and advance knowledge in partnership with our affiliated researchers.',
+    applicationMistakes: 'Application Mistakes in College Admissions: Chile',
+    morePublications: 'More Publications',
+    projectsTitle: 'Projects',
+    projectsTagline: 'Tools built with governments and partners in 7 countries.',
+    projectsP1:
+      'We want to achieve greater equity and transparency in access to government services and benefits — using better information to improve satisfaction and opportunities for everyone, especially the most vulnerable.',
+    projectsP2:
+      'As a data-driven organization, we rigorously monitor the effectiveness of our projects in partnership with affiliated researchers, to continuously learn and iterate on our work.',
+    tiles: [
+      'Chatbots & AI - Reduce information biases, promote educational continuity and access to higher education',
+      'CCAS - Coordinated Choice & Assignment Systems',
+      'Decidiendo Para Un Futuro Mejor',
+      'Feedback for Students',
+      'Feedback Reports in Teacher Assignment',
+      'Smart Matching Platforms',
+      'Subsidy Project',
+      'Matricula SAE',
+    ],
+    whyTitle: 'Why does it matter?',
+    why1Title: 'Informational interventions are effective',
+    why1Body:
+      'There is scientific evidence that providing relevant information at the right time can make a significant difference in the way people live. For instance:',
+    papers: [
+      ["Information about educational returns can change students' trajectories.", ' Jensen, 2010'],
+      ['Informed school choice has positive outcomes.', ' Allende, Gallego & Neilson, 2019'],
+      ['Earnings disclosure impacts college enrollment decisions.', ' Hastings, Neilson & Zimmerman, 2015'],
+    ],
+    why2Title: 'AI makes personalized guidance possible at scale',
+    why2Body:
+      'Artificial Intelligence, empowered by the emergence of large language models like GPT, has opened up new possibilities for delivering personalized and dynamic information on a massive scale. This transformative technology has the potential to reshape the way individuals make decisions in areas such as education, housing, and access to government services, offering more customized and responsive solutions.',
+    why3Title: 'Centralized Systems and Data Offer an Opportunity',
+    why3Body:
+      'Government benefits selection processes are increasingly digitized and centralized. The resulting centralized data has expanded the possibilities and lowered the cost of supporting families in the decision-making process with personalized information.',
+    photoAlt: 'ConsiliumBots field activity in Colombia',
+    blogTitle: 'From the blog',
+    allPosts: 'All posts',
+    readPost: 'Read the post →',
+    foreignNote: 'Available in Spanish only.',
+    partnersTitle: 'Our Partners',
+    wellspring: 'We thank Wellspring Philanthropic Fund for their generous core support, enabling us to pursue our mission.',
+    collaborators: 'Collaborators',
+    governments: 'Governments',
+    logos: {
+      idb: 'Inter-American Development Bank',
+      'mineduc-chile': 'Ministerio de Educacion de Chile',
+      pernambuco: 'Governo do Estado de Pernambuco',
+      'minedu-peru': 'Ministerio de Educacion Peru',
+      'minedu-ecuador': 'Ministerio de Educacion Ecuador',
+      'gobrd-educacion': 'Gobierno de la Republica Dominicana - Educacion',
+      'gobrd-presidencia': 'Presidencia de la Republica Dominicana',
+      'valle-del-cauca': 'Gobernacion Valle del Cauca',
+      'secretaria-bogota': 'Secretaria de Educacion Bogota',
+    },
+    cta1: 'If you have an idea, or want to be part of the ConsiliumBots team, we invite you to contact us',
+    cta1Link: 'Get in Touch',
+    cta2: "We're a diverse, interdisciplinary team based in the US, Chile, and Colombia.",
+    cta2Link: 'Meet Our Team',
+  },
+  es: {
+    title: 'ConsiliumBots | Organización sin fines de lucro de tecnología',
+    description:
+      'ConsiliumBots es una organización sin fines de lucro que usa datos e IA para ayudar a las personas a tomar mejores decisiones sobre educación, vivienda y beneficios del gobierno en América Latina y EE. UU.',
+    heroHighlight: 'Usando datos y tecnología',
+    heroRest: ' para ayudar a las personas a tomar decisiones importantes',
+    heroLink: 'Qué Hacemos',
+    mission: 'Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones personalizadas',
+    missionButton: 'Proyectos',
+    impactTitle: 'Nuestro impacto en números',
+    impact: [
+      ['36', 'Herramientas desarrolladas', 'Soluciones digitales desarrolladas para abordar las asimetrías de información.'],
+      ['23', 'Alianzas', 'Organizaciones internacionales, universidades, gobiernos locales y fundaciones'],
+      ['6M+', 'Vidas impactadas', 'Padres, estudiantes y docentes alcanzados'],
+    ],
+    countries: ['7', 'Países impactados', 'Chile, Colombia, Ecuador, Perú, Brasil, República Dominicana, EE. UU.'],
+    highlight: 'Orientación gratuita y personalizada — construida junto a gobiernos, entregada a escala nacional.',
+    results: [
+      ['icfesbot', '+36%', 'en las tasas de postulación a la educación superior entre estudiantes orientados por IcfesBot, que llegó a más de 430.000 estudiantes en Colombia en 2023.', 'IcfesBot →'],
+      ['dfm-chile', '8M+', 'interacciones en 1.100 escuelas de Chile y Colombia a través de las campañas de Decidiendo para un Futuro Mejor.', 'DFM →'],
+      ['dfm-colombia', '37x', 'más costo-efectivo, según estimaciones, que las transferencias monetarias no condicionadas — programa DFM en Colombia.', 'DFM Colombia →'],
+    ],
+    researchTitle: 'Investigación',
+    researchSubtitle:
+      'Nuestros proyectos permiten producir evidencia rigurosa sobre soluciones a problemas sociales y avanzar en el conocimiento en colaboración con nuestros investigadores afiliados.',
+    applicationMistakes: 'Errores de postulación en la admisión universitaria: Chile',
+    morePublications: 'Más publicaciones',
+    projectsTitle: 'Proyectos',
+    projectsTagline: 'Herramientas construidas junto a gobiernos y aliados en 7 países.',
+    projectsP1:
+      'Queremos lograr una mayor equidad en el acceso y la transparencia de los servicios y beneficios del gobierno, brindando mejor información para aumentar la satisfacción y mejorar las oportunidades para todos, especialmente para la población más vulnerable.',
+    projectsP2:
+      'Como organización basada en datos, monitoreamos rigurosamente la efectividad de nuestros proyectos en colaboración con investigadores asociados, para aprender de forma continua e iterar sobre nuestro trabajo.',
+    tiles: [
+      'Chatbots e IA - Reducir sesgos de información, promover la continuidad educativa y el acceso a la educación superior',
+      'CCAS - Sistemas Coordinados de Elección y Asignación',
+      'Decidiendo Para Un Futuro Mejor',
+      'Retroalimentación para estudiantes',
+      'Informes de retroalimentación en la asignación docente',
+      'Plataformas de emparejamiento inteligente',
+      'Proyecto de subsidios',
+      'Matrícula SAE',
+    ],
+    whyTitle: '¿Por qué es importante?',
+    why1Title: 'Las intervenciones informativas son efectivas',
+    why1Body:
+      'Existe evidencia científica de que brindar información relevante en el momento adecuado puede marcar una diferencia significativa en la vida de las personas. Por ejemplo:',
+    papers: [
+      ['La información sobre retornos educativos puede cambiar la trayectoria de los estudiantes.', ' Jensen, 2010'],
+      ['La elección informada de escuela tiene resultados positivos.', ' Allende, Gallego & Neilson, 2019'],
+      ['La divulgación de ingresos influye en las decisiones de matrícula universitaria.', ' Hastings, Neilson & Zimmerman, 2015'],
+    ],
+    why2Title: 'La IA hace posible la orientación personalizada a gran escala',
+    why2Body:
+      'La Inteligencia Artificial, impulsada por la aparición de grandes modelos de lenguaje como GPT, ha abierto nuevas posibilidades para entregar información personalizada y dinámica a gran escala. Esta tecnología transformadora tiene el potencial de cambiar la forma en que las personas toman decisiones en áreas como la educación, la vivienda y el acceso a servicios del gobierno, ofreciendo soluciones más personalizadas y receptivas.',
+    why3Title: 'Los sistemas y datos centralizados ofrecen una oportunidad',
+    why3Body:
+      'Los procesos de selección de beneficios del gobierno están cada vez más digitalizados y centralizados. Los datos centralizados resultantes han ampliado las posibilidades y reducido el costo de acompañar a las familias en el proceso de toma de decisiones con información personalizada.',
+    photoAlt: 'Actividad de campo de ConsiliumBots en Colombia',
+    blogTitle: 'Del blog',
+    allPosts: 'Todas las entradas',
+    readPost: 'Leer la entrada →',
+    foreignNote: 'Disponible solo en inglés.',
+    partnersTitle: 'Nuestros aliados',
+    wellspring: 'Agradecemos a Wellspring Philanthropic Fund por su generoso apoyo institucional, que nos permite avanzar en nuestra misión.',
+    collaborators: 'Colaboradores',
+    governments: 'Gobiernos',
+    logos: {
+      idb: 'Banco Interamericano de Desarrollo',
+      'mineduc-chile': 'Ministerio de Educación de Chile',
+      pernambuco: 'Gobierno del Estado de Pernambuco',
+      'minedu-peru': 'Ministerio de Educación del Perú',
+      'minedu-ecuador': 'Ministerio de Educación del Ecuador',
+      'gobrd-educacion': 'Gobierno de la República Dominicana - Educación',
+      'gobrd-presidencia': 'Presidencia de la República Dominicana',
+      'valle-del-cauca': 'Gobernación del Valle del Cauca',
+      'secretaria-bogota': 'Secretaría de Educación de Bogotá',
+    },
+    cta1: 'Si tienes una idea o quieres formar parte del equipo de ConsiliumBots, te invitamos a contactarnos.',
+    cta1Link: 'Contáctanos',
+    cta2: 'Somos un equipo diverso e interdisciplinario con base en EE. UU., Chile y Colombia.',
+    cta2Link: 'Conoce a Nuestro Equipo',
+  },
+}[lang];
+
+// Homepage project tiles; alt text is per language above.
+const tiles = [
+  ['chatbot-highered-chile', 'chatbots-ia.svg', 359, 263],
+  ['ccas-review', 'ccas.svg', 359, 263],
+  ['dfm-chile', 'dfm.svg', 359, 263],
+  ['feedback-reports-families', 'feedback-mineduc.svg', 359, 263],
+  ['teacher-feedback-ecuador', 'feedback-teachers.svg', 359, 263],
+  ['sae-algorithm-feedback-chile', 'smart-matching.svg', 359, 263],
+  ['domus', 'subsidy.svg', 360, 264],
+  ['sae-chile', 'matricula-sae.svg', 360, 264],
+];
+
+const papers = [
+  'https://academic.oup.com/qje/article-abstract/125/2/515/1882172',
+  'https://consiliumbots.github.io/working-papers-cb/AGN_2019/working_paper/AGN_2019.pdf',
+  'https://www.nber.org/papers/w21300',
+];
+
+// Logo alt text falls back to the proper name when it is the same in both languages.
+const collaborators = [
+  ['https://www.povertyactionlab.org/', 'jpal', 'J-PAL', 82, 25],
+  ['https://poverty-action.org/', 'ipa', 'IPA', 72, 24],
+  ['https://www.agency.fund/', 'agency-fund', 'The Agency Fund', 90, 12],
+  ['https://www.iadb.org/en', 'idb', 'Inter-American Development Bank', 53, 22],
+  ['https://globaldevincubator.org/', 'gdi', 'Global Development Incubator', 75, 41],
+  ['https://www.theigc.org/', 'igc', 'International Growth Centre', 34, 29],
+  ['https://openai.com/', 'openai', 'OpenAI', 68, 18],
+];
+const governments = [
+  ['https://www.mineduc.cl/', 'mineduc-chile', 'Ministerio de Educacion de Chile', 50, 46],
+  ['https://www.icfes.gov.co/', 'icfes-colombia', 'ICFES Colombia', 59, 30],
+  ['https://www.nhps.net/', 'nhps', 'New Haven Public Schools', 74, 20],
+  ['https://www.pe.gov.br/', 'pernambuco', 'Governo do Estado de Pernambuco', 75, 24],
+  ['https://www.gob.pe/minedu', 'minedu-peru', 'Ministerio de Educacion Peru', 89, 18],
+  ['https://www.gob.ec/minedec', 'minedu-ecuador', 'Ministerio de Educacion Ecuador', 78, 24],
+  ['https://inafocam.gob.do/', 'inafocam', 'INAFOCAM', 64, 28],
+  ['https://www.ministeriodeeducacion.gob.do/', 'gobrd-educacion', 'Gobierno de la Republica Dominicana - Educacion', 70, 34],
+  ['https://presidencia.gob.do/', 'gobrd-presidencia', 'Presidencia de la Republica Dominicana', 79, 32],
+  ['https://mepyd.gob.do/', 'gobrd-mepyd', 'MEPyD', 56, 37],
+  ['https://www.valledelcauca.gov.co/', 'valle-del-cauca', 'Gobernacion Valle del Cauca', 140, 46],
+  ['https://www.educacionbogota.edu.co/portal_institucional/', 'secretaria-bogota', 'Secretaria de Educacion Bogota', 140, 32],
+];
+const alt = (id, fallback) => copy.logos[id] ?? fallback;
+const locale = es ? 'es-ES' : 'en-US';
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description}>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="text-highlight">{copy.heroHighlight}</span>{copy.heroRest}
+        </h1>
+        <a href={to('/what-we-do')} class="btn-arrow">
+          {copy.heroLink}
+          <img src="/icons/arrow-right.svg" alt="" width="20" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="mission">
+    <div class="wrap">
+      <div class="mission-grid">
+        <div class="mission-content">
+          <h2>{copy.mission}</h2>
+          <a href={to('/projects')} class="btn btn-primary">
+            {copy.missionButton}
+            <img src="/icons/arrow-right.svg" alt="" width="20" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about section">
+    <div class="wrap">
+      {es ? (
+        <p class="about-text">
+          Nuestra organización sin fines de lucro se dedica a aprovechar la tecnología para
+          <strong>conectar los datos del gobierno con la comunidad</strong>
+          con el fin de
+          <strong>ayudar a las personas a tomar decisiones mejor informadas que impacten positivamente su bienestar.</strong>
+          Nuestra misión es aumentar el
+          <strong>acceso a la educación, la vivienda y otros beneficios del gobierno</strong>
+          fomentando la innovación tecnológica. Así, buscamos empoderar a quienes más lo necesitan y promover la equidad social y económica.
+        </p>
+      ) : (
+        <p class="about-text">
+          Our nonprofit organization is dedicated to leveraging technology to
+          <strong>connect government data with the community</strong>
+          in order to
+          <strong>help people make better-informed decisions that can positively impact their well-being.</strong>
+          Our mission is to increase
+          <strong>access to education, housing, and other government benefits</strong>
+          by fostering technological innovation. By doing so, we aim to empower those who need it most, and promote social and economic equity.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <!-- IMPACT NUMBERS -->
+  <section class="impact section">
+    <div class="wrap">
+      <h2 class="section-title">{copy.impactTitle}</h2>
+      <div class="impact-grid">
+        {copy.impact.map(([n, label, desc]) => (
+          <div class="impact-card">
+            <div class="impact-number">{n}</div>
+            <div class="impact-label">{label}</div>
+            <p class="impact-desc">{desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="impact-row">
+        <div class="impact-card">
+          <div class="impact-number">{copy.countries[0]}</div>
+          <div class="impact-label">{copy.countries[1]}</div>
+          <p class="impact-desc">{copy.countries[2]}</p>
+        </div>
+        <div class="impact-highlight">
+          <h3>{copy.highlight}</h3>
+        </div>
+      </div>
+
+      <!-- Headline outcomes pulled from the project data (see projects.json) -->
+      <div class="results-grid">
+        {copy.results.map(([slug, n, text, link]) => (
+          <a href={to(`/projects/${slug}`)} class="result-card">
+            <div class="result-number">{n}</div>
+            <p class="result-text">{text}</p>
+            <span class="result-link">{link}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="research section">
+    <div class="wrap">
+      <h2 class="section-title">{copy.researchTitle}</h2>
+      <p class="research-subtitle">{copy.researchSubtitle}</p>
+      <div class="research-papers">
+        <a href="https://academic.oup.com/qje/article/137/3/1791/6544686" target="_blank" rel="noopener noreferrer" class="paper-link">
+          <span>Smart Matching Platforms and Heterogeneous Beliefs in Centralized School Choice</span>
+          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+        </a>
+        <a href="https://www.christopher-neilson.com/work/Application-Mistakes.html" target="_blank" rel="noopener noreferrer" class="paper-link">
+          <span>{copy.applicationMistakes}</span>
+          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+        </a>
+        <a href="https://consiliumbots.github.io/working-papers-cb/AGN_2019/working_paper/AGN_2019.pdf" target="_blank" rel="noopener noreferrer" class="paper-link">
+          <span>Approximating the Equilibrium Effects of Informed School Choice</span>
+          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+        </a>
+      </div>
+      <a href={to('/research')} class="btn-arrow">
+        {copy.morePublications}
+        <img src="/icons/blue-arrow.png" alt="" width="20" />
+      </a>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section">
+    <div class="projects-intro">
+      <div class="wrap">
+        <div class="projects-intro-grid">
+          <div class="projects-intro-header">
+            <a href={to('/projects')}>
+              <h2>{copy.projectsTitle}</h2>
+              <p>{copy.projectsTagline}</p>
+            </a>
+          </div>
+          <p>{copy.projectsP1}</p>
+          <p>{copy.projectsP2}</p>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="projects-grid">
+        {tiles.map(([slug, img, w, h], i) => (
+          <a href={to(`/projects/${slug}`)} class="project-card">
+            <img src={`/images/projects/${img}`} alt={copy.tiles[i]} width={w} height={h} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY DOES IT MATTER -->
+  <section class="why-matters section">
+    <div class="wrap">
+      <h2 class="section-title">{copy.whyTitle}</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-card-header">
+            <img src="/images/figure-info-interventions.png" alt="" width="50" height="50" loading="lazy" />
+            <h3>{copy.why1Title}</h3>
+          </div>
+          <p>{copy.why1Body}</p>
+          <div class="why-papers">
+            {copy.papers.map(([claim, cite], i) => (
+              <a href={papers[i]} target="_blank" rel="noopener noreferrer" class="why-paper-link">
+                <strong>{claim}</strong>{cite}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="why-card">
+          <div class="why-card-header">
+            <img src="/images/figure-ai.png" alt="" width="50" height="50" loading="lazy" />
+            <h3>{copy.why2Title}</h3>
+          </div>
+          <p>{copy.why2Body}</p>
+        </div>
+        <div class="why-card">
+          <div class="why-card-header">
+            <img src="/images/figure-centralized.png" alt="" width="50" height="49" loading="lazy" />
+            <h3>{copy.why3Title}</h3>
+          </div>
+          <p>{copy.why3Body}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIELD PHOTOS -->
+  <section class="photos">
+    <div class="photos-grid">
+      <Image
+        src={fieldPhoto1}
+        alt={copy.photoAlt}
+        widths={[800, 1600]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+      <Image
+        src={fieldPhoto2}
+        alt={copy.photoAlt}
+        widths={[800, 1600]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+        format="webp"
+        quality={80}
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- FROM THE BLOG -->
+  {latestPosts.length > 0 && (
+    <section class="blog-strip section">
+      <div class="wrap">
+        <div class="blog-strip-head">
+          <h2 class="section-title">{copy.blogTitle}</h2>
+          <a href={to('/blog')} class="btn-arrow">
+            {copy.allPosts}
+            <img src="/icons/blue-arrow.png" alt="" width="20" />
+          </a>
+        </div>
+        <div class="blog-strip-grid">
+          {latestPosts.map((post) => {
+            // An untranslated post shown under the other language: tag its
+            // language and say so (today only EN originals appear on /es/).
+            const foreign = post.data.lang !== lang ? post.data.lang : undefined;
+            return (
+              <a href={to(`/blog/${postSlug(post)}`)} class="blog-strip-card">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString(locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' })}
+                </time>
+                <h3 lang={foreign}>{post.data.title}</h3>
+                <p lang={foreign}>{post.data.description}</p>
+                {foreign && <p class="blog-strip-note">{copy.foreignNote}</p>}
+                <span class="result-link">{copy.readPost}</span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- PARTNERS -->
+  <section class="partners section">
+    <div class="wrap">
+      <h2 class="section-title">{copy.partnersTitle}</h2>
+
+      <div class="partner-main">
+        <a href="https://wpfund.org/" target="_blank" rel="noopener noreferrer">
+          <img src="/logos/partners/wpf.png" alt="Wellspring Philanthropic Fund" width="67" height="24" loading="lazy" />
+        </a>
+        <p>{copy.wellspring}</p>
+      </div>
+
+      <h3 class="partner-section-title">{copy.collaborators}</h3>
+      <div class="logo-grid collaborators-grid">
+        {collaborators.map(([href, id, name, w, h]) => (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <img src={`/logos/collaborators/${id}.png`} alt={alt(id, name)} width={w} height={h} loading="lazy" />
+          </a>
+        ))}
+      </div>
+
+      <h3 class="partner-section-title">{copy.governments}</h3>
+      <div class="logo-grid governments-grid">
+        {governments.map(([href, id, name, w, h]) => (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <img src={`/logos/governments/${id}.png`} alt={alt(id, name)} width={w} height={h} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / CONTACT -->
+  <section class="cta section">
+    <div class="wrap">
+      <div class="cta-grid">
+        <div class="cta-card">
+          <img src="/icons/sms.svg" alt="" width="35" />
+          <p>{copy.cta1}</p>
+          <a href={to('/contact')} class="btn-arrow">
+            {copy.cta1Link}
+            <img src="/icons/blue-arrow.png" alt="" width="20" />
+          </a>
+        </div>
+        <div class="cta-card">
+          <img src="/icons/team-icon.svg" alt="" width="35" />
+          <p>{copy.cta2}</p>
+          <a href={to('/team')} class="btn-arrow">
+            {copy.cta2Link}
+            <img src="/icons/blue-arrow.png" alt="" width="20" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* HERO */
+  .hero {
+    background: var(--color-bg-light);
+    padding: 100px 0 80px;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 400;
+    max-width: 700px;
+    margin-bottom: 32px;
+    line-height: 1.15;
+  }
+
+  /* MISSION */
+  .mission {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 80px 0;
+  }
+  .mission h2 {
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-weight: 500;
+    max-width: 700px;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+
+  /* ABOUT */
+  .about-text {
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  .about-text strong {
+    color: var(--color-text);
+  }
+
+  /* IMPACT */
+  .impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .impact-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 24px;
+  }
+  .impact-card {
+    background: var(--color-bg-light);
+    border-radius: 12px;
+    padding: 32px;
+  }
+  .impact-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 4px;
+  }
+  .impact-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .impact-desc {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  .impact-highlight {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    align-items: center;
+  }
+  .impact-highlight h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .result-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--color-white);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+  }
+  .result-card:hover {
+    box-shadow: 0 6px 24px rgb(var(--navy-rgb) / 0.09);
+    transform: translateY(-2px);
+  }
+  .result-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    line-height: 1;
+  }
+  .result-text {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .result-link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+
+  .blog-strip-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .blog-strip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 12px;
+  }
+  .blog-strip-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    background: var(--color-white);
+    transition: box-shadow 0.18s ease, transform 0.18s ease;
+  }
+  .blog-strip-card:hover {
+    box-shadow: 0 6px 24px rgb(var(--navy-rgb) / 0.09);
+    transform: translateY(-2px);
+  }
+  .blog-strip-card time {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+  .blog-strip-card h3 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+  }
+  .blog-strip-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .blog-strip-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-text-muted);
+    flex-grow: 0 !important;
+  }
+
+  /* RESEARCH */
+  .research-subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+  .research-papers {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 24px;
+  }
+  .paper-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s ease;
+  }
+  .paper-link:hover {
+    background: var(--color-bg-light);
+  }
+
+  /* PROJECTS */
+  .projects-section {
+    padding: 80px 0;
+  }
+  .projects-intro {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 60px 0;
+    margin-bottom: 40px;
+  }
+  .projects-intro-grid {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .projects-intro-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+  .projects-intro-header p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+  }
+  .projects-intro-grid > p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .project-card {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* WHY MATTERS */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .why-card {
+    padding: 24px 0;
+  }
+  .why-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .why-card-header h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .why-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  .why-papers {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .why-paper-link {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    padding: 8px 12px;
+    border-left: 3px solid var(--color-accent);
+    transition: background 0.2s ease;
+  }
+  .why-paper-link:hover {
+    background: rgb(var(--accent-rgb) / 0.05);
+  }
+  .why-paper-link strong {
+    color: var(--color-primary);
+  }
+
+  /* PHOTOS */
+  .photos {
+    padding: 0;
+  }
+  .photos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .photos-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  /* PARTNERS */
+  .partner-main {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .partner-main p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+  }
+  .partner-section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--color-text-light);
+  }
+  .logo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .logo-grid a {
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+  }
+  .logo-grid a:hover {
+    opacity: 1;
+  }
+
+  /* CTA */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .cta-card {
+    padding: 32px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+  }
+  .cta-card img:first-child {
+    margin-bottom: 16px;
+  }
+  .cta-card p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .why-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .results-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .blog-strip-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .projects-intro-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .impact-grid {
+      grid-template-columns: 1fr;
+    }
+    .impact-row {
+      grid-template-columns: 1fr;
+    }
+    .results-grid {
+      grid-template-columns: 1fr;
+    }
+    .blog-strip-grid {
+      grid-template-columns: 1fr;
+    }
+    .why-grid {
+      grid-template-columns: 1fr;
+    }
+    .photos-grid {
+      grid-template-columns: 1fr;
+    }
+    .photos-grid img {
+      height: 250px;
+    }
+    .cta-grid {
+      grid-template-columns: 1fr;
+    }
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,61 @@
+---
+// Shared template for /blog and /es/blog — the routes only pass `lang`.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../PostCard.astro';
+import { useTranslations } from '../../i18n.js';
+import { getPostsFor } from '../../lib/posts.js';
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+const posts = await getPostsFor(lang);
+
+const copy = {
+  en: {
+    title: 'Blog | ConsiliumBots',
+    description:
+      'Notes on the research and the systems behind it — what we are learning from building information tools with governments.',
+  },
+  es: {
+    title: 'Blog en español | ConsiliumBots',
+    description:
+      'Notas sobre la investigación y los sistemas detrás de ella: lo que aprendemos construyendo herramientas de información junto a gobiernos.',
+  },
+}[lang];
+---
+
+<BaseLayout title={copy.title} description={copy.description} lang={lang}>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>{t('blog.title')}</h1>
+      <p>{t('blog.intro')}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {posts.length === 0 ? (
+        <p class="blog-empty">{t('blog.empty')}</p>
+      ) : (
+        <div class="blog-grid">
+          {posts.map((post) => <PostCard post={post} lang={lang} />)}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 28px;
+  }
+  .blog-empty {
+    color: var(--color-text-muted);
+  }
+  @media (max-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

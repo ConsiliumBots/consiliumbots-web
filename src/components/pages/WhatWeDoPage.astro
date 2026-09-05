@@ -1,0 +1,338 @@
+---
+// Shared template for /what-we-do and /es/what-we-do — the routes only pass
+// `lang`. Both languages' copy lives here, side by side.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { localizePath } from '../../i18n.js';
+
+const { lang = 'en' } = Astro.props;
+
+// The tool families mirror the `type` taxonomy in src/data/projects.json.
+const copy = {
+  en: {
+    title: 'What We Do | ConsiliumBots',
+    description:
+      'We turn complex and underutilized information into virtual assistance and personalized recommendations, helping people make better-informed decisions.',
+    heading: 'What We Do',
+    intro: 'We turn complex and underutilized information into virtual assistance and personalized recommendations.',
+    orgFacts:
+      'Founded in December 2018 and incorporated as ConsiliumBots, Inc., a 501(c)(3) nonprofit, we work with governments and researchers across Chile, Colombia, the Dominican Republic, Peru, Ecuador, Brazil, and the United States.',
+    howHeading: 'How we work',
+    howLead:
+      'We build and operate free information tools together with governments, and measure their impact with our affiliated researchers. Most of our work falls into five families:',
+    families: [
+      {
+        title: 'Chatbots & AI assistants',
+        body: "Conversational guidance on WhatsApp and the web that answers families' questions and delivers personalized recommendations during application windows.",
+        examples: [
+          { name: 'IcfesBot — Colombia', slug: 'icfesbot' },
+          { name: 'Higher Education Chatbot — Chile', slug: 'chatbot-highered-chile' },
+        ],
+      },
+      {
+        title: 'Personalized feedback reports',
+        body: 'Individualized reports that show applicants their options and real admission risks before applications close.',
+        examples: [
+          { name: 'Feedback Reports for Students and Families', slug: 'feedback-reports-families' },
+          { name: 'Teacher Assignment Feedback — Ecuador', slug: 'teacher-feedback-ecuador' },
+        ],
+      },
+      {
+        title: 'School & career explorers',
+        body: 'Search platforms that make schools, programs, and career outcomes comparable for every family.',
+        examples: [
+          { name: 'MIME — Chile', slug: 'mime-explorer-chile' },
+          { name: 'School Explorer — Colombia', slug: 'explorer-colombia' },
+        ],
+      },
+      {
+        title: 'Smart matching & assignment systems',
+        body: 'We have designed and helped operate centralized choice and assignment systems — from algorithm management to applicant communication.',
+        examples: [
+          { name: 'Sistema de Admisión Escolar — Chile', slug: 'sae-chile' },
+          { name: 'New Haven Public Schools — USA', slug: 'nhps' },
+        ],
+      },
+      {
+        title: 'Decision-support APIs',
+        body: 'Risk and recommendation services that plug into government platforms to warn applicants in real time.',
+        examples: [{ name: 'Admission Risk API — Pernambuco, Brazil', slug: 'risk-api-pernambuco' }],
+      },
+    ],
+    whyHeading: 'Why it matters',
+    approach: [
+      {
+        icon: '/images/figure-info-interventions.png',
+        title: 'Informational interventions are effective',
+        body: 'There is scientific evidence that providing relevant information at the right time can make a significant difference in the way people live — improving decisions about schooling, enrollment, and access to benefits.',
+      },
+      {
+        icon: '/images/figure-ai.png',
+        title: 'AI makes personalized guidance possible at scale',
+        body: 'AI, empowered by large language models, has opened up new possibilities for delivering personalized, dynamic information at massive scale — reshaping how individuals make decisions about education, housing, and government services.',
+      },
+      {
+        icon: '/images/figure-centralized.png',
+        title: 'Centralized systems and data offer an opportunity',
+        body: 'Government benefit processes are increasingly digitized and centralized. The resulting data lowers the cost of supporting families in decision-making with personalized information.',
+      },
+    ],
+    ctaHeading: 'See it in practice',
+    ctaLead: 'Explore the projects where we put this approach to work across Latin America and the US.',
+    ctaButton: 'View projects',
+  },
+  es: {
+    title: 'Qué Hacemos | ConsiliumBots',
+    description:
+      'Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones personalizadas, ayudando a las personas a tomar decisiones mejor informadas.',
+    heading: 'Qué Hacemos',
+    intro: 'Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones personalizadas.',
+    orgFacts:
+      'Fundada en diciembre de 2018 y constituida como ConsiliumBots, Inc., una organización sin fines de lucro 501(c)(3), trabajamos junto a gobiernos e investigadores en Chile, Colombia, República Dominicana, Perú, Ecuador, Brasil y Estados Unidos.',
+    howHeading: 'Cómo trabajamos',
+    howLead:
+      'Construimos y operamos herramientas de información gratuitas junto a gobiernos, y medimos su impacto con nuestros investigadores afiliados. La mayor parte de nuestro trabajo se organiza en cinco familias:',
+    families: [
+      {
+        title: 'Chatbots y asistentes de IA',
+        body: 'Orientación conversacional por WhatsApp y la web que responde las preguntas de las familias y entrega recomendaciones personalizadas durante los períodos de postulación.',
+        examples: [
+          { name: 'IcfesBot — Colombia', slug: 'icfesbot' },
+          { name: 'Chatbot de Educación Superior — Chile', slug: 'chatbot-highered-chile' },
+        ],
+      },
+      {
+        title: 'Cartillas de retroalimentación personalizada',
+        body: 'Reportes individualizados que muestran a cada postulante sus opciones y sus riesgos reales de admisión antes de que cierren los plazos.',
+        examples: [
+          { name: 'Cartillas para estudiantes y familias', slug: 'feedback-reports-families' },
+          { name: 'Retroalimentación docente — Ecuador', slug: 'teacher-feedback-ecuador' },
+        ],
+      },
+      {
+        title: 'Exploradores de escuelas y carreras',
+        body: 'Plataformas de búsqueda que hacen comparables las escuelas, los programas y los resultados laborales para todas las familias.',
+        examples: [
+          { name: 'MIME — Chile', slug: 'mime-explorer-chile' },
+          { name: 'Explorador de Colegios — Colombia', slug: 'explorer-colombia' },
+        ],
+      },
+      {
+        title: 'Sistemas de postulación y asignación centralizada',
+        body: 'Hemos diseñado y ayudado a operar sistemas centralizados de elección y asignación — desde la gestión del algoritmo hasta la comunicación con los postulantes.',
+        examples: [
+          { name: 'Sistema de Admisión Escolar — Chile', slug: 'sae-chile' },
+          { name: 'New Haven Public Schools — EE. UU.', slug: 'nhps' },
+        ],
+      },
+      {
+        title: 'APIs de apoyo a decisiones',
+        body: 'Servicios de riesgo y recomendación que se integran a plataformas de gobierno para alertar a los postulantes en tiempo real.',
+        examples: [{ name: 'API de Riesgo de Admisión — Pernambuco, Brasil', slug: 'risk-api-pernambuco' }],
+      },
+    ],
+    whyHeading: 'Por qué es importante',
+    approach: [
+      {
+        icon: '/images/figure-info-interventions.png',
+        title: 'Las intervenciones informativas son efectivas',
+        body: 'Existe evidencia científica de que brindar información relevante en el momento adecuado puede marcar una diferencia significativa en la forma en que viven las personas, mejorando las decisiones sobre escolaridad, matrícula y acceso a beneficios.',
+      },
+      {
+        icon: '/images/figure-ai.png',
+        title: 'Inteligencia Artificial: una realidad ahora disponible',
+        body: 'La IA, impulsada por los grandes modelos de lenguaje, ha abierto nuevas posibilidades para entregar información personalizada y dinámica a gran escala, transformando la forma en que las personas toman decisiones sobre educación, vivienda y servicios del gobierno.',
+      },
+      {
+        icon: '/images/figure-centralized.png',
+        title: 'Los sistemas y datos centralizados ofrecen una oportunidad',
+        body: 'Los procesos de beneficios del gobierno están cada vez más digitalizados y centralizados. Los datos resultantes reducen el costo de acompañar a las familias en la toma de decisiones con información personalizada.',
+      },
+    ],
+    ctaHeading: 'Míralo en la práctica',
+    ctaLead: 'Explora los proyectos donde ponemos en práctica este enfoque en América Latina y EE. UU.',
+    ctaButton: 'Ver proyectos',
+  },
+}[lang];
+
+const projectsPath = localizePath('/projects', lang);
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description}>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>{copy.heading}</h1>
+      <p>{copy.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      {lang === 'es' ? (
+        <p class="lead">
+          Nuestra organización sin fines de lucro se dedica a aprovechar la tecnología para
+          <strong>conectar los datos del gobierno con la comunidad</strong> con el fin de
+          <strong>ayudar a las personas a tomar decisiones mejor informadas que puedan impactar positivamente su bienestar.</strong>
+          Nuestra misión es aumentar el <strong>acceso a la educación, la vivienda y otros beneficios del gobierno</strong>
+          fomentando la innovación tecnológica, empoderando a quienes más lo necesitan y promoviendo la equidad social
+          y económica.
+        </p>
+      ) : (
+        <p class="lead">
+          Our nonprofit organization is dedicated to leveraging technology to
+          <strong>connect government data with the community</strong> in order to
+          <strong>help people make better-informed decisions that can positively impact their well-being.</strong>
+          Our mission is to increase <strong>access to education, housing, and other government benefits</strong>
+          by fostering technological innovation — empowering those who need it most and promoting social
+          and economic equity.
+        </p>
+      )}
+      <p class="org-facts">{copy.orgFacts}</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <h2 class="section-title">{copy.howHeading}</h2>
+      <p class="lead how-lead">{copy.howLead}</p>
+      <div class="family-grid">
+        {copy.families.map((f) => (
+          <div class="family-card">
+            <h3>{f.title}</h3>
+            <p>{f.body}</p>
+            <div class="family-examples">
+              {f.examples.map((e) => (
+                <a href={localizePath(`/projects/${e.slug}`, lang)} class="family-example">{e.name} →</a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <h2 class="section-title">{copy.whyHeading}</h2>
+      <div class="approach-grid">
+        {copy.approach.map((a) => (
+          <div class="approach-card">
+            <img src={a.icon} alt="" width="50" height="50" />
+            <h3>{a.title}</h3>
+            <p>{a.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap cta-row">
+      <div>
+        <h2 class="section-title">{copy.ctaHeading}</h2>
+        <p class="lead">{copy.ctaLead}</p>
+      </div>
+      <a href={projectsPath} class="btn btn-primary">
+        {copy.ctaButton}
+        <img src="/icons/arrow-right.svg" alt="" width="20" />
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .lead {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    max-width: 800px;
+  }
+  .lead strong {
+    color: var(--color-text);
+  }
+  .how-lead {
+    margin-bottom: 32px;
+  }
+  .org-facts {
+    margin-top: 20px;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+    max-width: 800px;
+  }
+  .family-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .family-card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .family-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .family-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+    flex-grow: 1;
+  }
+  .family-examples {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .family-example {
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+  .family-example:hover {
+    text-decoration: underline;
+  }
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  .approach-card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 14px 0 10px;
+  }
+  .approach-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin: 0;
+  }
+  .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-row .lead {
+    margin: 0;
+  }
+  @media (max-width: 1024px) {
+    .approach-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 768px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+    .family-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

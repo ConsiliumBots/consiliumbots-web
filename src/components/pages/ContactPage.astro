@@ -1,0 +1,139 @@
+---
+// Shared template for /contact and /es/contact — the two routes are thin
+// wrappers that only pass `lang`. Copy for both languages lives here so the
+// prose is maintained side by side instead of in two drifting page files.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const { lang = 'en' } = Astro.props;
+
+// NOTE: no public contact email is published yet — confirm which address to surface
+// (e.g. info@consiliumbots.com) and it can be wired as a mailto button here.
+const offices = [
+  { city: 'New Haven', lines: ['102 Audubon Street, Floor 2', 'New Haven, CT 06510', 'United States'] },
+  { city: 'Santiago', lines: ['Av. Apoquindo 5950', 'Las Condes', 'Santiago, Chile'] },
+];
+
+const socials = [
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/consiliumbots/about/', icon: '/icons/linkedin.svg' },
+  { label: 'X (Twitter)', href: 'https://twitter.com/ConsiliumBots', icon: '/icons/x-twitter.svg' },
+];
+
+const copy = {
+  en: {
+    title: 'Contact | ConsiliumBots',
+    description:
+      'Get in touch with ConsiliumBots — a nonprofit using data and technology to help people make important decisions.',
+    heading: 'Contact',
+    intro: "If you have an idea, or want to be part of the ConsiliumBots team, we'd love to hear from you.",
+    offices: 'Offices',
+    connect: 'Connect',
+    note: "We're a diverse, interdisciplinary team based in the US, Chile, and Colombia — and we're always interested in connecting with researchers, partners, and collaborators.",
+  },
+  es: {
+    title: 'Contacto | ConsiliumBots',
+    description:
+      'Contáctate con ConsiliumBots — una organización sin fines de lucro que usa datos y tecnología para ayudar a las personas a tomar decisiones importantes.',
+    heading: 'Contacto',
+    intro: 'Si tienes una idea o quieres formar parte del equipo de ConsiliumBots, nos encantaría saber de ti.',
+    offices: 'Oficinas',
+    connect: 'Conéctate',
+    note: 'Somos un equipo diverso e interdisciplinario con base en EE. UU., Chile y Colombia, y siempre nos interesa conectar con investigadores, aliados y colaboradores.',
+  },
+}[lang];
+---
+
+<BaseLayout lang={lang} title={copy.title} description={copy.description}>
+  <section class="page-hero">
+    <div class="wrap">
+      <h1>{copy.heading}</h1>
+      <p>{copy.intro}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="section-title">{copy.offices}</h2>
+        <div class="offices">
+          {offices.map((o) => (
+            <div class="office">
+              <h3>{o.city}</h3>
+              <address>{o.lines.map((l) => <span>{l}</span>)}</address>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-title">{copy.connect}</h2>
+        <div class="socials">
+          {socials.map((s) => (
+            <a href={s.href} target="_blank" rel="noopener noreferrer" class="social">
+              <img src={s.icon} alt="" width="20" />
+              {s.label}
+            </a>
+          ))}
+        </div>
+        <p class="join-note">{copy.note}</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .offices {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .office h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .office address {
+    font-style: normal;
+    color: var(--color-text-light);
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+  .office address span {
+    display: block;
+  }
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .social {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-accent);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  /* The shared social SVGs are white glyphs (for the dark footer); darken them here */
+  .social img {
+    filter: invert(1);
+    opacity: 0.75;
+  }
+  .join-note {
+    font-size: 0.92rem;
+    color: var(--color-text-light);
+    line-height: 1.7;
+    max-width: 460px;
+  }
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>
