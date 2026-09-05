@@ -59,9 +59,9 @@ const countries = [
   </section>
 
   <div class="wrap filter-bar" id="country-filter" role="group" aria-label={copy.filterLabel}>
-    <button class="chip active" data-country="" aria-pressed="true">{copy.allCountries}</button>
+    <button type="button" class="chip active" data-country="" aria-pressed="true">{copy.allCountries}</button>
     {countries.map((c) => (
-      <button class="chip" data-country={c} aria-pressed="false">{countryLabel(c, lang)}</button>
+      <button type="button" class="chip" data-country={c} aria-pressed="false">{countryLabel(c, lang)}</button>
     ))}
   </div>
 

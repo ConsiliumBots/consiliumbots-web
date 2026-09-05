@@ -15,6 +15,8 @@ const copy = {
     intro:
       "We're a diverse, interdisciplinary team based in the US, Chile, and Colombia, working alongside a network of affiliated researchers.",
     videoLabel: 'The ConsiliumBots team together at an event',
+    videoPause: 'Pause video',
+    videoPlay: 'Play video',
     team: 'ConsiliumBots team',
     website: 'Website',
     affiliates: 'Research affiliates',
@@ -37,6 +39,8 @@ const copy = {
     intro:
       'Somos un equipo diverso e interdisciplinario con base en EE. UU., Chile y Colombia, que trabaja junto a una red de investigadores afiliados.',
     videoLabel: 'El equipo de ConsiliumBots reunido en un evento',
+    videoPause: 'Pausar el video',
+    videoPlay: 'Reproducir el video',
     team: 'Equipo de ConsiliumBots',
     website: 'Sitio web',
     affiliates: 'Investigadores afiliados',
@@ -86,24 +90,30 @@ function labelled([label, desc]) {
 ---
 
 <BaseLayout lang={lang} title={copy.title} description={copy.description}>
+  <link slot="head" rel="preload" as="image" href="/videos/team-loop-poster.jpg" fetchpriority="high" />
   <section class="page-hero">
     <div class="wrap hero-grid">
       <div>
         <h1>{copy.heading}</h1>
         <p>{copy.intro}</p>
       </div>
-      <video
-        class="team-video"
-        src="/videos/team-loop.mp4"
-        poster="/videos/team-loop-poster.jpg"
-        autoplay
-        loop
-        muted
-        playsinline
-        width="600"
-        height="336"
-        aria-label={copy.videoLabel}
-      ></video>
+      <figure class="team-figure">
+        <video
+          class="team-video"
+          src="/videos/team-loop.mp4"
+          poster="/videos/team-loop-poster.jpg"
+          autoplay
+          loop
+          muted
+          playsinline
+          width="600"
+          height="336"
+        ></video>
+        <button type="button" class="video-toggle" data-pause={copy.videoPause} data-play={copy.videoPlay}>
+          {copy.videoPause}
+        </button>
+        <figcaption>{copy.videoLabel}</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -233,11 +243,25 @@ function labelled([label, desc]) {
 </BaseLayout>
 
 <script>
-  // Honor reduced-motion: show the poster instead of the looping video.
+  // The loop autoplays muted; the button lets anyone stop it (WCAG 2.2.2)
+  // and reduced-motion users get the poster instead.
   const v = document.querySelector<HTMLVideoElement>('.team-video');
-  if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    v.removeAttribute('autoplay');
-    v.pause();
+  const btn = document.querySelector<HTMLButtonElement>('.video-toggle');
+  if (v && btn) {
+    const sync = () => {
+      btn.textContent = v.paused ? (btn.dataset.play ?? 'Play') : (btn.dataset.pause ?? 'Pause');
+    };
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      v.pause();
+    }
+    btn.addEventListener('click', () => {
+      if (v.paused) v.play().catch(() => {});
+      else v.pause();
+    });
+    v.addEventListener('play', sync);
+    v.addEventListener('pause', sync);
+    sync();
   }
 </script>
 
@@ -248,18 +272,53 @@ function labelled([label, desc]) {
     gap: 48px;
     align-items: center;
   }
+  .team-figure {
+    position: relative;
+    margin: 0;
+  }
   .team-video {
+    display: block;
     width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 12px 32px rgb(var(--navy-rgb) / 0.18);
+  }
+  .team-figure figcaption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .video-toggle {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--color-white);
+    background: rgb(var(--navy-rgb) / 0.6);
+    border: 1px solid rgb(255 255 255 / 0.5);
+    border-radius: 999px;
+    padding: 5px 12px;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  .video-toggle:hover {
+    background: rgb(var(--navy-rgb) / 0.8);
+  }
+  .video-toggle:focus-visible {
+    outline: 2px solid var(--color-white);
+    outline-offset: 2px;
   }
   @media (max-width: 900px) {
     .hero-grid {
       grid-template-columns: 1fr;
       gap: 32px;
     }
-    .team-video {
+    .team-figure {
       max-width: 480px;
     }
   }

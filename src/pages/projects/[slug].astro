@@ -203,7 +203,7 @@ const meta = [
           <p>
             <a class="btn-arrow" href={project.website} target="_blank" rel="noopener">
               {L.visit}
-              <img src="/icons/arrow-outward.svg" alt="" width="16" />
+              <img src="/icons/arrow-outward.svg" alt="" width="16" height="16" />
             </a>
           </p>
         )}
@@ -212,7 +212,7 @@ const meta = [
           <p>
             <a class="btn-arrow" href={project.publication} target="_blank" rel="noopener noreferrer">
               {L.report}
-              <img src="/icons/arrow-outward.svg" alt="" width="16" />
+              <img src="/icons/arrow-outward.svg" alt="" width="16" height="16" />
             </a>
           </p>
         )}
@@ -443,5 +443,9 @@ const meta = [
     .related-grid {
       grid-template-columns: 1fr;
     }
+  }
+  .breadcrumb a {
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 </style>

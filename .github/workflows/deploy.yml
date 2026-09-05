@@ -19,13 +19,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Build + quality gate (links, HTML, Lighthouse) live in ci.yml; a failure
+  # there means nothing is uploaded and the deploy job never runs.
   build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Build Astro site
-        uses: withastro/action@v3
+    uses: ./.github/workflows/ci.yml
 
   deploy:
     needs: build

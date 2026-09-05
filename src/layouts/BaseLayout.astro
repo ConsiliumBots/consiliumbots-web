@@ -170,6 +170,7 @@ const structuredData = {
         <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}></script>
       </>
     )}
+    <slot name="head" />
   </head>
   <body>
     <a class="skip-link" href="#main">{t('a11y.skipToContent')}</a>
