@@ -16,6 +16,7 @@
       "numberOfRuns": 2
     },
     "assert": {
+      "aggregationMethod": "optimistic",
       "assertions": {
         "categories:performance": [
           "error",
