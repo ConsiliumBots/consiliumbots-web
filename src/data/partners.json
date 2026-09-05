@@ -5,7 +5,53 @@
     "fullName": "Abdul Latif Jameel Poverty Action Lab — Latin America & Caribbean",
     "type": "Research Partner",
     "status": "active",
-    "website": "https://www.povertyactionlab.org/lac"
+    "country": null,
+    "website": "https://www.povertyactionlab.org/lac",
+    "site": {
+      "section": "collaborators",
+      "order": 1,
+      "logo": "logos/collaborators/jpal.png",
+      "logoWidth": 82,
+      "logoHeight": 25,
+      "displayName": "J-PAL",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "ipa",
+    "name": "IPA",
+    "fullName": "Innovations for Poverty Action",
+    "type": "Research Partner",
+    "status": "unconfirmed",
+    "country": null,
+    "website": "https://poverty-action.org/",
+    "site": {
+      "section": "collaborators",
+      "order": 2,
+      "logo": "logos/collaborators/ipa.png",
+      "logoWidth": 72,
+      "logoHeight": 24,
+      "displayName": "IPA",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "agency-fund",
+    "name": "The Agency Fund",
+    "fullName": null,
+    "type": "Funder",
+    "status": "unconfirmed",
+    "country": null,
+    "website": "https://www.agency.fund/",
+    "site": {
+      "section": "collaborators",
+      "order": 3,
+      "logo": "logos/collaborators/agency-fund.png",
+      "logoWidth": 90,
+      "logoHeight": 12,
+      "displayName": "The Agency Fund",
+      "displayNameEs": null
+    }
   },
   {
     "id": "openai",
@@ -13,7 +59,17 @@
     "fullName": null,
     "type": "Technology Partner",
     "status": "active",
-    "website": null
+    "country": null,
+    "website": "https://openai.com/",
+    "site": {
+      "section": "collaborators",
+      "order": 7,
+      "logo": "logos/collaborators/openai.png",
+      "logoWidth": 68,
+      "logoHeight": 18,
+      "displayName": "OpenAI",
+      "displayNameEs": null
+    }
   },
   {
     "id": "tethereducation",
@@ -21,6 +77,7 @@
     "fullName": null,
     "type": "Spin-off",
     "status": "active",
+    "country": null,
     "website": "https://tether.education"
   },
   {
@@ -29,7 +86,17 @@
     "fullName": null,
     "type": "Strategic Alliance",
     "status": "active",
-    "website": null
+    "country": null,
+    "website": "https://www.iadb.org/en",
+    "site": {
+      "section": "collaborators",
+      "order": 4,
+      "logo": "logos/collaborators/idb.png",
+      "logoWidth": 53,
+      "logoHeight": 22,
+      "displayName": "Inter-American Development Bank",
+      "displayNameEs": "Banco Interamericano de Desarrollo"
+    }
   },
   {
     "id": "yale",
@@ -37,6 +104,7 @@
     "fullName": null,
     "type": "Academic Partner",
     "status": "active",
+    "country": null,
     "website": null
   },
   {
@@ -45,7 +113,53 @@
     "fullName": null,
     "type": "Incubator",
     "status": "historical",
-    "website": null
+    "country": null,
+    "website": "https://globaldevincubator.org/",
+    "site": {
+      "section": "collaborators",
+      "order": 5,
+      "logo": "logos/collaborators/gdi.png",
+      "logoWidth": 75,
+      "logoHeight": 41,
+      "displayName": "Global Development Incubator",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "igc",
+    "name": "IGC",
+    "fullName": "International Growth Centre",
+    "type": "Research Partner",
+    "status": "unconfirmed",
+    "country": null,
+    "website": "https://www.theigc.org/",
+    "site": {
+      "section": "collaborators",
+      "order": 6,
+      "logo": "logos/collaborators/igc.png",
+      "logoWidth": 34,
+      "logoHeight": 29,
+      "displayName": "International Growth Centre",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "wellspring",
+    "name": "Wellspring Philanthropic Fund",
+    "fullName": null,
+    "type": "Funder",
+    "status": "active",
+    "country": null,
+    "website": "https://wpfund.org/",
+    "site": {
+      "section": "core-support",
+      "order": 1,
+      "logo": "logos/partners/wpf.png",
+      "logoWidth": 67,
+      "logoHeight": 24,
+      "displayName": "Wellspring Philanthropic Fund",
+      "displayNameEs": null
+    }
   },
   {
     "id": "chile-mineduc",
@@ -53,7 +167,17 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "active",
-    "website": null
+    "country": "Chile",
+    "website": "https://www.mineduc.cl/",
+    "site": {
+      "section": "governments",
+      "order": 1,
+      "logo": "logos/governments/mineduc-chile.png",
+      "logoWidth": 50,
+      "logoHeight": 46,
+      "displayName": "Ministerio de Educación de Chile",
+      "displayNameEs": null
+    }
   },
   {
     "id": "icfes",
@@ -61,7 +185,17 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "active",
-    "website": null
+    "country": "Colombia",
+    "website": "https://www.icfes.gov.co/",
+    "site": {
+      "section": "governments",
+      "order": 2,
+      "logo": "logos/governments/icfes-colombia.png",
+      "logoWidth": 59,
+      "logoHeight": 30,
+      "displayName": "ICFES Colombia",
+      "displayNameEs": null
+    }
   },
   {
     "id": "banco-republica",
@@ -69,6 +203,7 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "historical",
+    "country": "Colombia",
     "website": null
   },
   {
@@ -77,6 +212,7 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "active",
+    "country": "Colombia",
     "website": null
   },
   {
@@ -85,7 +221,35 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "active",
-    "website": null
+    "country": "Colombia",
+    "website": "https://www.valledelcauca.gov.co/",
+    "site": {
+      "section": "governments",
+      "order": 11,
+      "logo": "logos/governments/valle-del-cauca.png",
+      "logoWidth": 140,
+      "logoHeight": 46,
+      "displayName": "Gobernación del Valle del Cauca",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "secretaria-bogota",
+    "name": "Bogotá Secretariat of Education",
+    "fullName": "Secretaría de Educación del Distrito (Bogotá)",
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Colombia",
+    "website": "https://www.educacionbogota.edu.co/portal_institucional/",
+    "site": {
+      "section": "governments",
+      "order": 12,
+      "logo": "logos/governments/secretaria-bogota.png",
+      "logoWidth": 140,
+      "logoHeight": 32,
+      "displayName": "Secretaría de Educación de Bogotá",
+      "displayNameEs": null
+    }
   },
   {
     "id": "medellin",
@@ -93,7 +257,152 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "active",
+    "country": "Colombia",
     "website": null
+  },
+  {
+    "id": "nhps",
+    "name": "New Haven Public Schools",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "United States",
+    "website": "https://www.nhps.net/",
+    "site": {
+      "section": "governments",
+      "order": 3,
+      "logo": "logos/governments/nhps.png",
+      "logoWidth": 74,
+      "logoHeight": 20,
+      "displayName": "New Haven Public Schools",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "pernambuco",
+    "name": "Government of Pernambuco",
+    "fullName": "Governo do Estado de Pernambuco",
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Brazil",
+    "website": "https://www.pe.gov.br/",
+    "site": {
+      "section": "governments",
+      "order": 4,
+      "logo": "logos/governments/pernambuco.png",
+      "logoWidth": 75,
+      "logoHeight": 24,
+      "displayName": "Governo do Estado de Pernambuco",
+      "displayNameEs": "Gobierno del Estado de Pernambuco"
+    }
+  },
+  {
+    "id": "minedu-peru",
+    "name": "Peru Ministry of Education (MINEDU)",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Peru",
+    "website": "https://www.gob.pe/minedu",
+    "site": {
+      "section": "governments",
+      "order": 5,
+      "logo": "logos/governments/minedu-peru.png",
+      "logoWidth": 89,
+      "logoHeight": 18,
+      "displayName": "Ministerio de Educación del Perú",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "mineduc-ecuador",
+    "name": "Ecuador Ministry of Education",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Ecuador",
+    "website": "https://www.gob.ec/minedec",
+    "site": {
+      "section": "governments",
+      "order": 6,
+      "logo": "logos/governments/minedu-ecuador.png",
+      "logoWidth": 78,
+      "logoHeight": 24,
+      "displayName": "Ministerio de Educación del Ecuador",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "inafocam",
+    "name": "INAFOCAM",
+    "fullName": "Instituto Nacional de Formación y Capacitación del Magisterio (Dominican Republic)",
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Dominican Republic",
+    "website": "https://inafocam.gob.do/",
+    "site": {
+      "section": "governments",
+      "order": 7,
+      "logo": "logos/governments/inafocam.png",
+      "logoWidth": 64,
+      "logoHeight": 28,
+      "displayName": "INAFOCAM",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "minerd",
+    "name": "Dominican Republic Ministry of Education (MINERD)",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Dominican Republic",
+    "website": "https://www.ministeriodeeducacion.gob.do/",
+    "site": {
+      "section": "governments",
+      "order": 8,
+      "logo": "logos/governments/gobrd-educacion.png",
+      "logoWidth": 70,
+      "logoHeight": 34,
+      "displayName": "Gobierno de la República Dominicana - Educación",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "presidencia-rd",
+    "name": "Presidency of the Dominican Republic",
+    "fullName": null,
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Dominican Republic",
+    "website": "https://presidencia.gob.do/",
+    "site": {
+      "section": "governments",
+      "order": 9,
+      "logo": "logos/governments/gobrd-presidencia.png",
+      "logoWidth": 79,
+      "logoHeight": 32,
+      "displayName": "Presidencia de la República Dominicana",
+      "displayNameEs": null
+    }
+  },
+  {
+    "id": "mepyd",
+    "name": "MEPyD",
+    "fullName": "Ministerio de Economía, Planificación y Desarrollo (Dominican Republic)",
+    "type": "Government Partner",
+    "status": "unconfirmed",
+    "country": "Dominican Republic",
+    "website": "https://mepyd.gob.do/",
+    "site": {
+      "section": "governments",
+      "order": 10,
+      "logo": "logos/governments/gobrd-mepyd.png",
+      "logoWidth": 56,
+      "logoHeight": 37,
+      "displayName": "MEPyD",
+      "displayNameEs": null
+    }
   },
   {
     "id": "toctoc",
@@ -101,6 +410,7 @@
     "fullName": null,
     "type": "Private Sector Partner",
     "status": "active",
+    "country": "Chile",
     "website": null
   },
   {
@@ -109,6 +419,7 @@
     "fullName": null,
     "type": "Government Partner",
     "status": "active",
+    "country": "Chile",
     "website": null
   }
 ]

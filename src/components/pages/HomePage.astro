@@ -4,6 +4,7 @@
 // longer drift apart structurally.
 import { Image } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { partners, org } from '../../data/site-data.js';
 import fieldPhoto1 from '../../assets/field-photo-1.png';
 import fieldPhoto2 from '../../assets/field-photo-2.png';
 import { getPostsFor, postSlug } from '../../lib/posts.js';
@@ -26,11 +27,11 @@ const copy = {
     missionButton: 'Projects',
     impactTitle: 'Our impact in numbers',
     impact: [
-      ['36', 'Tools developed', 'Digital solutions developed to address information asymmetries.'],
-      ['23', 'Partnerships', 'International Organizations, Universities, Local Governments & Foundations'],
-      ['6M+', 'Lives impacted', 'Parents, students, and teachers reached'],
+      [org.impact.toolsDeveloped.value, 'Tools developed', 'Digital solutions developed to address information asymmetries.'],
+      [org.impact.partnerships.value, 'Partnerships', 'International Organizations, Universities, Local Governments & Foundations'],
+      [org.impact.livesImpacted.value, 'Lives impacted', 'Parents, students, and teachers reached'],
     ],
-    countries: ['7', 'Countries impacted', 'Chile, Colombia, Ecuador, Peru, Brazil, Dominican Republic, USA'],
+    countries: [org.impact.countries.value, 'Countries impacted', 'Chile, Colombia, Ecuador, Peru, Brazil, Dominican Republic, USA'],
     highlight: 'Free, personalized guidance — built with governments, delivered at national scale.',
     results: [
       ['icfesbot', '+36%', 'in higher-education application rates among students guided by IcfesBot, which reached 430,000+ students in Colombia in 2023.', 'IcfesBot →'],
@@ -82,17 +83,6 @@ const copy = {
     wellspring: 'We thank Wellspring Philanthropic Fund for their generous core support, enabling us to pursue our mission.',
     collaborators: 'Collaborators',
     governments: 'Governments',
-    logos: {
-      idb: 'Inter-American Development Bank',
-      'mineduc-chile': 'Ministerio de Educacion de Chile',
-      pernambuco: 'Governo do Estado de Pernambuco',
-      'minedu-peru': 'Ministerio de Educacion Peru',
-      'minedu-ecuador': 'Ministerio de Educacion Ecuador',
-      'gobrd-educacion': 'Gobierno de la Republica Dominicana - Educacion',
-      'gobrd-presidencia': 'Presidencia de la Republica Dominicana',
-      'valle-del-cauca': 'Gobernacion Valle del Cauca',
-      'secretaria-bogota': 'Secretaria de Educacion Bogota',
-    },
     cta1: 'If you have an idea, or want to be part of the ConsiliumBots team, we invite you to contact us',
     cta1Link: 'Get in Touch',
     cta2: "We're a diverse, interdisciplinary team based in the US, Chile, and Colombia.",
@@ -109,11 +99,11 @@ const copy = {
     missionButton: 'Proyectos',
     impactTitle: 'Nuestro impacto en números',
     impact: [
-      ['36', 'Herramientas desarrolladas', 'Soluciones digitales desarrolladas para abordar las asimetrías de información.'],
-      ['23', 'Alianzas', 'Organizaciones internacionales, universidades, gobiernos locales y fundaciones'],
-      ['6M+', 'Vidas impactadas', 'Padres, estudiantes y docentes alcanzados'],
+      [org.impact.toolsDeveloped.value, 'Herramientas desarrolladas', 'Soluciones digitales desarrolladas para abordar las asimetrías de información.'],
+      [org.impact.partnerships.value, 'Alianzas', 'Organizaciones internacionales, universidades, gobiernos locales y fundaciones'],
+      [org.impact.livesImpacted.value, 'Vidas impactadas', 'Padres, estudiantes y docentes alcanzados'],
     ],
-    countries: ['7', 'Países impactados', 'Chile, Colombia, Ecuador, Perú, Brasil, República Dominicana, EE. UU.'],
+    countries: [org.impact.countries.value, 'Países impactados', 'Chile, Colombia, Ecuador, Perú, Brasil, República Dominicana, EE. UU.'],
     highlight: 'Orientación gratuita y personalizada — construida junto a gobiernos, entregada a escala nacional.',
     results: [
       ['icfesbot', '+36%', 'en las tasas de postulación a la educación superior entre estudiantes orientados por IcfesBot, que llegó a más de 430.000 estudiantes en Colombia en 2023.', 'IcfesBot →'],
@@ -165,17 +155,6 @@ const copy = {
     wellspring: 'Agradecemos a Wellspring Philanthropic Fund por su generoso apoyo institucional, que nos permite avanzar en nuestra misión.',
     collaborators: 'Colaboradores',
     governments: 'Gobiernos',
-    logos: {
-      idb: 'Banco Interamericano de Desarrollo',
-      'mineduc-chile': 'Ministerio de Educación de Chile',
-      pernambuco: 'Gobierno del Estado de Pernambuco',
-      'minedu-peru': 'Ministerio de Educación del Perú',
-      'minedu-ecuador': 'Ministerio de Educación del Ecuador',
-      'gobrd-educacion': 'Gobierno de la República Dominicana - Educación',
-      'gobrd-presidencia': 'Presidencia de la República Dominicana',
-      'valle-del-cauca': 'Gobernación del Valle del Cauca',
-      'secretaria-bogota': 'Secretaría de Educación de Bogotá',
-    },
     cta1: 'Si tienes una idea o quieres formar parte del equipo de ConsiliumBots, te invitamos a contactarnos.',
     cta1Link: 'Contáctanos',
     cta2: 'Somos un equipo diverso e interdisciplinario con base en EE. UU., Chile y Colombia.',
@@ -201,31 +180,13 @@ const papers = [
   'https://www.nber.org/papers/w21300',
 ];
 
-// Logo alt text falls back to the proper name when it is the same in both languages.
-const collaborators = [
-  ['https://www.povertyactionlab.org/', 'jpal', 'J-PAL', 82, 25],
-  ['https://poverty-action.org/', 'ipa', 'IPA', 72, 24],
-  ['https://www.agency.fund/', 'agency-fund', 'The Agency Fund', 90, 12],
-  ['https://www.iadb.org/en', 'idb', 'Inter-American Development Bank', 53, 22],
-  ['https://globaldevincubator.org/', 'gdi', 'Global Development Incubator', 75, 41],
-  ['https://www.theigc.org/', 'igc', 'International Growth Centre', 34, 29],
-  ['https://openai.com/', 'openai', 'OpenAI', 68, 18],
-];
-const governments = [
-  ['https://www.mineduc.cl/', 'mineduc-chile', 'Ministerio de Educacion de Chile', 50, 46],
-  ['https://www.icfes.gov.co/', 'icfes-colombia', 'ICFES Colombia', 59, 30],
-  ['https://www.nhps.net/', 'nhps', 'New Haven Public Schools', 74, 20],
-  ['https://www.pe.gov.br/', 'pernambuco', 'Governo do Estado de Pernambuco', 75, 24],
-  ['https://www.gob.pe/minedu', 'minedu-peru', 'Ministerio de Educacion Peru', 89, 18],
-  ['https://www.gob.ec/minedec', 'minedu-ecuador', 'Ministerio de Educacion Ecuador', 78, 24],
-  ['https://inafocam.gob.do/', 'inafocam', 'INAFOCAM', 64, 28],
-  ['https://www.ministeriodeeducacion.gob.do/', 'gobrd-educacion', 'Gobierno de la Republica Dominicana - Educacion', 70, 34],
-  ['https://presidencia.gob.do/', 'gobrd-presidencia', 'Presidencia de la Republica Dominicana', 79, 32],
-  ['https://mepyd.gob.do/', 'gobrd-mepyd', 'MEPyD', 56, 37],
-  ['https://www.valledelcauca.gov.co/', 'valle-del-cauca', 'Gobernacion Valle del Cauca', 140, 46],
-  ['https://www.educacionbogota.edu.co/portal_institucional/', 'secretaria-bogota', 'Secretaria de Educacion Bogota', 140, 32],
-];
-const alt = (id, fallback) => copy.logos[id] ?? fallback;
+// Partner wall, driven by partners.yaml in the SSOT (`site.section` / `site.order`).
+const wall = (section) =>
+  partners.filter((p) => p.site?.section === section).sort((a, b) => a.site.order - b.site.order);
+const coreSupport = wall('core-support')[0];
+const collaborators = wall('collaborators');
+const governments = wall('governments');
+const logoAlt = (p) => (es && p.site.displayNameEs) || p.site.displayName;
 const locale = es ? 'es-ES' : 'en-US';
 ---
 
@@ -240,7 +201,7 @@ const locale = es ? 'es-ES' : 'en-US';
         </h1>
         <a href={to('/what-we-do')} class="btn-arrow">
           {copy.heroLink}
-          <img src="/icons/arrow-right.svg" alt="" width="20" />
+          <img src="/icons/arrow-right.svg" alt="" width="20" height="20" />
         </a>
       </div>
     </div>
@@ -254,7 +215,7 @@ const locale = es ? 'es-ES' : 'en-US';
           <h2>{copy.mission}</h2>
           <a href={to('/projects')} class="btn btn-primary">
             {copy.missionButton}
-            <img src="/icons/arrow-right.svg" alt="" width="20" />
+            <img src="/icons/arrow-right.svg" alt="" width="20" height="20" />
           </a>
         </div>
       </div>
@@ -333,15 +294,15 @@ const locale = es ? 'es-ES' : 'en-US';
       <div class="research-papers">
         <a href="https://academic.oup.com/qje/article/137/3/1791/6544686" target="_blank" rel="noopener noreferrer" class="paper-link">
           <span>Smart Matching Platforms and Heterogeneous Beliefs in Centralized School Choice</span>
-          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+          <img src="/icons/arrow-outward.svg" alt="" width="16" height="16" />
         </a>
         <a href="https://www.christopher-neilson.com/work/Application-Mistakes.html" target="_blank" rel="noopener noreferrer" class="paper-link">
           <span>{copy.applicationMistakes}</span>
-          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+          <img src="/icons/arrow-outward.svg" alt="" width="16" height="16" />
         </a>
         <a href="https://consiliumbots.github.io/working-papers-cb/AGN_2019/working_paper/AGN_2019.pdf" target="_blank" rel="noopener noreferrer" class="paper-link">
           <span>Approximating the Equilibrium Effects of Informed School Choice</span>
-          <img src="/icons/arrow-outward.svg" alt="" width="16" />
+          <img src="/icons/arrow-outward.svg" alt="" width="16" height="16" />
         </a>
       </div>
       <a href={to('/research')} class="btn-arrow">
@@ -478,26 +439,26 @@ const locale = es ? 'es-ES' : 'en-US';
       <h2 class="section-title">{copy.partnersTitle}</h2>
 
       <div class="partner-main">
-        <a href="https://wpfund.org/" target="_blank" rel="noopener noreferrer">
-          <img src="/logos/partners/wpf.png" alt="Wellspring Philanthropic Fund" width="67" height="24" loading="lazy" />
+        <a href={coreSupport.website} target="_blank" rel="noopener noreferrer">
+          <img src={`/${coreSupport.site.logo}`} alt={logoAlt(coreSupport)} width={coreSupport.site.logoWidth} height={coreSupport.site.logoHeight} loading="lazy" />
         </a>
         <p>{copy.wellspring}</p>
       </div>
 
       <h3 class="partner-section-title">{copy.collaborators}</h3>
       <div class="logo-grid collaborators-grid">
-        {collaborators.map(([href, id, name, w, h]) => (
-          <a href={href} target="_blank" rel="noopener noreferrer">
-            <img src={`/logos/collaborators/${id}.png`} alt={alt(id, name)} width={w} height={h} loading="lazy" />
+        {collaborators.map((p) => (
+          <a href={p.website} target="_blank" rel="noopener noreferrer">
+            <img src={`/${p.site.logo}`} alt={logoAlt(p)} width={p.site.logoWidth} height={p.site.logoHeight} loading="lazy" />
           </a>
         ))}
       </div>
 
       <h3 class="partner-section-title">{copy.governments}</h3>
       <div class="logo-grid governments-grid">
-        {governments.map(([href, id, name, w, h]) => (
-          <a href={href} target="_blank" rel="noopener noreferrer">
-            <img src={`/logos/governments/${id}.png`} alt={alt(id, name)} width={w} height={h} loading="lazy" />
+        {governments.map((p) => (
+          <a href={p.website} target="_blank" rel="noopener noreferrer">
+            <img src={`/${p.site.logo}`} alt={logoAlt(p)} width={p.site.logoWidth} height={p.site.logoHeight} loading="lazy" />
           </a>
         ))}
       </div>
@@ -509,7 +470,7 @@ const locale = es ? 'es-ES' : 'en-US';
     <div class="wrap">
       <div class="cta-grid">
         <div class="cta-card">
-          <img src="/icons/sms.svg" alt="" width="35" />
+          <img src="/icons/sms.svg" alt="" width="35" height="35" />
           <p>{copy.cta1}</p>
           <a href={to('/contact')} class="btn-arrow">
             {copy.cta1Link}
@@ -517,7 +478,7 @@ const locale = es ? 'es-ES' : 'en-US';
           </a>
         </div>
         <div class="cta-card">
-          <img src="/icons/team-icon.svg" alt="" width="35" />
+          <img src="/icons/team-icon.svg" alt="" width="35" height="35" />
           <p>{copy.cta2}</p>
           <a href={to('/team')} class="btn-arrow">
             {copy.cta2Link}

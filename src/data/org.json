@@ -1,0 +1,33 @@
+{
+  "impact": {
+    "toolsDeveloped": {
+      "value": "36",
+      "verified": false,
+      "source": "Legacy website copy (pre-2026 site). projects.yaml lists 30 projects; the two have not been reconciled."
+    },
+    "partnerships": {
+      "value": "23",
+      "verified": false,
+      "source": "Legacy website copy (pre-2026 site). partners.yaml now lists 27 organizations, 20 of them with logos on the site; not reconciled."
+    },
+    "livesImpacted": {
+      "value": "6M+",
+      "verified": false,
+      "source": "Legacy website copy (pre-2026 site); no underlying tally exists in this repository."
+    },
+    "countries": {
+      "value": "7",
+      "verified": true,
+      "source": "Distinct countries across projects.yaml",
+      "list": [
+        "Brazil",
+        "Chile",
+        "Colombia",
+        "Dominican Republic",
+        "Ecuador",
+        "Peru",
+        "United States"
+      ]
+    }
+  }
+}
