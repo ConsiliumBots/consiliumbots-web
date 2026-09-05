@@ -3,6 +3,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { projects } from '../../data/site-data.js';
 import { localizePath } from '../../i18n.js';
+import { typeLabel, countryLabel } from '../../lib/labels.js';
 
 const { lang = 'en' } = Astro.props;
 
@@ -18,9 +19,9 @@ const copy = {
     filterLabel: 'Filter projects by country',
     allCountries: 'All countries',
     view: 'View project →',
-    // Badges and chips show the raw snapshot values in English.
+    viewEnglish: 'View project →',
+    // Badges show the raw snapshot values in English.
     status: null,
-    country: null,
   },
   es: {
     title: 'Proyectos | ConsiliumBots',
@@ -32,12 +33,10 @@ const copy = {
     groups: { active: 'Activos', completed: 'Completados', proposed: 'Propuestos', research: 'Iniciativas de investigación' },
     filterLabel: 'Filtrar proyectos por país',
     allCountries: 'Todos los países',
-    // Detail pages have Spanish chrome; project content stays English until the SSOT exports it.
-    view: 'Ver proyecto (en inglés) →',
+    view: 'Ver proyecto →',
+    // Shown while a project's content is still English only in the SSOT.
+    viewEnglish: 'Ver proyecto (en inglés) →',
     status: { active: 'Activo', completed: 'Completado', proposed: 'Propuesto', research: 'Investigación' },
-    // Visible labels only — data-country keeps the raw snapshot value so the
-    // filter script still matches.
-    country: { Brazil: 'Brasil', 'Dominican Republic': 'República Dominicana', Peru: 'Perú', 'United States': 'Estados Unidos' },
   },
 }[lang];
 
@@ -62,7 +61,7 @@ const countries = [
   <div class="wrap filter-bar" id="country-filter" role="group" aria-label={copy.filterLabel}>
     <button class="chip active" data-country="" aria-pressed="true">{copy.allCountries}</button>
     {countries.map((c) => (
-      <button class="chip" data-country={c} aria-pressed="false">{copy.country?.[c] ?? c}</button>
+      <button class="chip" data-country={c} aria-pressed="false">{countryLabel(c, lang)}</button>
     ))}
   </div>
 
@@ -75,12 +74,14 @@ const countries = [
             {byStatus(g.key).map((p) => (
               <a href={localizePath(`/projects/${p.slug}`, lang)} class="card proj-card" data-countries={p.country ?? ''}>
                 <span class={`badge badge-${p.status}`}>{copy.status?.[p.status] ?? p.status}</span>
-                <h3>{p.name}</h3>
+                <h3>{lang === 'es' ? (p.nameEs ?? p.name) : p.name}</h3>
                 {(p.country || p.type) && (
-                  <p class="proj-meta">{[p.country, p.type].filter(Boolean).join(' · ')}</p>
+                  <p class="proj-meta">{[countryLabel(p.country, lang), typeLabel(p.type, lang)].filter(Boolean).join(' · ')}</p>
                 )}
-                {p.description && <p class="proj-desc">{p.description}</p>}
-                <span class="proj-link">{copy.view}</span>
+                {(lang === 'es' ? (p.descriptionEs ?? p.description) : p.description) && (
+                  <p class="proj-desc">{lang === 'es' ? (p.descriptionEs ?? p.description) : p.description}</p>
+                )}
+                <span class="proj-link">{lang === 'es' && !p.descriptionEs ? copy.viewEnglish : copy.view}</span>
               </a>
             ))}
           </div>

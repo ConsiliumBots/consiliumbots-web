@@ -71,7 +71,9 @@ const copy = {
   },
 }[lang];
 
-const nameBySlug = Object.fromEntries(projects.map((p) => [p.slug, p.name]));
+const nameBySlug = Object.fromEntries(
+  projects.map((p) => [p.slug, lang === 'es' ? (p.nameEs ?? p.name) : p.name])
+);
 
 const byCategory = (c) =>
   publications.filter((p) => p.category === c).sort((a, b) => (b.year ?? 0) - (a.year ?? 0));

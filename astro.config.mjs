@@ -24,6 +24,11 @@ const untranslated = postSlugs('en').filter((s) => !esSlugs.has(s));
 // duplicates that canonicalize to the EN URL, so keep them out of the sitemap.
 const projects = JSON.parse(readFileSync(new URL('./src/data/projects.json', import.meta.url), 'utf8'));
 const untranslatedProjects = projects.filter((p) => !p.descriptionEs).map((p) => p.slug);
+// Routes produced by the fallback rewrite never reach the sitemap integration's
+// page list, so translated ES project pages are added explicitly.
+const translatedEsProjectPages = projects
+  .filter((p) => p.descriptionEs)
+  .map((p) => `https://www.consiliumbots.com/es/projects/${p.slug}/`);
 
 // https://astro.build/config
 export default defineConfig({
@@ -49,6 +54,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      customPages: translatedEsProjectPages,
       filter: (page) =>
         !untranslated.some((s) => page.endsWith(`/es/blog/${s}/`)) &&
         !untranslatedProjects.some((s) => page.endsWith(`/es/projects/${s}/`)),

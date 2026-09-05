@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { projects } from '../../data/site-data.js';
 import publications from '../../data/publications.json';
 import { localizePath } from '../../i18n.js';
+import { typeLabel, countryLabel } from '../../lib/labels.js';
 
 export function getStaticPaths() {
   return projects.map((p) => ({ params: { slug: p.slug }, props: { project: p } }));
@@ -19,10 +20,17 @@ const lang = Astro.currentLocale === 'es' ? 'es' : 'en';
 // The SSOT exports no Spanish project fields yet. When it emits `descriptionEs`
 // this flips the ES page from an English-content duplicate (canonical -> EN,
 // no hreflang, content notice) into a real translation.
-const translated = lang === 'es' && Boolean(project.descriptionEs);
+// A Spanish translation exists in the data (so EN and ES pages form an
+// hreflang pair) vs. this render actually shows it.
+const hasTranslation = Boolean(project.descriptionEs);
+const translated = lang === 'es' && hasTranslation;
 const contentLang = translated ? 'es' : 'en';
 const contentLangAttr = contentLang !== lang ? contentLang : undefined;
 const description = translated ? project.descriptionEs : project.description;
+const name = translated ? (project.nameEs ?? project.name) : project.name;
+const targetPopulation = translated ? (project.targetPopulationEs ?? project.targetPopulation) : project.targetPopulation;
+const outcomes = translated && project.outcomesEs?.length ? project.outcomesEs : project.outcomes;
+const scale = translated ? (project.scaleEs ?? project.scale) : project.scale;
 
 const L = {
   en: {
@@ -126,21 +134,21 @@ const related = projects
   .map((r) => r.p);
 
 const meta = [
-  [L.country, [project.country, project.region].filter(Boolean).join(' — ')],
+  [L.country, [countryLabel(project.country, lang), project.region].filter(Boolean).join(' — ')],
   [L.years, years],
-  [L.type, project.type],
+  [L.type, typeLabel(project.type, lang)],
   [L.partner, project.partner],
   [L.client, project.client],
-  [L.scale, project.scale],
+  [L.scale, scale],
 ].filter(([, v]) => v);
 ---
 
 <BaseLayout
-  title={`${project.name} | ConsiliumBots`}
+  title={`${name} | ConsiliumBots`}
   description={truncate(description) ?? undefined}
   lang={lang}
   contentLang={contentLang}
-  bilingual={translated}
+  bilingual={hasTranslation}
   canonicalPath={translated ? Astro.originPathname : undefined}
   langSwitchBase={`/projects/${project.slug}`}
 >
@@ -149,10 +157,10 @@ const meta = [
   <section class="page-hero">
     <div class:list={['wrap', { 'hero-grid': heroArt }]}>
       <div>
-        <p class="breadcrumb"><a href={projectsPath}>{L.projects}</a> / {project.name}</p>
+        <p class="breadcrumb"><a href={projectsPath}>{L.projects}</a> / {name}</p>
         <span class={`badge badge-${project.status}`}>{L.status?.[project.status] ?? project.status}</span>
         {contentLangAttr && <p class="lang-note">{L.englishOnly}</p>}
-        <h1 lang={contentLangAttr}>{project.name}</h1>
+        <h1 lang={contentLangAttr}>{name}</h1>
         {description && <p lang={contentLangAttr}>{description}</p>}
       </div>
       {heroArt && (
@@ -164,17 +172,17 @@ const meta = [
   <section class="section">
     <div class="wrap detail-grid">
       <div class="detail-main" lang={contentLangAttr}>
-        {project.targetPopulation && (
+        {targetPopulation && (
           <>
             <h2 class="section-title" lang={contentLangAttr ? lang : undefined}>{L.target}</h2>
-            <p>{project.targetPopulation}</p>
+            <p>{targetPopulation}</p>
           </>
         )}
 
-        {project.outcomes.length > 0 && (
+        {outcomes.length > 0 && (
           <>
             <h2 class="section-title" lang={contentLangAttr ? lang : undefined}>{L.outcomes}</h2>
-            <ul class="outcomes">{project.outcomes.map((o) => <li>{o}</li>)}</ul>
+            <ul class="outcomes">{outcomes.map((o) => <li>{o}</li>)}</ul>
           </>
         )}
 
@@ -256,9 +264,9 @@ const meta = [
         <div class="related-grid">
           {related.map((p) => (
             <a href={localizePath(`/projects/${p.slug}`, lang)} class="related-card">
-              <span class="related-name" lang={contentLangAttr}>{p.name}</span>
+              <span class="related-name" lang={contentLangAttr}>{lang === 'es' ? (p.nameEs ?? p.name) : p.name}</span>
               {(p.country || p.type) && (
-                <span class="related-meta">{[p.country, p.type].filter(Boolean).join(' · ')}</span>
+                <span class="related-meta">{[countryLabel(p.country, lang), typeLabel(p.type, lang)].filter(Boolean).join(' · ')}</span>
               )}
             </a>
           ))}
