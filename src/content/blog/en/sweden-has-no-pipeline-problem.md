@@ -13,8 +13,8 @@ tags:
   - Higher education
   - Centralized admissions
 draft: true
-paperUrl: https://gendergapinsights.com/paper.pdf
-paperLabel: Read the paper (PDF)
+paperUrl: https://consiliumbots.github.io/working-papers-cb/stem_gender_gaps/v2/paper.pdf
+paperLabel: Read the working paper (PDF)
 ---
 
 In Sweden, women are 66 percent of the students who finish high school in the top 10 percent of their cohort. By any measure of academic preparation, the pipeline into selective university programs is not a place where Swedish women are losing ground. They are the clear majority of the people standing at its entrance.
@@ -94,4 +94,4 @@ What it does establish is where to look. If the gap opened at admission, the fix
 
 ---
 
-The paper, *The Global Gender Gap in STEM Applications: Pipeline vs. Choice*, is joint work with Isaac Ahimbisibwe, Adam Altmejd, Georgy Artemov, Andrés Barrios-Fernández, Aspasia Bizopoulou, Martti Kaila, Jin-Tan Liu, Rigissa Megalokonomou, José Montalbán, Sebastián Otero, Jintao Sun and Xiaoyang Ye — thirteen authors across twelve institutions. Country-by-country institutional detail, every exhibit and the underlying counts are available on the [project's companion site](https://gendergapinsights.com).
+The paper, *The Global Gender Gap in STEM Applications: Pipeline vs. Choice*, is ConsiliumBots Working Paper No. 3, joint work with Isaac Ahimbisibwe, Adam Altmejd, Georgy Artemov, Andrés Barrios-Fernández, Aspasia Bizopoulou, Martti Kaila, Jin-Tan Liu, Rigissa Megalokonomou, José Montalbán, Sebastián Otero, Jintao Sun and Xiaoyang Ye — thirteen authors across twelve institutions. Country-by-country institutional detail, every exhibit and the underlying counts are available on the [project's companion site](https://gendergapinsights.com).
