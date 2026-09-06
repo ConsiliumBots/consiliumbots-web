@@ -390,7 +390,7 @@
     "funders": [],
     "costEffectiveness": null,
     "publication": null,
-    "website": "https://egresa.do",
+    "website": null,
     "contributors": []
   },
   {
@@ -889,15 +889,15 @@
     "scaleEs": null,
     "outcomesEs": [
       "Las brechas de pipeline varían mucho entre países y siguen las etapas de desarrollo: desde una desventaja femenina en Uganda hasta una ventaja en Suecia",
-      "La brecha de elección es grande, negativa y notablemente consistente entre contextos: incluso entre los mejores puntajes, las mujeres tienen cerca de 24 puntos porcentuales menos de probabilidad de poner un programa STEM en primer lugar",
-      "Enviado a Economics of Education Review (2026); 13 coautores de 12 instituciones"
+      "La brecha de elección es grande, negativa y notablemente consistente entre contextos: incluso entre los mejores puntajes, las mujeres tienen 23,7 puntos porcentuales menos de probabilidad de poner un programa STEM en primer lugar",
+      "Documento de Trabajo N.º 3 de ConsiliumBots (noviembre de 2025), con 13 coautores de 12 instituciones"
     ],
     "targetPopulation": "High-achieving university applicants in countries with centralized, score-based admissions; researchers and policymakers working on gender gaps in STEM",
     "scale": null,
     "outcomes": [
       "Pipeline gaps vary widely across countries and track stages of development — from female disadvantage in Uganda to advantage in Sweden",
-      "The choice gap is large, negative and remarkably consistent across settings: even among top scorers, women are about 24 percentage points less likely to rank a STEM program first",
-      "Submitted to the Economics of Education Review (2026); 13 co-authors across 12 institutions"
+      "The choice gap is large, negative and remarkably consistent across settings: even among top scorers, women are 23.7 percentage points less likely to rank a STEM program first",
+      "ConsiliumBots Working Paper No. 3 (November 2025), with 13 co-authors across 12 institutions"
     ],
     "technologies": [],
     "partner": null,

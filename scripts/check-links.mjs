@@ -61,7 +61,7 @@ console.log('all internal links and assets resolve');
 if (process.env.CHECK_EXTERNAL === '1') {
   const urls = [...external].filter((u) => !/googletagmanager|google-analytics/.test(u));
   console.log(`\nprobing ${urls.length} external URLs (warnings only)...`);
-  let failures = 0;
+  const broken = [], blocked = [];
   const probe = async (u) => {
     try {
       const ctrl = new AbortController();
@@ -69,12 +69,25 @@ if (process.env.CHECK_EXTERNAL === '1') {
       let r = await fetch(u, { method: 'HEAD', redirect: 'follow', signal: ctrl.signal, headers: { 'user-agent': 'Mozilla/5.0 (link check)' } });
       if (r.status === 405 || r.status === 403) r = await fetch(u, { method: 'GET', redirect: 'follow', signal: ctrl.signal, headers: { 'user-agent': 'Mozilla/5.0 (link check)' } });
       clearTimeout(t);
-      if (r.status >= 400) { failures++; console.warn(`  ${r.status}  ${u}`); }
+      // 401/403/429 mean the host turned away a bot, not that the page is gone
+      // (publishers like academic.oup.com do this); listing them as broken just
+      // teaches people to ignore the report.
+      if ([401, 403, 429].includes(r.status)) blocked.push(`  ${r.status}  ${u}`);
+      else if (r.status >= 400) broken.push(`  ${r.status}  ${u}`);
     } catch (e) {
-      failures++; console.warn(`  ERR  ${u}  (${e.name})`);
+      broken.push(`  ERR  ${u}  (${e.name === 'TypeError' ? 'DNS or connection failure' : e.name})`);
     }
   };
   // modest concurrency so partner sites are not hammered
   for (let i = 0; i < urls.length; i += 6) await Promise.all(urls.slice(i, i + 6).map(probe));
-  console.log(failures ? `${failures} external URL(s) need attention` : 'all external URLs reachable');
+  if (blocked.length) {
+    console.log(`\n${blocked.length} URL(s) refused an automated request (likely bot protection, not broken):`);
+    for (const l of blocked) console.log(l);
+  }
+  if (broken.length) {
+    console.warn(`\n${broken.length} external URL(s) need attention:`);
+    for (const l of broken) console.warn(l);
+  } else {
+    console.log('\nno broken external URLs');
+  }
 }

@@ -6,7 +6,7 @@ pubDate: 2026-09-05
 lang: en
 authors:
   - Christopher A. Neilson
-heroImage: /images/blog/women-in-stem/hero.png
+heroImage: /images/blog/women-in-stem/hero.webp
 ogImage: /images/blog/women-in-stem/og.png
 tags:
   - Gender gaps

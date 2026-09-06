@@ -163,12 +163,15 @@ const structuredData = {
     <!-- Structured data (Schema.org) -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
-    <!-- Google Analytics 4 (only rendered when a Measurement ID is configured) -->
+    <!-- Google Analytics 4 (only rendered when a Measurement ID is configured).
+         The page view is queued into dataLayer immediately and gtag.js is
+         fetched once the browser is idle, so the tag never competes with
+         first paint; gtag replays the queue when it arrives. -->
     {GA_MEASUREMENT_ID && (
-      <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-        <script is:inline set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');`}></script>
-      </>
+      <script
+        is:inline
+        set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_MEASUREMENT_ID}');(function(){var l=function(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}';document.head.appendChild(s);};if('requestIdleCallback' in window){requestIdleCallback(l,{timeout:5000});}else{addEventListener('load',function(){setTimeout(l,1500);});}})();`}
+      />
     )}
     <slot name="head" />
   </head>
