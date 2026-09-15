@@ -5,8 +5,9 @@
 import team from './team.json';
 import projects from './projects.json';
 import partners from './partners.json';
+import org from './org.json';
 
-export { team, projects, partners };
+export { team, projects, partners, org };
 
 export const activeTeam = team.filter((m) => m.status === 'active');
 export const researchAffiliates = team.filter((m) => m.status === 'research-affiliate');

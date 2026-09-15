@@ -8,7 +8,7 @@ authors:
   - Christopher A. Neilson
   - Exequiel Medina
   - Leonardo Ortiz Mesías
-heroImage: /images/blog/transparency2/hero.png
+heroImage: /images/blog/transparency2/hero.webp
 ogImage: /images/blog/transparency2/og.png
 tags:
   - Algorithmic transparency
