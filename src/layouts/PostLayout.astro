@@ -276,6 +276,17 @@ const blogPosting = {
     border-radius: 8px;
     margin: 32px 0 8px;
   }
+
+  /* A small round portrait, used when a post quotes one of a paper's authors.
+     Overrides the full-width figure image above. */
+  .post-body :global(img.portrait) {
+    width: 96px;
+    height: 96px;
+    border: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 0 4px;
+  }
   .post-body :global(figure) {
     margin: 36px 0;
   }

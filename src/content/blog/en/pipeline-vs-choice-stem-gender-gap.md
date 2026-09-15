@@ -67,7 +67,7 @@ It also survives every obvious attempt to break it. Widen the definition of high
 Which leads to the number worth putting in front of a ministry. Close the pipeline gap completely, leave application behavior where it is, and the pool of high-achieving STEM applicants would still be between 57% and 75% male — in every one of the ten settings. Fixing preparation is worth doing on its own terms. It would not, by itself, produce a gender-balanced applicant pool anywhere in this sample.
 
 <figure>
-  <img src="/images/blog/stem-gender-gap/aspasia-bizopoulou.jpg" alt="Aspasia Bizopoulou" width="96" height="96" style="width:96px;height:96px;border-radius:50%;object-fit:cover;border:0;margin:0 0 4px;" />
+  <img src="/images/blog/stem-gender-gap/aspasia-bizopoulou.jpg" alt="Aspasia Bizopoulou" width="96" height="96" class="portrait" />
   <blockquote>
     <p>"The stability of the STEM choice gap across contexts with vastly different levels of income, human development and gender parity highlights the need to carefully identify and disentangle persistent mechanisms that are shaping girls' education choices, and which appear to be operating globally."</p>
   </blockquote>
