@@ -14,8 +14,8 @@ tags:
   - Education policy
   - Chile
 draft: false
-paperUrl: https://doi.org/10.3386/w35837
-paperLabel: Read the NBER working paper
+paperUrl: https://consiliumbots.github.io/working-papers-cb/AGN_2019/latest.pdf
+paperLabel: Download the latest working paper (PDF)
 ---
 
 Give a few families better information about nearby schools, and they may find better places for their children. Give the same guidance to families across a city, and those places may fill up.
@@ -83,4 +83,6 @@ Helping one family find a better school is a meaningful result. A policy reachin
 
 ---
 
-**Read the paper:** Claudia Allende, Francisco Gallego, and Christopher Neilson, [*Approximating the Equilibrium Effects of Informed School Choice*, NBER Working Paper 35837](https://doi.org/10.3386/w35837).
+**Explore the project:** Visit the [project website](https://school-choice-equilibrium-effects-information.org/) for the experiment, interactive results, and online appendix.
+
+**Read the latest paper:** Claudia Allende, Francisco Gallego, and Christopher Neilson, [*Approximating the Equilibrium Effects of Informed School Choice*](https://consiliumbots.github.io/working-papers-cb/AGN_2019/latest.pdf), ConsiliumBots Working Papers no. 01. Also available as [NBER Working Paper 35837](https://doi.org/10.3386/w35837).
