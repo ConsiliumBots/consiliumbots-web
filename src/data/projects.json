@@ -516,7 +516,7 @@
       "Chatbot",
       "WhatsApp"
     ],
-    "partner": null,
+    "partner": "Fundación Santo Domingo, Harvard University",
     "client": "Secretaría de Educación de Bogotá",
     "funders": [],
     "costEffectiveness": null,
@@ -1132,7 +1132,9 @@
     ],
     "partner": "Tether Education",
     "client": "MESCyT; MINERD",
-    "funders": [],
+    "funders": [
+      "FID"
+    ],
     "costEffectiveness": null,
     "publication": null,
     "website": null,

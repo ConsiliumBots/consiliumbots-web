@@ -22,7 +22,7 @@
     "name": "IPA",
     "fullName": "Innovations for Poverty Action",
     "type": "Research Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": null,
     "website": "https://poverty-action.org/",
     "site": {
@@ -40,7 +40,7 @@
     "name": "The Agency Fund",
     "fullName": null,
     "type": "Funder",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": null,
     "website": "https://www.agency.fund/",
     "site": {
@@ -122,24 +122,6 @@
       "logoWidth": 75,
       "logoHeight": 41,
       "displayName": "Global Development Incubator",
-      "displayNameEs": null
-    }
-  },
-  {
-    "id": "igc",
-    "name": "IGC",
-    "fullName": "International Growth Centre",
-    "type": "Research Partner",
-    "status": "unconfirmed",
-    "country": null,
-    "website": "https://www.theigc.org/",
-    "site": {
-      "section": "collaborators",
-      "order": 6,
-      "logo": "logos/collaborators/igc.png",
-      "logoWidth": 34,
-      "logoHeight": 29,
-      "displayName": "International Growth Centre",
       "displayNameEs": null
     }
   },
@@ -238,7 +220,7 @@
     "name": "Bogotá Secretariat of Education",
     "fullName": "Secretaría de Educación del Distrito (Bogotá)",
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": "Colombia",
     "website": "https://www.educacionbogota.edu.co/portal_institucional/",
     "site": {
@@ -265,7 +247,7 @@
     "name": "New Haven Public Schools",
     "fullName": null,
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": "United States",
     "website": "https://www.nhps.net/",
     "site": {
@@ -283,7 +265,7 @@
     "name": "Government of Pernambuco",
     "fullName": "Governo do Estado de Pernambuco",
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": "Brazil",
     "website": "https://www.pe.gov.br/",
     "site": {
@@ -301,7 +283,7 @@
     "name": "Peru Ministry of Education (MINEDU)",
     "fullName": null,
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": "Peru",
     "website": "https://www.gob.pe/minedu",
     "site": {
@@ -319,7 +301,7 @@
     "name": "Ecuador Ministry of Education",
     "fullName": null,
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": "Ecuador",
     "website": "https://www.gob.ec/minedec",
     "site": {
@@ -337,7 +319,7 @@
     "name": "INAFOCAM",
     "fullName": "Instituto Nacional de Formación y Capacitación del Magisterio (Dominican Republic)",
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "historical",
     "country": "Dominican Republic",
     "website": "https://inafocam.gob.do/",
     "site": {
@@ -355,7 +337,7 @@
     "name": "Dominican Republic Ministry of Education (MINERD)",
     "fullName": null,
     "type": "Government Partner",
-    "status": "unconfirmed",
+    "status": "active",
     "country": "Dominican Republic",
     "website": "https://www.ministeriodeeducacion.gob.do/",
     "site": {
@@ -365,42 +347,6 @@
       "logoWidth": 70,
       "logoHeight": 34,
       "displayName": "Gobierno de la República Dominicana - Educación",
-      "displayNameEs": null
-    }
-  },
-  {
-    "id": "presidencia-rd",
-    "name": "Presidency of the Dominican Republic",
-    "fullName": null,
-    "type": "Government Partner",
-    "status": "unconfirmed",
-    "country": "Dominican Republic",
-    "website": "https://presidencia.gob.do/",
-    "site": {
-      "section": "governments",
-      "order": 9,
-      "logo": "logos/governments/gobrd-presidencia.png",
-      "logoWidth": 79,
-      "logoHeight": 32,
-      "displayName": "Presidencia de la República Dominicana",
-      "displayNameEs": null
-    }
-  },
-  {
-    "id": "mepyd",
-    "name": "MEPyD",
-    "fullName": "Ministerio de Economía, Planificación y Desarrollo (Dominican Republic)",
-    "type": "Government Partner",
-    "status": "unconfirmed",
-    "country": "Dominican Republic",
-    "website": "https://mepyd.gob.do/",
-    "site": {
-      "section": "governments",
-      "order": 10,
-      "logo": "logos/governments/gobrd-mepyd.png",
-      "logoWidth": 56,
-      "logoHeight": 37,
-      "displayName": "MEPyD",
       "displayNameEs": null
     }
   },
