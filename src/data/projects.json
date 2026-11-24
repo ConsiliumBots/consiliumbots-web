@@ -206,20 +206,22 @@
     "targetPopulationEs": "Todos los estudiantes que presentaron la prueba Saber 11: la cohorte nacional del segundo semestre de 2017 y la del primer semestre de 2018",
     "scaleEs": "519.355 estudiantes en dos experimentos a escala nacional",
     "outcomesEs": [
-      "Los mensajes emergentes movieron la atención a escala nacional: 15,2% de los estudiantes tratados hizo clic en 2017 y 24,6% en 2018",
+      "Los mensajes emergentes movieron la atención a escala nacional: 24,6% de los estudiantes tratados hizo clic en 2018, y al menos 15,2% en 2017 (el registro de clics de 2017 se cerró antes de las últimas entregas)",
       "Una invitación simple a buscar (20,9%) superó a todas las variantes dirigidas a creencias (13,1–16,7%) por 4 a 8 puntos porcentuales",
       "Los mensajes enmarcados en pérdidas rindieron peor que sus equivalentes enmarcados en ganancias (13,1% vs. 16,7%), en contra de lo que predice la teoría prospectiva",
-      "La matrícula no cambió: se descartan efectos promedio superiores a 2,6 puntos porcentuales",
-      "Los resultados nulos motivaron la orientación personalizada por WhatsApp que se convirtió en IcfesBot"
+      "La matrícula hasta 2019 no cambió: se descartan efectos promedio superiores a 2,6 puntos porcentuales",
+      "Las respuestas sugerentes reordenan a los estudiantes hacia programas técnicos de ciclo corto, en lugar de ampliar la matrícula",
+      "En octubre de 2018, la ventana emergente corta ganadora pasó a ser la puerta de entrada a IcfesBot, mostrada a cerca de 430.000 estudiantes"
     ],
     "targetPopulation": "All Saber 11 takers — the fall 2017 national cohort and the spring 2018 cohort",
     "scale": "519,355 students across two nationwide experiments",
     "outcomes": [
-      "Pop-ups moved attention at national scale: 15.2% of treated students clicked through in 2017, 24.6% in 2018",
+      "Pop-ups moved attention at national scale: 24.6% of treated students clicked through in 2018, and at least 15.2% in 2017 (the 2017 click log closed before the final deliveries)",
       "A plain invitation to search (20.9%) beat every belief-targeting message variant (13.1-16.7%) by 4-8 percentage points",
       "Loss-framed messages did worse than gain-framed equivalents (13.1% vs 16.7%), contrary to prospect-theory predictions",
-      "Enrollment did not move: average effects above 2.6 percentage points are ruled out",
-      "The experimental nulls motivated the personalized WhatsApp guidance that became IcfesBot"
+      "Enrollment through 2019 did not move: average effects above 2.6 percentage points are ruled out",
+      "The suggestive responses re-sort students toward short-cycle technical programs rather than expanding enrollment",
+      "In October 2018 the winning short pop-up became the entry point to IcfesBot, shown to about 430,000 students"
     ],
     "technologies": [
       "Web platform",
@@ -267,22 +269,22 @@
     "startYear": 2018,
     "endYear": null,
     "type": "Chatbot / Information Intervention",
-    "description": "AI chatbot helping Colombian students navigate higher education options from their own ICFES exam results, delivered over WhatsApp. Built and hosted by ConsiliumBots and distributed through ICFES, it followed the 2017 Nudge to Search experiments, whose null results pointed toward personalized guidance anchored in each student's own scores.",
+    "description": "AI chatbot helping Colombian students navigate higher education options from their own ICFES exam results, reached from the results page and by SMS, email and WhatsApp. Built and hosted by ConsiliumBots and distributed through ICFES, it came out of the same 2017 collaboration as the Nudge to Search pop-up experiments, and the winning pop-up from those experiments became its front door in 2018.",
     "nameEs": "IcfesBot — Orientación para la educación superior",
-    "descriptionEs": "Chatbot con IA que ayuda a los estudiantes colombianos a explorar sus opciones de educación superior a partir de sus propios resultados en la prueba del ICFES, por WhatsApp. Construido y alojado por ConsiliumBots y distribuido a través del ICFES, siguió a los experimentos Nudge to Search de 2017, cuyos resultados nulos apuntaron hacia una orientación personalizada, anclada en los puntajes de cada estudiante.",
+    "descriptionEs": "Chatbot con IA que ayuda a los estudiantes colombianos a explorar sus opciones de educación superior a partir de sus propios resultados en la prueba del ICFES; se accede desde la página de resultados y por SMS, correo electrónico y WhatsApp. Construido y alojado por ConsiliumBots y distribuido a través del ICFES, surgió de la misma colaboración de 2017 que los experimentos de ventanas emergentes de Nudge to Search, y la ventana ganadora de esos experimentos pasó a ser su puerta de entrada en 2018.",
     "targetPopulationEs": "Estudiantes colombianos que reciben sus resultados de la prueba Saber 11 (ICFES)",
-    "scaleEs": "Más de 430.000 estudiantes alcanzados en 2023 (séptimo año consecutivo), 41,5% de tasa de respuesta",
+    "scaleEs": "Cerca de 430.000 estudiantes invitados por ola nacional (430.227 en octubre de 2019)",
     "outcomesEs": [
-      "Las tasas de postulación a la educación superior aumentaron 36%",
-      "La toma de créditos estudiantiles aumentó 27%",
-      "Los mayores efectos se dieron entre los estudiantes que recibieron información personalizada"
+      "Funciona con el ICFES cada año desde 2018: el despliegue gubernamental más largo de ConsiliumBots",
+      "Octubre de 2018: un experimento de nueve brazos con cerca de 430.000 estudiantes comparó tres motores de recomendación (aleatorio, aprendizaje automático y estructural) y tres diseños de menú",
+      "Octubre de 2019: 34.940 usuarios y 251.100 interacciones en los cinco días siguientes a la entrega de resultados, el 8,1% de los 430.227 estudiantes invitados"
     ],
     "targetPopulation": "Colombian students receiving Saber 11 (ICFES) results",
-    "scale": "430,000+ students reached in 2023 (seventh consecutive year), 41.5% response rate",
+    "scale": "About 430,000 students invited per nationwide wave (430,227 in October 2019)",
     "outcomes": [
-      "Higher education application rates increased 36%",
-      "Student loan take-up increased 27%",
-      "Largest effects among students receiving personalized information"
+      "Run with ICFES every year since 2018 — ConsiliumBots' longest-running government deployment",
+      "October 2018: a nine-arm experiment across about 430,000 students tested three recommendation engines (random, machine-learning and structural) against three menu designs",
+      "October 2019: 34,940 users and 251,100 interactions within five days of results day — 8.1% of the 430,227 students invited"
     ],
     "technologies": [
       "Chatbot",
