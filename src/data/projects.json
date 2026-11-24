@@ -16,20 +16,14 @@
     "outcomesEs": [
       "Análisis de línea final del RCT en curso",
       "76% de los colegios con índice de vulnerabilidad ≥ 0,8",
-      "Más del 70% son colegios públicos; el resto, subvencionados",
-      "60% de los estudiantes completó el programa, frente a un promedio de 6,5% en los cursos abiertos en línea",
-      "70% de los estudiantes calificó el contenido como bueno o muy bueno",
-      "El conocimiento de las opciones de ayuda financiera se quintuplicó; el sesgo en la percepción de salarios cayó 87%"
+      "Más del 70% son colegios públicos; el resto, subvencionados"
     ],
     "targetPopulation": "Grades 7–12, publicly funded schools nationwide",
     "scale": "25,000 treated + 25,000 control",
     "outcomes": [
       "RCT endline analysis ongoing",
       "76% of schools with vulnerability index ≥ 0.8",
-      "70%+ public schools, rest subsidized",
-      "60% of students completed the program, against a 6.5% average for open online courses",
-      "70% of students rated the content good or very good",
-      "Awareness of financial aid options increased fivefold; salary perception bias fell 87%"
+      "70%+ public schools, rest subsidized"
     ],
     "technologies": [
       "Web application",
