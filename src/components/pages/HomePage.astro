@@ -26,11 +26,6 @@ const copy = {
     mission: 'We turn complex and underutilized information into virtual assistance and personalized recommendations',
     missionButton: 'Projects',
     impactTitle: 'Our impact in numbers',
-    impact: [
-      [org.impact.toolsDeveloped.value, 'Tools developed', 'Digital solutions developed to address information asymmetries.'],
-      [org.impact.partnerships.value, 'Partnerships', 'International Organizations, Universities, Local Governments & Foundations'],
-      [org.impact.livesImpacted.value, 'Lives impacted', 'Parents, students, and teachers reached'],
-    ],
     countries: [org.impact.countries.value, 'Countries impacted', 'Chile, Colombia, Ecuador, Peru, Brazil, Dominican Republic, USA'],
     highlight: 'Free, personalized guidance — built with governments, delivered at national scale.',
     results: [
@@ -97,11 +92,6 @@ const copy = {
     mission: 'Convertimos información compleja y subutilizada en asistencia virtual y recomendaciones personalizadas',
     missionButton: 'Proyectos',
     impactTitle: 'Nuestro impacto en números',
-    impact: [
-      [org.impact.toolsDeveloped.value, 'Herramientas desarrolladas', 'Soluciones digitales desarrolladas para abordar las asimetrías de información.'],
-      [org.impact.partnerships.value, 'Alianzas', 'Organizaciones internacionales, universidades, gobiernos locales y fundaciones'],
-      [org.impact.livesImpacted.value, 'Vidas impactadas', 'Padres, estudiantes y docentes alcanzados'],
-    ],
     countries: [org.impact.countries.value, 'Países impactados', 'Chile, Colombia, Ecuador, Perú, Brasil, República Dominicana, EE. UU.'],
     highlight: 'Orientación gratuita y personalizada — construida junto a gobiernos, entregada a escala nacional.',
     results: [
@@ -251,15 +241,6 @@ const locale = es ? 'es-ES' : 'en-US';
   <section class="impact section">
     <div class="wrap">
       <h2 class="section-title">{copy.impactTitle}</h2>
-      <div class="impact-grid">
-        {copy.impact.map(([n, label, desc]) => (
-          <div class="impact-card">
-            <div class="impact-number">{n}</div>
-            <div class="impact-label">{label}</div>
-            <p class="impact-desc">{desc}</p>
-          </div>
-        ))}
-      </div>
       <div class="impact-row">
         <div class="impact-card">
           <div class="impact-number">{copy.countries[0]}</div>
@@ -531,12 +512,6 @@ const locale = es ? 'es-ES' : 'en-US';
   }
 
   /* IMPACT */
-  .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 24px;
-  }
   .impact-row {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
@@ -874,9 +849,6 @@ const locale = es ? 'es-ES' : 'en-US';
   }
 
   @media (max-width: 768px) {
-    .impact-grid {
-      grid-template-columns: 1fr;
-    }
     .impact-row {
       grid-template-columns: 1fr;
     }
