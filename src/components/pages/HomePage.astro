@@ -35,7 +35,6 @@ const copy = {
     highlight: 'Free, personalized guidance — built with governments, delivered at national scale.',
     results: [
       ['icfesbot', '430,000', 'students invited to IcfesBot in a single nationwide wave, timed to the release of their Saber 11 results. It has run with ICFES every year since 2018.', 'IcfesBot →'],
-      ['dfm-chile', '8M+', 'interactions across 1,100 schools in Chile and Colombia through the Decidiendo para un Futuro Mejor information campaigns.', 'DFM →'],
       ['dfm-colombia', '37x', 'estimated cost-effectiveness relative to unconditional cash transfers for the DFM program in Colombia.', 'DFM Colombia →'],
     ],
     researchTitle: 'Research',
@@ -107,7 +106,6 @@ const copy = {
     highlight: 'Orientación gratuita y personalizada — construida junto a gobiernos, entregada a escala nacional.',
     results: [
       ['icfesbot', '430.000', 'estudiantes invitados a IcfesBot en una sola ola nacional, coordinada con la entrega de sus resultados de Saber 11. Funciona con el ICFES cada año desde 2018.', 'IcfesBot →'],
-      ['dfm-chile', '8M+', 'interacciones en 1.100 escuelas de Chile y Colombia a través de las campañas de Decidiendo para un Futuro Mejor.', 'DFM →'],
       ['dfm-colombia', '37x', 'más costo-efectivo, según estimaciones, que las transferencias monetarias no condicionadas — programa DFM en Colombia.', 'DFM Colombia →'],
     ],
     researchTitle: 'Investigación',
@@ -579,7 +577,8 @@ const locale = es ? 'es-ES' : 'en-US';
   }
   .results-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* as many equal columns as there are tiles, wrapping below ~240px each */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
     margin-top: 20px;
   }
