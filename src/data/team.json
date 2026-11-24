@@ -159,7 +159,7 @@
     "status": "active",
     "location": "Santiago, Chile",
     "bio": "Alonso builds and maintains ConsiliumBots' platforms end to end — interfaces, APIs, data pipelines, and cloud infrastructure supporting the organization's education tools.",
-    "photo": null,
+    "photo": "/images/team/alonso-herrera.png",
     "expertise": [
       "Fullstack Development",
       "Python",
@@ -182,7 +182,7 @@
     "status": "active",
     "location": null,
     "bio": "Francisco is one of the two anchoring developers on ConsiliumBots' platform build, working alongside Alonso Herrera on production delivery.",
-    "photo": null,
+    "photo": "/images/team/francisco-balmaceda.png",
     "expertise": [
       "Software Development",
       "Platform Engineering"
