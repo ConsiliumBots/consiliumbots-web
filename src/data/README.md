@@ -19,7 +19,8 @@ It is intentionally separate from the private structured records in `consiliumbo
 | `team.json` | Approved public team profiles |
 | `projects.json` | Approved public project descriptions and outcomes |
 | `partners.json` | Approved public partner listings |
-| `site-data.js` | Global public copy, links, and site configuration |
-| `research.json` | Approved public research references |
+| `org.json` | Organization-level figures for the homepage impact tiles, each with its source and whether it is verified |
+| `publications.json` | Approved public research references (the research page and each project's related research) |
+| `site-data.js` | Loads the JSON files above and exports them, with the team groupings, to the pages |
 
 If public content conflicts with an internal record, resolve the factual discrepancy in `consiliumbots-data` first, then make a deliberate public update here.
