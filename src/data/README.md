@@ -19,7 +19,7 @@ It is intentionally separate from the private structured records in `consiliumbo
 | `team.json` | Approved public team profiles |
 | `projects.json` | Approved public project descriptions and outcomes |
 | `partners.json` | Approved public partner listings |
-| `org.json` | Organization-level figures for the homepage impact tiles, each with its source and whether it is verified |
+| `org.json` | Organization-level figures for the homepage impact section (currently the country count), each with its source and whether it is verified |
 | `publications.json` | Approved public research references (the research page and each project's related research) |
 | `site-data.js` | Loads the JSON files above and exports them, with the team groupings, to the pages |
 
